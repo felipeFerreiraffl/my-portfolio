@@ -1,0 +1,48 @@
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: none;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    font: var(--font-space_grotesk);
+  }
+
+  :root {
+    --bg: var(--color-light-bg);
+    --gray: var(--color-light-gray);
+    --main: var(--color-light-main);
+    --title: var(--color-light-title);
+    --study: var(--color-light-study);
+    --work: var(--color-light-work);
+    --star: var(--color-star);
+  }
+
+  @variant dark {
+    :root {
+      --bg: var(--color-dark-bg);
+      --gray: var(--color-dark-gray);
+      --main: var(--color-dark-main);
+      --title: var(--color-dark-title);
+      --study: var(--color-dark-study);
+      --work: var(--color-dark-work);
+      --star: var(--color-star);
+    }
+  }
+}
