@@ -2,5 +2,5 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "./_base.css" layer(base);
 @import "./_themes.css" layer(theme);
+@import "./_base.css" layer(base);

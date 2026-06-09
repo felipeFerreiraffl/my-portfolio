@@ -29,6 +29,7 @@
     --gray: var(--color-light-gray);
     --main: var(--color-light-main);
     --title: var(--color-light-title);
+    --text: var(--color-dark-bg);
     --study: var(--color-light-study);
     --work: var(--color-light-work);
     --star: var(--color-star);
@@ -40,6 +41,7 @@
       --gray: var(--color-dark-gray);
       --main: var(--color-dark-main);
       --title: var(--color-dark-title);
+      --text: var(--color-light-bg);
       --study: var(--color-dark-study);
       --work: var(--color-dark-work);
       --star: var(--color-star);

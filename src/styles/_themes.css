@@ -18,3 +18,13 @@
   --leading-heading: 1.2;
   --leading-body: 1.5;
 }
+
+@theme inline {
+  --color-main: var(--main);
+  --color-title: var(--title);
+  --color-star: var(--star);
+  --color-study: var(--study);
+  --color-work: var(--work);
+  --color-gray: var(--gray);
+  --color-bg: var(--bg);
+}
