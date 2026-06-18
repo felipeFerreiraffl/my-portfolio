@@ -1,7 +1,10 @@
+import { availableThemes } from "@/constants/objects";
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import { ThemeProvider } from "@teispace/next-themes";
 import { Space_Grotesk } from "next/font/google";
 import { ReactNode } from "react";
+import { getTheme } from "@teispace/next-themes/server";
 
 export const meta: Metadata = {
   title: "Portfolio — Felipe Ferreira",
@@ -24,10 +27,25 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space_grotesk",
 });
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const initialTheme = await getTheme();
+
   return (
-    <html lang="pt-BR" className={`${spaceGrotesk.className}`}>
-      <body>{children}</body>
+    <html lang="pt-BR" className={`${spaceGrotesk.className}`} suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          initialTheme={initialTheme ?? "light"}
+          enableSystem
+          themes={availableThemes}
+          transition={{
+            type: "fade",
+            duration: 300,
+            origin: "center",
+          }}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

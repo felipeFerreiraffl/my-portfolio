@@ -4,3 +4,5 @@ export const navLinks = [
   { id: 3, label: "Habilidades" },
   { id: 4, label: "Projetos" },
 ];
+
+export const availableThemes = ["light", "dark"];
