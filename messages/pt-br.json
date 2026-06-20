@@ -1,0 +1,20 @@
+{
+  "Header": {
+    "tooltips": {
+      "theme": {
+        "light": "Trocar para tema claro",
+        "dark": "Trocar para tema escuro"
+      },
+      "language": {
+        "ptBr": "Trocar para Português",
+        "en": "Trocar para Inglês"
+      }
+    },
+    "nav": {
+      "aboutMe": "Sobre mim",
+      "experiences": "Experiências",
+      "skills": "Habilidades",
+      "projects": "Projetos"
+    }
+  }
+}

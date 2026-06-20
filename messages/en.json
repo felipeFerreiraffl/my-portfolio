@@ -1,0 +1,20 @@
+{
+  "Header": {
+    "tooltips": {
+      "theme": {
+        "light": "Switch to light mode",
+        "dark": "Switch to dark mode"
+      },
+      "language": {
+        "ptBr": "Switch to PT-BR",
+        "en": "Switch to EN"
+      }
+    },
+    "nav": {
+      "aboutMe": "About me",
+      "experiences": "Experiences",
+      "skills": "Skills",
+      "projects": "Projects"
+    }
+  }
+}

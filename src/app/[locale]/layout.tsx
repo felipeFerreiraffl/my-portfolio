@@ -1,12 +1,21 @@
 import { availableThemes } from "@/constants/objects";
+import { routing } from "@/libs/i18n/routing";
 import "@/styles/globals.css";
-import { Metadata } from "next";
 import { ThemeProvider } from "@teispace/next-themes";
-import { Space_Grotesk } from "next/font/google";
-import { ReactNode } from "react";
 import { getTheme } from "@teispace/next-themes/server";
+import { Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { Space_Grotesk } from "next/font/google";
+import { notFound } from "next/navigation";
+import { ReactNode } from "react";
 
-export const meta: Metadata = {
+interface LocaleRoutingProps {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}
+
+export const metadata: Metadata = {
   title: "Portfolio — Felipe Ferreira",
   description:
     "Portfólio profissional feito por Felipe Ferreira, para demonstrar as habilidades, experiências e projetos",
@@ -27,11 +36,18 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space_grotesk",
 });
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children, params }: LocaleRoutingProps) {
   const initialTheme = await getTheme();
+  const messages = await getMessages();
+  const plainMessages = JSON.parse(JSON.stringify(messages));
+
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
   return (
-    <html lang="pt-BR" className={`${spaceGrotesk.className}`} suppressHydrationWarning>
+    <html lang={locale} className={`${spaceGrotesk.className}`} suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"
@@ -42,7 +58,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             duration: 300,
             origin: "center",
           }}>
-          {children}
+          <NextIntlClientProvider
+            locale={locale}
+            messages={plainMessages}
+            now={new Date()}
+            timeZone="America/Sao_Paulo">
+            {children}
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
