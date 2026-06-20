@@ -1,5 +1,6 @@
 import { navLinks } from "@/constants/objects";
 import ThemeChanger from "./ThemeChanger";
+import LanguageChanger from "./LanguageChanger";
 
 export default function Header() {
   return (
@@ -18,7 +19,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <div className=""></div>
+      <LanguageChanger />
     </header>
   );
 }

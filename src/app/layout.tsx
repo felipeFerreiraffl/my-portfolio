@@ -36,7 +36,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <ThemeProvider
           attribute="class"
           initialTheme={initialTheme ?? "light"}
-          enableSystem
           themes={availableThemes}
           transition={{
             type: "fade",

@@ -1,6 +1,8 @@
 @theme {
   --color-main: oklch(39.147% 0.20073 281.116);
   --color-title: oklch(12.789% 0.06032 286.919);
+  --color-circle: oklch(69.329% 0.13888 291.439);
+  --color-text: oklch(12.789% 0.06032 286.919);
   --color-study: oklch(45.581% 0.12963 146.929);
   --color-work: oklch(42.362% 0.1608 24.766);
   --color-gray: oklch(54.182% 0.01241 291.635);
