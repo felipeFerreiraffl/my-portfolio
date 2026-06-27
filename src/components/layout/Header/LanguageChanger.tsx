@@ -25,13 +25,13 @@ export default function LanguageChanger() {
 
   return (
     <button
-      className="relative group grid place-items-center size-12 cursor-pointer"
+      className="relative group grid place-items-center md:size-12 size-10 cursor-pointer"
       onClick={() => (isLangPtBr ? handleSwitchLang("en") : handleSwitchLang("pt-br"))}
       disabled={isPending}>
-      <div className="absolute top-1/2 left-1/2 -translate-1/2 size-12 border-main border-2 rounded-full scale-0 transition-transform duration-300 group-hover:scale-100" />
+      <div className="absolute top-1/2 left-1/2 -translate-1/2 md:size-12 size-10 border-main border-2 rounded-full scale-0 transition-transform duration-300 group-hover:scale-100" />
       <Icon
         icon={isLangPtBr ? ICONS.language.ptBr : ICONS.language.en}
-        className="size-10 z-20"
+        className="md:size-10 size-7 z-20"
         label={isLangPtBr ? t("tooltips.language.en") : t("tooltips.language.ptBr")}
       />
     </button>
