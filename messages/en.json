@@ -16,5 +16,10 @@
       "skills": "Skills",
       "projects": "Projects"
     }
+  },
+  "Hero": {
+    "role": "Front-end Developer",
+    "workingNow": "Currently working",
+    "scrollDown": "Continue"
   }
 }
