@@ -6,7 +6,8 @@ import { ICONS } from "@/constants/icons";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const t = useTranslations("Hero");
+  const tDef = useTranslations("ButtonLabels");
+  const tHero = useTranslations("Hero");
 
   return (
     <article className="w-full h-dvh grid place-items-center">
@@ -20,12 +21,12 @@ export default function Hero() {
           <h1 className="md:text-5xl text-[2rem] font-bold text-title leading-heading">
             Felipe Ferreira Lima
           </h1>
-          <p className="md:text-lg text-base text-gray leading-body">{t("role")}</p>
+          <p className="md:text-lg text-base text-gray leading-body">{tHero("role")}</p>
         </div>
 
         <div className="flex flex-col items-center gap-1">
-          <span className="text-xs text-text leading-body text-center">{t("workingNow")}</span>
-          <Button label="Currículo" />
+          <span className="text-xs text-text leading-body text-center">{tHero("workingNow")}</span>
+          <Button label={tDef("curriculum")} />
         </div>
       </div>
     </article>

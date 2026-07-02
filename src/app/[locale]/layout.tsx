@@ -1,4 +1,4 @@
-import { availableThemes } from "@/constants/objects";
+import { AVAILABLE_THEMES } from "@/constants/elements";
 import { routing } from "@/libs/i18n/routing";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@teispace/next-themes";
@@ -54,7 +54,7 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
           <ThemeProvider
             attribute="class"
             initialTheme={initialTheme ?? "light"}
-            themes={availableThemes}
+            themes={AVAILABLE_THEMES}
             transition={{
               type: "fade",
               duration: 300,

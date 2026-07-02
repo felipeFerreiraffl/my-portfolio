@@ -1,4 +1,7 @@
 {
+  "ButtonLabels": {
+    "curriculum": "Curriculum"
+  },
   "Header": {
     "tooltips": {
       "theme": {

@@ -7,4 +7,4 @@ export const NAV_LINKS = [
   { id: 4, label: "nav.projects", icon: ICONS.nav.projects },
 ];
 
-export const availableThemes = ["light", "dark"];
+
