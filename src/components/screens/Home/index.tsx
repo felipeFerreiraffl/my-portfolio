@@ -10,7 +10,7 @@ export default function HomeScreen() {
       <Header />
 
       <Hero />
-
+    
       <MobileNav />
     </>
   );

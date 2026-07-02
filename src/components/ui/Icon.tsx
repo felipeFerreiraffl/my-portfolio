@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/libs/cn";
 import { SVGIcon } from "@/types/elements/elements.types";
 import Tooltip from "./Tooltip";

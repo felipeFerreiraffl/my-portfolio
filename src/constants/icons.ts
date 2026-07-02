@@ -4,7 +4,7 @@ import NavAboutMe from "@/assets/svg/nav/nav-about-me.svg";
 import NavExp from "@/assets/svg/nav/nav-experiences.svg";
 import NavSkills from "@/assets/svg/nav/nav-skills.svg";
 import NavProj from "@/assets/svg/nav/nav-projects.svg";
-import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr";
 import SkillHtml5 from "devicons-react/icons/Html5Plain";
 import SkillCss3 from "devicons-react/icons/Css3Plain";
 import SkillJavascript from "devicons-react/icons/JavascriptPlain";
@@ -18,6 +18,7 @@ import SkillMongodb from "devicons-react/icons/MongodbPlain";
 import SkillNodejs from "devicons-react/icons/NodejsPlain";
 import SkillGit from "devicons-react/icons/GitPlain";
 import SkillFigma from "devicons-react/icons/FigmaPlain";
+import { withFillWeight } from "@/libs/withFillWeight";
 
 export const ICONS = {
   language: {
@@ -31,8 +32,8 @@ export const ICONS = {
     projects: NavProj,
   },
   social: {
-    gitHub: GithubLogoIcon,
-    linkedIn: LinkedinLogoIcon,
+    gitHub: withFillWeight(GithubLogoIcon),
+    linkedIn: withFillWeight(LinkedinLogoIcon),
   },
   skills: {
     html5: SkillHtml5,

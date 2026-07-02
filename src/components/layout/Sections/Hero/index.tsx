@@ -12,8 +12,8 @@ export default function Hero() {
     <article className="w-full h-dvh grid place-items-center">
       <div className="flex flex-col items-center gap-8">
         <div className="flex items-center gap-3">
-          <IconButton icon={ICONS.nav.aboutMe} />
-          <IconButton icon={ICONS.nav.aboutMe} />
+          <IconButton icon={ICONS.social.gitHub} />
+          <IconButton icon={ICONS.social.linkedIn} />
         </div>
 
         <div className="flex flex-col items-center gap-2 text-center">
