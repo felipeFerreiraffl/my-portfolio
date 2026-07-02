@@ -1,0 +1,25 @@
+{
+  "Header": {
+    "tooltips": {
+      "theme": {
+        "light": "Trocar para tema claro",
+        "dark": "Trocar para tema escuro"
+      },
+      "language": {
+        "ptBr": "Trocar para Português",
+        "en": "Trocar para Inglês"
+      }
+    },
+    "nav": {
+      "aboutMe": "Sobre mim",
+      "experiences": "Experiências",
+      "skills": "Habilidades",
+      "projects": "Projetos"
+    }
+  },
+  "Hero": {
+    "role": "Desenvolvedor Front-end",
+    "workingNow": "Trabalhando no momento",
+    "scrollDown": "Continuar"
+  }
+}
