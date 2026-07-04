@@ -40,7 +40,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         variants={circleVars}
         initial="hidden"
         animate={contentVisible ? "visible" : "hidden"}
-        className="absolute top-1/2 left-1/2 -translate-1/2 lg:size-[27dvw] size-[82dvw] bg-main/20 rounded-full blur-2xl shadow-main/30"
+        className="absolute top-1/2 left-1/2 -translate-1/2 lg:size-[27dvw] size-[82dvw] bg-main/20 rounded-full blur-2xl shadow-main/30 z-1"
       />
 
       <m.div
@@ -54,7 +54,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         </div>
 
         <div className="flex flex-col items-center gap-2 text-center">
-          <h1 className="md:text-5xl text-[2rem] font-bold text-title leading-heading">
+          <h1 className="md:text-5xl text-[2rem] font-bold text-title leading-heading w-full">
             Felipe Ferreira Lima
           </h1>
           <p className="md:text-lg text-base text-gray leading-body">{tHero("role")}</p>
