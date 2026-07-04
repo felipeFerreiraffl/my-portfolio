@@ -15,7 +15,6 @@ export const HERO_RINGS: HeroRingData[] = [
     borderStyle: "dashed",
     sizeVar: "--ring-dashed-size",
     className: cn("lg:[--ring-dashed-size:65dvw] [--ring-dashed-size:164dvw]"),
-    hasGradient: true,
   },
   {
     id: "inner-1",
@@ -48,6 +47,6 @@ export const HERO_RINGS: HeroRingData[] = [
     borderWidth: 1.5,
     sizeVar: "--ring-outer-3-size",
     className: cn("lg:[--ring-outer-3-size:100dvw] [--ring-outer-3-size:0]"),
-    hasGradient: true,  
+    hasGradient: true,
   },
 ];

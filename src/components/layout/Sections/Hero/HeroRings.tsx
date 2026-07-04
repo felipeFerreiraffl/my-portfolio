@@ -5,7 +5,11 @@ import { cn } from "@/libs/cn";
 import { AnimatePresence, m, stagger, Variants } from "motion/react";
 import { useEffect, useState } from "react";
 
-export default function HeroRings() {
+interface HeroRingsProps {
+  onExpandComplete?: () => void;
+}
+
+export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   const [phase, setPhase] = useState<"loading" | "expanded">("loading");
 
   const ringsContainerVars: Variants = {
@@ -51,11 +55,17 @@ export default function HeroRings() {
         variants={ringsContainerVars}
         animate={phase}
         className="relative grid place-items-center">
-        {HERO_RINGS.map((ring) => (
+        {HERO_RINGS.map((ring, i) => (
           <m.div
             key={ring.id}
             custom={ring}
             variants={ringVars}
+            onAnimationComplete={(def) => {
+              const isLastRing = i === HERO_RINGS.length - 1;
+              if (def === "expanded" && isLastRing) {
+                onExpandComplete?.();
+              }
+            }}
             className={cn("absolute rounded-full border-main", ring.className)}
             style={{
               borderWidth: ring.borderWidth,

@@ -3,15 +3,28 @@
 import Header from "@/components/layout/Header";
 import MobileNav from "@/components/layout/Header/MobileNav";
 import Hero from "@/components/layout/Sections/Hero";
+import { Variants, m } from "motion/react";
+import { useState } from "react";
 
 export default function HomeScreen() {
+  const [ringsExpanded, setRingsExpanded] = useState(false);
+
+  const revealVars: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+  };
+
   return (
     <>
-      <Header />
+      <m.div variants={revealVars} initial="hidden" animate={ringsExpanded ? "visible" : "hidden"}>
+        <Header />
+      </m.div>
 
-      <Hero />
-    
-      <MobileNav />
+      <Hero onRingsExpandComplete={() => setRingsExpanded(true)} />
+
+      <m.div variants={revealVars} initial="hidden" animate={ringsExpanded ? "visible" : "hidden"}>
+        <MobileNav />
+      </m.div>
     </>
   );
 }

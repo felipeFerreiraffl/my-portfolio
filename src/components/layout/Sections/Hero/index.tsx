@@ -3,18 +3,51 @@
 import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
 import { ICONS } from "@/constants/icons";
+import { Variants, m } from "motion/react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import HeroRings from "./HeroRings";
 
-export default function Hero() {
+interface HeroProps {
+  onRingsExpandComplete?: () => void;
+}
+
+export default function Hero({ onRingsExpandComplete }: HeroProps) {
   const tDef = useTranslations("ButtonLabels");
   const tHero = useTranslations("Hero");
+  const [contentVisible, setContentVisible] = useState(false);
+
+  const contentVars: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+  };
+
+  const circleVars: Variants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "easeInOut" } },
+  };
+
+  const handleExpandComplete = () => {
+    setContentVisible(true);
+    onRingsExpandComplete?.();
+  };
 
   return (
     <article className="relative w-full h-dvh grid place-items-center">
-      <HeroRings />
+      <HeroRings onExpandComplete={handleExpandComplete} />
 
-      <div className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
+      <m.div
+        variants={circleVars}
+        initial="hidden"
+        animate={contentVisible ? "visible" : "hidden"}
+        className="absolute top-1/2 left-1/2 -translate-1/2 lg:size-[27dvw] size-[82dvw] bg-main/20 rounded-full blur-2xl shadow-main/30"
+      />
+
+      <m.div
+        variants={contentVars}
+        initial="hidden"
+        animate={contentVisible ? "visible" : "hidden"}
+        className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
           <IconButton icon={ICONS.social.gitHub} />
           <IconButton icon={ICONS.social.linkedIn} />
@@ -31,7 +64,7 @@ export default function Hero() {
           <span className="text-xs text-text leading-body text-center">{tHero("workingNow")}</span>
           <Button label={tDef("curriculum")} />
         </div>
-      </div>
+      </m.div>
     </article>
   );
 }
