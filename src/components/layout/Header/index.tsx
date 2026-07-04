@@ -9,7 +9,7 @@ export default function Header() {
   const t = useTranslations("Header");
 
   return (
-    <header className="md:flex hidden fixed top-10 left-1/2 -translate-x-1/2 items-center gap-20 bg-main/20 border-[0.5px] border-main rounded-[40px] py-3 px-10 backdrop-blur-md">
+    <header className="md:flex hidden fixed top-10 left-1/2 -translate-x-1/2 items-center gap-20 bg-main/20 border-[0.5px] border-main rounded-[40px] py-3 px-10 backdrop-blur-md z-100">
       <ThemeChanger />
       <nav>
         <ul className="flex items-center gap-5">
