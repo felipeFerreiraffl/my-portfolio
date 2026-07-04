@@ -4,14 +4,17 @@ import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
 import { ICONS } from "@/constants/icons";
 import { useTranslations } from "next-intl";
+import HeroRings from "./HeroRings";
 
 export default function Hero() {
   const tDef = useTranslations("ButtonLabels");
   const tHero = useTranslations("Hero");
 
   return (
-    <article className="w-full h-dvh grid place-items-center">
-      <div className="flex flex-col items-center gap-8">
+    <article className="relative w-full h-dvh grid place-items-center">
+      <HeroRings />
+
+      <div className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
           <IconButton icon={ICONS.social.gitHub} />
           <IconButton icon={ICONS.social.linkedIn} />
