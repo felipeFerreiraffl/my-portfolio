@@ -62,7 +62,9 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
 
         <div className="flex flex-col items-center gap-1">
           <span className="text-xs text-text leading-body text-center">{tHero("workingNow")}</span>
-          <Button label={tDef("curriculum")} />
+          <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferer">
+            <Button label={tDef("curriculum")} />
+          </a>
         </div>
       </m.div>
     </article>

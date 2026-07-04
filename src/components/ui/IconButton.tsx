@@ -14,6 +14,7 @@ interface IconButtonProps extends ComponentProps<"button"> {
 export default function IconButton({ icon, tooltipLabel, className, ...props }: IconButtonProps) {
   return (
     <button
+      aria-label={tooltipLabel}
       className={cn(
         "relative group cursor-pointer grid place-items-center md:size-16 size-10",
         className,
