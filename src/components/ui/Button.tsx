@@ -25,6 +25,7 @@ export default function Button({ label, ...props }: ButtonProps) {
       variants={dotToRing}
       initial="rest"
       whileHover="hover"
+      aria-label={label}
       className={cn(
         "group cursor-pointer p-2 rounded-[20px]",
         "min-w-30 whitespace-nowrap inline-flex items-center transition-colors duration-300",

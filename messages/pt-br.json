@@ -1,4 +1,11 @@
 {
+  "ButtonLabels": {
+    "curriculum": "Currículo"
+  },
+  "AriaLabels": {
+    "github": "Ver GitHub",
+    "linkedin": "Ver LinkedIn"
+  },
   "Header": {
     "tooltips": {
       "theme": {
