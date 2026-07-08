@@ -3,6 +3,7 @@
 import Header from "@/components/layout/Header";
 import MobileNav from "@/components/layout/Header/MobileNav";
 import Hero from "@/components/layout/Sections/Hero";
+import Section from "@/components/ui/Section";
 import { Variants, m } from "motion/react";
 import { useState } from "react";
 
@@ -21,6 +22,10 @@ export default function HomeScreen() {
       </m.div>
 
       <Hero onRingsExpandComplete={() => setRingsExpanded(true)} />
+
+      <main className="w-dvw md:mt-56 mt-37 mb-5">
+        <Section title="Sobre mim" />
+      </main>
 
       <m.div variants={revealVars} initial="hidden" animate={ringsExpanded ? "visible" : "hidden"}>
         <MobileNav />
