@@ -3,9 +3,9 @@
 import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
 import { ICONS } from "@/constants/icons";
-import { Variants, m } from "motion/react";
+import { Variants, m, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import HeroRings from "./HeroRings";
 
 interface HeroProps {
@@ -14,8 +14,18 @@ interface HeroProps {
 
 export default function Hero({ onRingsExpandComplete }: HeroProps) {
   const tDef = useTranslations("ButtonLabels");
+  const tAria = useTranslations("AriaLabels");
   const tHero = useTranslations("Hero");
+
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
   const [contentVisible, setContentVisible] = useState(false);
+
+  const ringsScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const ringsOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const contentVars: Variants = {
     hidden: { opacity: 0 },
@@ -33,8 +43,10 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
   };
 
   return (
-    <article className="relative w-full h-dvh grid place-items-center">
-      <HeroRings onExpandComplete={handleExpandComplete} />
+    <article ref={heroRef} className="relative w-full h-dvh grid place-items-center">
+      <m.div style={{ scale: ringsScale, opacity: ringsOpacity }}>
+        <HeroRings onExpandComplete={handleExpandComplete} />
+      </m.div>
 
       <m.div
         variants={circleVars}
@@ -49,8 +61,8 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         animate={contentVisible ? "visible" : "hidden"}
         className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
-          <IconButton icon={ICONS.social.gitHub} />
-          <IconButton icon={ICONS.social.linkedIn} />
+          <IconButton icon={ICONS.social.gitHub} aria-label={tAria("github")} />
+          <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
         </div>
 
         <div className="flex flex-col items-center gap-2 text-center">
@@ -67,6 +79,21 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
           </a>
         </div>
       </m.div>
+
+      <m.a
+        variants={contentVars}
+        initial="hidden"
+        animate={contentVisible ? "visible" : "hidden"}
+        className="cursor-pointer absolute bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center">
+        <div className="flex flex-col items-center">
+          <div className="grid place-items-center md:size-5 size-4 border border-main rounded-full">
+            <div className="md:size-3 size-2 rounded-full bg-main"></div>
+          </div>
+          <div className="bg-main md:w-0.5 w-[1.5px] h-6" />
+        </div>
+
+        <span>{tHero("scrollDown")}</span>
+      </m.a>
     </article>
   );
 }

@@ -2,6 +2,10 @@
   "ButtonLabels": {
     "curriculum": "Curriculum"
   },
+  "AriaLabels": {
+    "github": "Check GitHub",
+    "linkedin": "Check LinkedIn"
+  },
   "Header": {
     "tooltips": {
       "theme": {

@@ -22,16 +22,12 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   };
 
   const ringVars: Variants = {
-    loading: (ring: HeroRingData) =>
-      ring.id === "dashed"
-        ? { width: 48, height: 48, opacity: 1 }
-        : { width: 0, height: 0, opacity: 1 },
-    expanded: (ring: HeroRingData) => ({
-      width: `var(${ring.sizeVar})`,
-      height: `var(${ring.sizeVar})`,
+    loading: { scale: 0, opacity: 1 },
+    expanded: {
+      scale: 1,
       opacity: 1,
       transition: { duration: 0.8, ease: "easeInOut" },
-    }),
+    },
   };
 
   useEffect(() => {
@@ -68,6 +64,8 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
             }}
             className={cn("absolute rounded-full border-main", ring.className)}
             style={{
+              width: `var(${ring.sizeVar})`,
+              height: `var(${ring.sizeVar})`,
               borderWidth: ring.borderWidth,
               borderStyle: ring.borderStyle ?? "solid",
               ...(ring.hasGradient && {
