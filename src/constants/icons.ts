@@ -19,17 +19,18 @@ import SkillNodejs from "devicons-react/icons/NodejsPlain";
 import SkillGit from "devicons-react/icons/GitPlain";
 import SkillFigma from "devicons-react/icons/FigmaPlain";
 import { withFillWeight } from "@/libs/withFillWeight";
+import { SVGIcon } from "@/types/elements/elements.types";
 
 export const ICONS = {
   language: {
-    ptBr: LangPt,
-    en: LangEn,
+    ptBr: LangPt as SVGIcon,
+    en: LangEn as SVGIcon,
   },
   nav: {
-    aboutMe: NavAboutMe,
-    experiences: NavExp,
-    skills: NavSkills,
-    projects: NavProj,
+    aboutMe: NavAboutMe as SVGIcon,
+    experiences: NavExp as SVGIcon,
+    skills: NavSkills as SVGIcon,
+    projects: NavProj as SVGIcon,
   },
   social: {
     gitHub: withFillWeight(GithubLogoIcon),

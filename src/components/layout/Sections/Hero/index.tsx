@@ -7,12 +7,15 @@ import { Variants, m, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import HeroRings from "./HeroRings";
+import { useSectionRefs } from "@/contexts/sectionRefs.context";
+import { handleScrollToSection } from "@/utils/handlers.util";
 
 interface HeroProps {
   onRingsExpandComplete?: () => void;
 }
 
 export default function Hero({ onRingsExpandComplete }: HeroProps) {
+  const { refs } = useSectionRefs();
   const tDef = useTranslations("ButtonLabels");
   const tAria = useTranslations("AriaLabels");
   const tHero = useTranslations("Hero");
@@ -80,10 +83,11 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         </div>
       </m.div>
 
-      <m.a
+      <m.button
         variants={contentVars}
         initial="hidden"
         animate={contentVisible ? "visible" : "hidden"}
+        onClick={() => handleScrollToSection(refs.aboutMe)}
         className="cursor-pointer absolute bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center">
         <div className="flex flex-col items-center">
           <div className="grid place-items-center md:size-5 size-4 border border-main rounded-full">
@@ -93,7 +97,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         </div>
 
         <span>{tHero("scrollDown")}</span>
-      </m.a>
+      </m.button>
     </article>
   );
 }

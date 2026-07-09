@@ -1,4 +1,5 @@
 import { AVAILABLE_THEMES } from "@/constants/elements";
+import { SectionRefsProvider } from "@/contexts/sectionRefs.context";
 import { routing } from "@/libs/i18n/routing";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@teispace/next-themes";
@@ -65,7 +66,7 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
               messages={plainMessages}
               now={new Date()}
               timeZone="America/Sao_Paulo">
-              {children}
+              <SectionRefsProvider>{children}</SectionRefsProvider>
             </NextIntlClientProvider>
           </ThemeProvider>
         </body>

@@ -1,11 +1,12 @@
 import { cn } from "@/libs/cn";
 import { ICONS } from "./icons";
+import { NavLink } from "@/types/elements/elements.types";
 
-export const NAV_LINKS = [
-  { id: 1, label: "nav.aboutMe", icon: ICONS.nav.aboutMe },
-  { id: 2, label: "nav.experiences", icon: ICONS.nav.experiences },
-  { id: 3, label: "nav.skills", icon: ICONS.nav.skills },
-  { id: 4, label: "nav.projects", icon: ICONS.nav.projects },
+export const NAV_LINKS: NavLink[] = [
+  { id: "aboutMe", label: "nav.aboutMe", icon: ICONS.nav.aboutMe },
+  { id: "experiences", label: "nav.experiences", icon: ICONS.nav.experiences },
+  { id: "skills", label: "nav.skills", icon: ICONS.nav.skills },
+  { id: "projects", label: "nav.projects", icon: ICONS.nav.projects },
 ];
 
 export const HERO_RINGS: HeroRingData[] = [
