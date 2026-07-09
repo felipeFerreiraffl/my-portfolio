@@ -10,7 +10,7 @@ interface SectionProps extends ComponentProps<"section"> {
 
 export default function Section({ className, children, title, ...props }: SectionProps) {
   return (
-    <section className={cn("w-full flex flex-col gap-16", className)} {...props}>
+    <section className={cn("w-full flex flex-col gap-16 py-15", className)} {...props}>
       <SectionTitle title={title} />
 
       {children}

@@ -6,7 +6,7 @@ export type SectionRef = RefObject<HTMLElement | null>;
 export type SectionKey = "aboutMe" | "experiences" | "skills" | "projects";
 
 export interface SectionProps {
-  ref?: SectionRef;
+  ref: SectionRef;
 }
 
 export interface NavLink {
