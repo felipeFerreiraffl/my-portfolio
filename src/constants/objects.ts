@@ -49,4 +49,4 @@ export const HERO_RINGS: HeroRingData[] = [
     className: cn("lg:[--ring-outer-3-size:100dvw] [--ring-outer-3-size:0]"),
     hasGradient: true,
   },
-];
+] as const;

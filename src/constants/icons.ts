@@ -50,4 +50,4 @@ export const ICONS = {
     git: SkillGit,
     figma: SkillFigma,
   },
-};
+} as const;
