@@ -1,3 +1,4 @@
+import Cursor from "@/components/ui/Cursor";
 import { AVAILABLE_THEMES } from "@/constants/elements";
 import { SectionRefsProvider } from "@/contexts/sectionRefs.context";
 import { routing } from "@/libs/i18n/routing";
@@ -68,7 +69,10 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
                 messages={plainMessages}
                 now={new Date()}
                 timeZone="America/Sao_Paulo">
-                <SectionRefsProvider>{children}</SectionRefsProvider>
+                <SectionRefsProvider>
+                  <Cursor />
+                  {children}
+                </SectionRefsProvider>
               </NextIntlClientProvider>
             </ThemeProvider>
           </SmoothScrollProvider>

@@ -34,7 +34,8 @@ export default function Header() {
             <li key={link.id}>
               <button
                 onClick={() => handleScrollToSection(resolveIdToRef(link.id))}
-                className="whitespace-nowrap cursor-pointer text-sm font-bold text-text transition-colors duration-300 hover:text-main">
+                className="whitespace-nowrap cursor-pointer text-sm font-bold text-text transition-colors duration-300 hover:text-main"
+                data-cursor-hover>
                 {t(link.label)}
               </button>
             </li>

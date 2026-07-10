@@ -88,7 +88,8 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         initial="hidden"
         animate={contentVisible ? "visible" : "hidden"}
         onClick={() => handleScrollToSection(refs.aboutMe)}
-        className="cursor-pointer absolute bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center">
+        className="cursor-pointer absolute bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center"
+        data-cursor-hover>
         <div className="flex flex-col items-center">
           <div className="grid place-items-center md:size-5 size-4 border border-main rounded-full">
             <div className="md:size-3 size-2 rounded-full bg-main"></div>

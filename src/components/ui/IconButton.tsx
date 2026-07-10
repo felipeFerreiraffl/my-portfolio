@@ -18,6 +18,7 @@ export default function IconButton({ icon, tooltipLabel, className, ...props }: 
         "relative group cursor-pointer grid place-items-center md:size-16 size-10",
         className,
       )}
+      data-cursor-hover
       {...props}>
       <div
         className={cn(
