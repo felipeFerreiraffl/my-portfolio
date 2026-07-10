@@ -25,7 +25,7 @@ export default function AboutMe({ ref }: SectionProps) {
   const itemVars: Variants = {
     hidden: {
       opacity: 0,
-      y: 8,
+      y: 16,
     },
     visible: {
       opacity: 1,
@@ -43,7 +43,7 @@ export default function AboutMe({ ref }: SectionProps) {
         variants={containerVars}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ amount: 0.5 }}
         className="grid lg:grid-cols-3 grid-cols-1 gap-5 md:px-12 px-7">
         <AboutTopic variants={itemVars} title={tSec("hobbies.title")}>
           <ul className="flex xl:flex-row flex-col gap-5">
