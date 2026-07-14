@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
 import { ICONS } from "./icons";
 import { NavLink } from "@/types/elements/elements.types";
+import { HeroRingData } from "@/types/elements/data.types";
 
 export const NAV_LINKS: NavLink[] = [
   { id: "aboutMe", label: "nav.aboutMe", icon: ICONS.nav.aboutMe },
@@ -51,3 +52,20 @@ export const HERO_RINGS: HeroRingData[] = [
     hasGradient: true,
   },
 ] as const;
+
+export const SKILLS_NAMES = {
+  html: "HTML",
+  css: "CSS",
+  javascript: "Javascript",
+  typescript: "Typescript",
+  reactjs: "React.js",
+  nextjs: "Next.js",
+  java: "Java",
+  tailwind: "TailwindCSS",
+  spring: "Spring",
+  mysql: "MySQL",
+  mongodb: "MongoDB",
+  nodejs: "Node.js",
+  git: "Git",
+  figma: "Figma",
+};

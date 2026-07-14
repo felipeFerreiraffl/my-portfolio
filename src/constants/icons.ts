@@ -1,6 +1,9 @@
 import AboutAnimeManga from "@/assets/svg/aboutMe/about-anime-manga.svg";
 import AboutFootball from "@/assets/svg/aboutMe/about-football.svg";
 import AboutGames from "@/assets/svg/aboutMe/about-games.svg";
+import ExpDev from "@/assets/svg/experiences/experience-dev.svg";
+import ExpMech from "@/assets/svg/experiences/experience-mech.svg";
+import ExpStar from "@/assets/svg/experiences/experience-star.svg";
 import LangEn from "@/assets/svg/lang/lang-en.svg";
 import LangPt from "@/assets/svg/lang/lang-pt.svg";
 import NavAboutMe from "@/assets/svg/nav/nav-about-me.svg";
@@ -39,6 +42,11 @@ export const ICONS = {
     animeManga: AboutAnimeManga as SVGIcon,
     football: AboutFootball as SVGIcon,
     games: AboutGames as SVGIcon,
+  },
+  experiences: {
+    dev: ExpDev as SVGIcon,
+    mech: ExpMech as SVGIcon,
+    star: ExpStar as SVGIcon,
   },
   social: {
     gitHub: withFillWeight(GithubLogoIcon),
