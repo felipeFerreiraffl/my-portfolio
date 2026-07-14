@@ -28,5 +28,28 @@
     "role": "Front-end Developer",
     "workingNow": "Currently working",
     "scrollDown": "Continue"
+  },
+  "AboutMe": {
+    "title": "About me",
+    "hobbies": {
+      "title": "Hobbies",
+      "icons": {
+        "football": "Football",
+        "games": "Games",
+        "animesMangas": "Animes & Mangas"
+      }
+    },
+    "goals": {
+      "title": "Goals",
+      "body": {
+        "topic1": "Become a mid-level/senior front-end developer",
+        "topic2": "Learn more about the IT field as a whole",
+        "topic3": "Start studying game programming and design"
+      }
+    },
+    "presentation": {
+      "title": "Presentation",
+      "span": "Click below to see more details of my journey"
+    }
   }
 }

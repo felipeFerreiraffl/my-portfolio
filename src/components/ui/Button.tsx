@@ -31,6 +31,7 @@ export default function Button({ label, ...props }: ButtonProps) {
         "min-w-30 whitespace-nowrap inline-flex items-center transition-colors duration-300",
         "bg-main/5 text-title hover:bg-main/20 hover:text-main",
       )}
+      data-cursor-hover
       {...props}>
       <div className="flex items-center">
         <div className="relative">

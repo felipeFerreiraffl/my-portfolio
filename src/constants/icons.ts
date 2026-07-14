@@ -1,35 +1,44 @@
-import LangPt from "@/assets/svg/lang/lang-pt.svg";
+import AboutAnimeManga from "@/assets/svg/aboutMe/about-anime-manga.svg";
+import AboutFootball from "@/assets/svg/aboutMe/about-football.svg";
+import AboutGames from "@/assets/svg/aboutMe/about-games.svg";
 import LangEn from "@/assets/svg/lang/lang-en.svg";
+import LangPt from "@/assets/svg/lang/lang-pt.svg";
 import NavAboutMe from "@/assets/svg/nav/nav-about-me.svg";
 import NavExp from "@/assets/svg/nav/nav-experiences.svg";
-import NavSkills from "@/assets/svg/nav/nav-skills.svg";
 import NavProj from "@/assets/svg/nav/nav-projects.svg";
-import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr";
-import SkillHtml5 from "devicons-react/icons/Html5Plain";
-import SkillCss3 from "devicons-react/icons/Css3Plain";
-import SkillJavascript from "devicons-react/icons/JavascriptPlain";
-import SkillTypescript from "devicons-react/icons/TypescriptPlain";
-import SkillNextjs from "devicons-react/icons/NextjsPlain";
-import SkillTailwindcss from "devicons-react/icons/TailwindcssPlainWordmark";
-import SkillJava from "devicons-react/icons/JavaPlain";
-import SkillSpring from "devicons-react/icons/SpringOriginal";
-import SkillMysql from "devicons-react/icons/MysqlOriginal";
-import SkillMongodb from "devicons-react/icons/MongodbPlain";
-import SkillNodejs from "devicons-react/icons/NodejsPlain";
-import SkillGit from "devicons-react/icons/GitPlain";
-import SkillFigma from "devicons-react/icons/FigmaPlain";
+import NavSkills from "@/assets/svg/nav/nav-skills.svg";
 import { withFillWeight } from "@/libs/withFillWeight";
+import { SVGIcon } from "@/types/elements/elements.types";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr";
+import SkillCss3 from "devicons-react/icons/Css3Plain";
+import SkillFigma from "devicons-react/icons/FigmaPlain";
+import SkillGit from "devicons-react/icons/GitPlain";
+import SkillHtml5 from "devicons-react/icons/Html5Plain";
+import SkillJava from "devicons-react/icons/JavaPlain";
+import SkillJavascript from "devicons-react/icons/JavascriptPlain";
+import SkillMongodb from "devicons-react/icons/MongodbPlain";
+import SkillMysql from "devicons-react/icons/MysqlOriginal";
+import SkillNextjs from "devicons-react/icons/NextjsPlain";
+import SkillNodejs from "devicons-react/icons/NodejsPlain";
+import SkillSpring from "devicons-react/icons/SpringOriginal";
+import SkillTailwindcss from "devicons-react/icons/TailwindcssPlainWordmark";
+import SkillTypescript from "devicons-react/icons/TypescriptPlain";
 
 export const ICONS = {
   language: {
-    ptBr: LangPt,
-    en: LangEn,
+    ptBr: LangPt as SVGIcon,
+    en: LangEn as SVGIcon,
   },
   nav: {
-    aboutMe: NavAboutMe,
-    experiences: NavExp,
-    skills: NavSkills,
-    projects: NavProj,
+    aboutMe: NavAboutMe as SVGIcon,
+    experiences: NavExp as SVGIcon,
+    skills: NavSkills as SVGIcon,
+    projects: NavProj as SVGIcon,
+  },
+  aboutMe: {
+    animeManga: AboutAnimeManga as SVGIcon,
+    football: AboutFootball as SVGIcon,
+    games: AboutGames as SVGIcon,
   },
   social: {
     gitHub: withFillWeight(GithubLogoIcon),
@@ -50,4 +59,4 @@ export const ICONS = {
     git: SkillGit,
     figma: SkillFigma,
   },
-};
+} as const;

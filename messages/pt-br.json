@@ -28,5 +28,28 @@
     "role": "Desenvolvedor Front-end",
     "workingNow": "Trabalhando no momento",
     "scrollDown": "Continuar"
+  },
+  "AboutMe": {
+    "title": "Sobre mim",
+    "hobbies": {
+      "title": "Hobbies",
+      "icons": {
+        "football": "Futebol",
+        "games": "Jogos",
+        "animesMangas": "Animes & Mangás"
+      }
+    },
+    "goals": {
+      "title": "Objetivos",
+      "body": {
+        "topic1": "Me tornar um futuro desenvolvedor front-end pleno/sênior",
+        "topic2": "Aprender mais sobre a área de T.I. como um todo",
+        "topic3": "Começar estudos sobre programação e design em jogos"
+      }
+    },
+    "presentation": {
+      "title": "Apresentação",
+      "span": "Clique abaixo para ver mais detalhes da minha trajetória"
+    }
   }
 }
