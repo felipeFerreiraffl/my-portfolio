@@ -10,6 +10,11 @@ export const NAV_LINKS: NavLink[] = [
   { id: "projects", label: "nav.projects", icon: ICONS.nav.projects },
 ];
 
+export const EXTERNAL_LINKS = {
+  gitHub: "https://github.com/felipeFerreiraffl",
+  linkedIn: "https://www.linkedin.com/in/felipe-ferreira-959bb8271/",
+};
+
 export const HERO_RINGS: HeroRingData[] = [
   {
     id: "dashed",
