@@ -8,9 +8,10 @@ import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { useTranslations } from "next-intl";
 import { SectionKey } from "@/types/elements/elements.types";
 import { handleScrollToSection } from "@/utils/handlers.util";
+import { cn } from "@/libs/cn";
 
 export default function MobileNav() {
-  const { refs } = useSectionRefs();
+  const { refs, activeSec } = useSectionRefs();
   const t = useTranslations("Header");
 
   const resolveIdToRef = (id: SectionKey) => {
@@ -26,6 +27,8 @@ export default function MobileNav() {
     }
   };
 
+  console.log("Seção ativa no Mobile: ", activeSec);
+
   return (
     <nav className="md:hidden w-[90dvw] fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-between bg-main/20 border-[0.5px] border-main rounded-[40px] py-3 px-5 backdrop-blur-md">
       <ThemeChanger />
@@ -35,7 +38,13 @@ export default function MobileNav() {
             <button
               onClick={() => handleScrollToSection(resolveIdToRef(link.id))}
               aria-label={t(link.label)}>
-              <Icon icon={link.icon} className="bg-main/20 p-2 rounded-full text-text size-8" />
+              <Icon
+                icon={link.icon}
+                className={cn(
+                  "p-2 rounded-full text-text size-8",
+                  activeSec === link.id ? "bg-main/60" : "bg-main/20",
+                )}
+              />
             </button>
           </li>
         ))}

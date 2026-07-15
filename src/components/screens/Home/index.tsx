@@ -27,7 +27,7 @@ export default function HomeScreen() {
       <Hero onRingsExpandComplete={() => setRingsExpanded(true)} />
 
       {ringsExpanded && (
-        <main className="w-dvw md:mt-56 mt-37 mb-5">
+        <main className="w-dvw flex flex-col gap-10 md:mt-56 mt-37 mb-5">
           <AboutMe ref={refs.aboutMe} />
           <Experiences ref={refs.experiences} />
         </main>
