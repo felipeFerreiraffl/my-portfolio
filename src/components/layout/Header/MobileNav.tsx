@@ -27,8 +27,6 @@ export default function MobileNav() {
     }
   };
 
-  console.log("Seção ativa no Mobile: ", activeSec);
-
   return (
     <nav className="md:hidden w-[90dvw] fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-between bg-main/20 border-[0.5px] border-main rounded-[40px] py-3 px-5 backdrop-blur-md">
       <ThemeChanger />

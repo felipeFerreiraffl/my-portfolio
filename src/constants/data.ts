@@ -9,7 +9,7 @@ export const EXPERIENCES: ExperienceData[] = [
     type: "academic",
     place: "exp_1.place",
     initialTime: {
-      month: "Jul.",
+      month: "months.jul",
       year: 2023,
     },
     endingTime: {
@@ -31,11 +31,11 @@ export const EXPERIENCES: ExperienceData[] = [
     type: "work",
     place: "exp_2.place",
     initialTime: {
-      month: "Jul.",
+      month: "months.jul",
       year: 2023,
     },
     endingTime: {
-      month: "Jul.",
+      month: "months.jul",
       year: 2025,
     },
     description: "exp_2.description",
