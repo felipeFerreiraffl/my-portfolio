@@ -26,6 +26,9 @@ import SkillNodejs from "devicons-react/icons/NodejsPlain";
 import SkillSpring from "devicons-react/icons/SpringOriginal";
 import SkillTailwindcss from "devicons-react/icons/TailwindcssPlainWordmark";
 import SkillTypescript from "devicons-react/icons/TypescriptPlain";
+import ArrowUp from "@/assets/svg/arrows/arrow-up.svg";
+import ArrowRight from "@/assets/svg/arrows/arrow-right.svg";
+import ArrowLeft from "@/assets/svg/arrows/arrow-left.svg";
 
 export const ICONS = {
   language: {
@@ -47,6 +50,11 @@ export const ICONS = {
     dev: ExpDev as SVGIcon,
     mech: ExpMech as SVGIcon,
     star: ExpStar as SVGIcon,
+  },
+  arrows: {
+    up: ArrowUp as SVGIcon,
+    right: ArrowRight as SVGIcon,
+    left: ArrowLeft as SVGIcon,
   },
   social: {
     gitHub: withFillWeight(GithubLogoIcon),
