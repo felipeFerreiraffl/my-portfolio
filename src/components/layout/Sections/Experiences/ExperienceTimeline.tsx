@@ -32,6 +32,7 @@ export default function ExperienceTimeline({ emblaApi, total }: ExperienceTimeli
             key={idx}
             type="button"
             onClick={() => emblaApi?.scrollTo(idx)}
+            aria-label={`Slide ${idx}`}
             className="grid place-items-center"
             style={{ width: SLOT_WIDTH }}>
             <m.div
