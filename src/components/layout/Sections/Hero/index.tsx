@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import HeroRings from "./HeroRings";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { handleScrollToSection } from "@/utils/handlers.util";
+import { EXTERNAL_LINKS } from "@/constants/objects";
 
 interface HeroProps {
   onRingsExpandComplete?: () => void;
@@ -64,8 +65,12 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         animate={contentVisible ? "visible" : "hidden"}
         className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
-          <IconButton icon={ICONS.social.gitHub} aria-label={tAria("github")} />
-          <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
+          <a href={EXTERNAL_LINKS.gitHub} target="_blank" rel="noopener noreferer">
+            <IconButton icon={ICONS.social.gitHub} aria-label={tAria("github")} />
+          </a>
+          <a href={EXTERNAL_LINKS.linkedIn} target="_blank" rel="noopener noreferer">
+            <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
+          </a>
         </div>
 
         <div className="flex flex-col items-center gap-2 text-center">

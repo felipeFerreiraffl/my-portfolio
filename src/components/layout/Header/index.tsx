@@ -1,15 +1,16 @@
 "use client";
 
 import { NAV_LINKS } from "@/constants/objects";
+import { useSectionRefs } from "@/contexts/sectionRefs.context";
+import { cn } from "@/libs/cn";
+import { SectionKey } from "@/types/elements/elements.types";
+import { handleScrollToSection } from "@/utils/handlers.util";
 import { useTranslations } from "next-intl";
 import LanguageChanger from "./LanguageChanger";
 import ThemeChanger from "./ThemeChanger";
-import { useSectionRefs } from "@/contexts/sectionRefs.context";
-import { handleScrollToSection } from "@/utils/handlers.util";
-import { SectionKey } from "@/types/elements/elements.types";
 
 export default function Header() {
-  const { refs } = useSectionRefs();
+  const { refs, activeSec } = useSectionRefs();
   const t = useTranslations("Header");
 
   const resolveIdToRef = (id: SectionKey) => {
@@ -34,7 +35,10 @@ export default function Header() {
             <li key={link.id}>
               <button
                 onClick={() => handleScrollToSection(resolveIdToRef(link.id))}
-                className="whitespace-nowrap cursor-pointer text-sm font-bold text-text transition-colors duration-300 hover:text-main"
+                className={cn(
+                  "whitespace-nowrap cursor-pointer text-sm font-bold transition-colors duration-300 hover:text-main",
+                  activeSec === link.id ? "text-main" : "text-text",
+                )}
                 data-cursor-hover>
                 {t(link.label)}
               </button>

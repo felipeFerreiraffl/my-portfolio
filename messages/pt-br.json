@@ -4,7 +4,26 @@
   },
   "AriaLabels": {
     "github": "Ver GitHub",
-    "linkedin": "Ver LinkedIn"
+    "linkedin": "Ver LinkedIn",
+    "prev": "Anterior",
+    "next": "Próximo"
+  },
+  "Date": {
+    "current": "Atual",
+    "months": {
+      "jan": "Jan.",
+      "feb": "Fev.",
+      "mar": "Mar.",
+      "apr": "Abr.",
+      "may": "Mai.",
+      "jun": "Jun.",
+      "jul": "Jul.",
+      "aug": "Ago.",
+      "sep": "Set.",
+      "oct": "Out.",
+      "nov": "Nov.",
+      "dec": "Dez."
+    }
   },
   "Header": {
     "tooltips": {
@@ -50,6 +69,38 @@
     "presentation": {
       "title": "Apresentação",
       "span": "Clique abaixo para ver mais detalhes da minha trajetória"
+    }
+  },
+  "Experiences": {
+    "title": "Experiências",
+    "academicTag": "Acadêmico",
+    "workTag": "Profissional",
+    "descriptionTitle": "Descrição",
+    "skillsTitle": "Habilidades",
+    "exp_1": {
+      "title": "Técnico em Desenvolvimento de Sistemas",
+      "place": "SENAI Suiço-Brasileiro Paulo Ernesto Tolle",
+      "description": "Curso técnico para aprendizagem de princípios de desenvolvimento de sistemas como front-end, back-end, banco de dados SQL, redes, hardware, entre outros. Foi realizado um projeto final de chat e busca de conteúdo otaku.",
+      "skills": {
+        "fullstack": "Desenvolvimento Full-Stack",
+        "network": "Redes",
+        "hardware": "Princípios de Hardware",
+        "office": "Pacote Office"
+      }
+    },
+    "exp_2": {
+      "title": "Mecânico de Produção Veicular",
+      "place": "SENAI Mercedes-Benz do Brasil",
+      "description": "Curso/estágio de aprendizagem industrial na área de mecânica automotiva. Como atividades extracurriculares, foram realizadas manutenções em computadores de trabalho, incluindo organização, construção e formatação dos mesmos.",
+      "skills": {
+        "teamwork": "Trabalho em equipe",
+        "details": "Atenção aos detalhes"
+      }
+    },
+    "exp_3": {
+      "title": "Desenvolvedor de Software Jr.",
+      "place": "M. Shimizu",
+      "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização."
     }
   }
 }

@@ -3,6 +3,7 @@
 import Header from "@/components/layout/Header";
 import MobileNav from "@/components/layout/Header/MobileNav";
 import AboutMe from "@/components/layout/Sections/AboutMe";
+import Experiences from "@/components/layout/Sections/Experiences";
 import Hero from "@/components/layout/Sections/Hero";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { Variants, m } from "motion/react";
@@ -26,8 +27,9 @@ export default function HomeScreen() {
       <Hero onRingsExpandComplete={() => setRingsExpanded(true)} />
 
       {ringsExpanded && (
-        <main className="w-dvw md:mt-56 mt-37 mb-5">
+        <main className="w-dvw flex flex-col gap-10 md:mt-56 mt-37 mb-5">
           <AboutMe ref={refs.aboutMe} />
+          <Experiences ref={refs.experiences} />
         </main>
       )}
 

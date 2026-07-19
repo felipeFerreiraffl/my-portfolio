@@ -4,7 +4,26 @@
   },
   "AriaLabels": {
     "github": "Check GitHub",
-    "linkedin": "Check LinkedIn"
+    "linkedin": "Check LinkedIn",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "Date": {
+    "current": "Current",
+    "months": {
+      "jan": "Jan.",
+      "feb": "Feb.",
+      "mar": "Mar.",
+      "apr": "Apr.",
+      "may": "May",
+      "jun": "Jun.",
+      "jul": "Jul.",
+      "aug": "Aug.",
+      "sep": "Sep.",
+      "oct": "Oct.",
+      "nov": "Nov.",
+      "dec": "Dec."
+    }
   },
   "Header": {
     "tooltips": {
@@ -50,6 +69,38 @@
     "presentation": {
       "title": "Presentation",
       "span": "Click below to see more details of my journey"
+    }
+  },
+  "Experiences": {
+    "title": "Experiences",
+    "academicTag": "Academic",
+    "workTag": "Professional",
+    "descriptionTitle": "Description",
+    "skillsTitle": "Skills",
+    "exp_1": {
+      "title": "System Development Technician",
+      "place": "SENAI Swiss-Brazilian Paulo Ernesto Tolle",
+      "description": "Technical course covering system development fundamentals, like front-end, back-end, SQL database, networking, hardware, etc. Otaku content search and chat final project was done.",
+      "skills": {
+        "fullstack": "Full-Stack Development",
+        "network": "Networking",
+        "hardware": "Hardware Fundamentals",
+        "office": "Office Package"
+      }
+    },
+    "exp_2": {
+      "title": "Vehicular Production Mechanic",
+      "place": "SENAI Mercedes-Benz Brazil",
+      "description": "Industrial learning course/internship in automotive mechanics field. As extracurriculum activities, maintenance on work computers was done, including organization, building and formatting on them.",
+      "skills": {
+        "teamwork": "Teamwork",
+        "details": "Attention to details"
+      }
+    },
+    "exp_3": {
+      "title": "Junior Software Developer",
+      "place": "M. Shimizu",
+      "description": "Front-end focused development, with interface building, performance/SEO checking and best practices in coding, structure and organization."
     }
   }
 }
