@@ -39,10 +39,6 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const entries = Object.entries(refs) as [SectionKey, SectionRef][];
-    console.log(
-      "refs: ",
-      entries.map(([key, ref]) => [key, ref.current]),
-    );
     const observedNodes = new Set<Element>();
     const visibleSecs = new Map<Element, number>();
 

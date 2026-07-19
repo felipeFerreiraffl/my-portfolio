@@ -4,7 +4,9 @@
   },
   "AriaLabels": {
     "github": "Check GitHub",
-    "linkedin": "Check LinkedIn"
+    "linkedin": "Check LinkedIn",
+    "prev": "Previous",
+    "next": "Next"
   },
   "Date": {
     "current": "Current",
