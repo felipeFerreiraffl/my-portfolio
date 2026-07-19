@@ -1,13 +1,13 @@
 "use client";
 
 import Section from "@/components/ui/Section";
-import { SectionProps } from "@/types/elements/elements.types";
-import { useTranslations } from "next-intl";
-import ExperienceCard from "./ExperienceCard";
-import useEmblaCarousel from "embla-carousel-react";
-import { useState } from "react";
 import { EXPERIENCES } from "@/constants/data";
 import { ExperienceData } from "@/types/elements/data.types";
+import { SectionProps } from "@/types/elements/elements.types";
+import useEmblaCarousel from "embla-carousel-react";
+import { useTranslations } from "next-intl";
+import ExperienceCard from "./ExperienceCard";
+import ExperienceTimeline from "./ExperienceTimeline";
 
 export default function Experiences({ ref }: SectionProps) {
   const tSec = useTranslations("Experiences");
@@ -40,6 +40,8 @@ export default function Experiences({ ref }: SectionProps) {
           ))}
         </div>
       </div>
+
+      <ExperienceTimeline emblaApi={emblaApi} total={EXPERIENCES.length} />
     </Section>
   );
 }
