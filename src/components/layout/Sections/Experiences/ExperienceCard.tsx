@@ -3,7 +3,6 @@
 import Icon from "@/components/ui/Icon";
 import { SVGIcon } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
-import { ReactNode } from "react";
 
 interface ExperienceCardProps {
   title: string;

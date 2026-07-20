@@ -2,9 +2,11 @@
 
 import Icon from "@/components/ui/Icon";
 import Section from "@/components/ui/Section";
+import { SKILLS } from "@/constants/data";
 import { ICONS } from "@/constants/icons";
 import { SectionProps } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
+import SkillSet from "./SkillSet";
 
 export default function Skills({ ref }: SectionProps) {
   const tSec = useTranslations("Skills");
@@ -15,6 +17,12 @@ export default function Skills({ ref }: SectionProps) {
         <div className="flex items-center gap-3">
           <Icon icon={ICONS.skills.star} className="size-8 text-star" />
           <span className="text-xl font-medium leading-heading text-gray">{tSec("mostUsed")}</span>
+        </div>
+
+        <div className="flex flex-col gap-25">
+          {SKILLS.map((s) => (
+            <SkillSet key={s.id} {...s} />
+          ))}
         </div>
       </div>
     </Section>
