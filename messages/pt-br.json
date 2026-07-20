@@ -102,5 +102,21 @@
       "place": "M. Shimizu",
       "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização."
     }
+  },
+  "Skills": {
+    "title": "Habilidades",
+    "mostUsed": "Mais utilizadas",
+    "frontend": {
+      "title": "Front-end",
+      "alt": "Janela com símbolo de desenvolvimento — Front-end"
+    },
+    "backend": {
+      "title": "Back-end",
+      "alt": "Servidor — Back-end"
+    },
+    "tools": {
+      "title": "Ferramentas",
+      "alt": "Barra com ferramentas — Ferramentas"
+    }
   }
 }

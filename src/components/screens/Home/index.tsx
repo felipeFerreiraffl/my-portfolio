@@ -5,6 +5,7 @@ import MobileNav from "@/components/layout/Header/MobileNav";
 import AboutMe from "@/components/layout/Sections/AboutMe";
 import Experiences from "@/components/layout/Sections/Experiences";
 import Hero from "@/components/layout/Sections/Hero";
+import Skills from "@/components/layout/Sections/Skills";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { Variants, m } from "motion/react";
 import { useState } from "react";
@@ -30,6 +31,7 @@ export default function HomeScreen() {
         <main className="w-dvw flex flex-col gap-10 md:mt-56 mt-37 mb-5">
           <AboutMe ref={refs.aboutMe} />
           <Experiences ref={refs.experiences} />
+          <Skills ref={refs.skills} />
         </main>
       )}
 

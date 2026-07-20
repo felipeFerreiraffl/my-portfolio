@@ -29,6 +29,10 @@ import SkillTypescript from "devicons-react/icons/TypescriptPlain";
 import ArrowUp from "@/assets/svg/arrows/arrow-up.svg";
 import ArrowRight from "@/assets/svg/arrows/arrow-right.svg";
 import ArrowLeft from "@/assets/svg/arrows/arrow-left.svg";
+import SkillsBack from "@/assets/svg/skills/skills-back.svg";
+import SkillsFront from "@/assets/svg/skills/skills-front.svg";
+import SkillsStar from "@/assets/svg/skills/skills-star.svg";
+import SkillsTools from "@/assets/svg/skills/skills-tools.svg";
 
 export const ICONS = {
   language: {
@@ -51,6 +55,12 @@ export const ICONS = {
     mech: ExpMech as SVGIcon,
     star: ExpStar as SVGIcon,
   },
+  skills: {
+    backend: SkillsBack as SVGIcon,
+    frontend: SkillsFront as SVGIcon,
+    star: SkillsStar as SVGIcon,
+    tools: SkillsTools as SVGIcon,
+  },
   arrows: {
     up: ArrowUp as SVGIcon,
     right: ArrowRight as SVGIcon,
@@ -60,7 +70,7 @@ export const ICONS = {
     gitHub: withFillWeight(GithubLogoIcon),
     linkedIn: withFillWeight(LinkedinLogoIcon),
   },
-  skills: {
+  skillsIcons: {
     html5: SkillHtml5,
     css3: SkillCss3,
     javascript: SkillJavascript,

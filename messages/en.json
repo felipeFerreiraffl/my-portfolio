@@ -102,5 +102,21 @@
       "place": "M. Shimizu",
       "description": "Front-end focused development, with interface building, performance/SEO checking and best practices in coding, structure and organization."
     }
+  },
+  "Skills": {
+    "title": "Skills",
+    "mostUsed": "Most used",
+    "frontend": {
+      "title": "Front-end",
+      "alt": "Window with development symbol — Front-end"
+    },
+    "backend": {
+      "title": "Back-end",
+      "alt": "Server — Back-end"
+    },
+    "tools": {
+      "title": "Tools",
+      "alt": "Tools bar — Tools"
+    }
   }
 }
