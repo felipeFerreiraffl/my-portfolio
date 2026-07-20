@@ -1,5 +1,5 @@
 import { ExperienceData } from "@/types/elements/data.types";
-import { ICONS } from "./icons";
+import { ICONS } from "../icons";
 
 export const EXPERIENCES: ExperienceData[] = [
   {
