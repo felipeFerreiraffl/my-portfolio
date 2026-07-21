@@ -11,6 +11,7 @@ export const SKILLS: SkillsData[] = [
       { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css, isMostUsed: true },
       { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript, isMostUsed: true },
       { icon: ICONS.skillsIcons.typescript, label: SKILLS_NAMES.typescript, isMostUsed: true },
+      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs, isMostUsed: true },
       { icon: ICONS.skillsIcons.nextjs, label: SKILLS_NAMES.nextjs, isMostUsed: true },
       { icon: ICONS.skillsIcons.tailwind, label: SKILLS_NAMES.tailwind, isMostUsed: true },
     ],

@@ -21,7 +21,9 @@ export default function Skills({ ref }: SectionProps) {
 
         <div className="flex flex-col gap-25">
           {SKILLS.map((s) => (
-            <SkillSet key={s.id} {...s} />
+            <div key={s.id}>
+              <SkillSet {...s} />
+            </div>
           ))}
         </div>
       </div>
