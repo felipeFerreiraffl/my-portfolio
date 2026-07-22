@@ -20,6 +20,8 @@ Next.js App Router entry point. Contains the `[locale]` dynamic segment that dri
 - `src/app/[locale]/layout.tsx` — root server layout; initializes theme, i18n, smooth scroll, and refs providers
 - `src/app/[locale]/page.tsx` — home route; renders `HomeScreen`
 
+Sitting alongside `app/` at the `src/` root, `src/proxy.ts` is the Next.js middleware that runs `next-intl`'s locale-detection using the config from `src/libs/i18n/routing.ts` (see `src/libs/` below).
+
 ## `src/components/layout/`
 
 Page structure and major content sections — the feature-based half of `components/`.
@@ -115,7 +117,7 @@ This section covers asset **folder** naming only. Asset **file** naming (SVG fil
 
 ## `/messages`
 
-Translation files for i18n, consumed via `useTranslations()`. `messages/en.json` (English) and `messages/pt-br.json` (Portuguese, the project's default locale) exist as parallel files — every key added to one must be mirrored in the other. Keys are nested by section/subsection, e.g. `nav.aboutMe` or `frontend.title`.
+Translation files for i18n, consumed via `useTranslations()`. `messages/en.json` (English) and `messages/pt-br.json` (Portuguese, the project's default locale) exist as parallel files — every key added to one must be mirrored in the other. Keys are nested by namespace/section/subsection, e.g. `Header.nav.aboutMe` or `Skills.frontend.title`.
 
 ## `/public`
 
