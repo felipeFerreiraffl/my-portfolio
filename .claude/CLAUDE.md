@@ -92,6 +92,12 @@ A personal portfolio site built with Next.js 16 (App Router), React 19, and Type
 
 <!-- GSD:stack-end -->
 
+## Project Documentation
+
+- `docs/convention.md` — the authoritative reference for HOW things are named (case conventions for variables, constants, functions, components, hooks, utils, assets, and files). Read it before touching any naming decision.
+- `docs/folder-structure.md` — the authoritative reference for WHERE code lives (folder organization for `/src`, `/messages`, `/public`, and a "Where to Add New Code" guide). Read it before adding or moving any file.
+- These two documents are a pair: naming lives in `docs/convention.md`, structure lives in `docs/folder-structure.md`.
+
 <!-- GSD:conventions-start source:CONVENTIONS.md -->
 
 ## Conventions
