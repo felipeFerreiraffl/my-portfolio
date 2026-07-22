@@ -119,3 +119,10 @@ None - no external service configuration required.
 ---
 *Phase: 01-conventions-documentation*
 *Completed: 2026-07-22*
+
+## Self-Check: PASSED
+
+- FOUND: docs/convention.md
+- FOUND: .planning/phases/01-conventions-documentation/01-01-SUMMARY.md
+- FOUND: commit 7a9f8eb (Task 1)
+- FOUND: commit dcf0f66 (SUMMARY.md / plan completion)
