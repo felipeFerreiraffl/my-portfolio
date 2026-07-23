@@ -6,10 +6,14 @@ import { SKILLS } from "@/constants/data";
 import { ICONS } from "@/constants/icons";
 import { SectionProps } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
+import { createRef, useMemo, useRef } from "react";
+import SkillConnector from "./SkillConnector";
 import SkillSet from "./SkillSet";
 
 export default function Skills({ ref }: SectionProps) {
   const tSec = useTranslations("Skills");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const circleRefs = useMemo(() => SKILLS.map(() => createRef<HTMLDivElement>()), []);
 
   return (
     <Section ref={ref} title={tSec("title")}>
@@ -19,11 +23,20 @@ export default function Skills({ ref }: SectionProps) {
           <span className="text-xl font-medium leading-heading text-gray">{tSec("mostUsed")}</span>
         </div>
 
-        <div className="flex flex-col gap-25">
-          {SKILLS.map((s) => (
+        <div ref={containerRef} className="relative flex flex-col gap-25">
+          {SKILLS.map((s, idx) => (
             <div key={s.id}>
-              <SkillSet {...s} />
+              <SkillSet {...s} reversed={idx % 2 === 1} circleRef={circleRefs[idx]} />
             </div>
+          ))}
+
+          {SKILLS.slice(1).map((s, idx) => (
+            <SkillConnector
+              key={`connector-${s.id}`}
+              containerRef={containerRef}
+              fromRef={circleRefs[idx]}
+              toRef={circleRefs[idx + 1]}
+            />
           ))}
         </div>
       </div>
