@@ -149,6 +149,13 @@ A personal portfolio site built with Next.js 16 (App Router), React 19, and Type
 - `src/libs/cn.ts`: Merges Tailwind classes safely
 - `src/libs/withFillWeight.tsx`: Higher-order component for icon styling
 
+## Documentation Lookups
+
+- Use the Context7 MCP server to fetch current official docs whenever a prompt involves a specific library, framework, plugin, or external API — even well-known ones (Next.js, React, Tailwind CSS 4, next-intl, motion, Lenis, embla-carousel-react, etc.)
+- Call order: `resolve-library-id` first to get the Context7 library ID, then `query-docs` with a focused, single-topic query
+- Consult Context7 before writing or reviewing code whose correctness depends on version-specific syntax, configuration, or API usage — do not rely on training-data knowledge alone
+- Skip it for general programming concepts, refactoring, business-logic debugging, or code review that does not hinge on a library's current API
+
 <!-- GSD:skills-start source:skills/ -->
 
 ## Project Skills
