@@ -20,13 +20,16 @@ The portfolio must present the developer's experience and skills clearly and rel
 - ✓ Theme switching (light/dark) and language switching in header — existing
 - ✓ Smooth scroll via Lenis, section-active tracking via IntersectionObserver — existing
 - ✓ Responsive navigation with mobile nav — existing
+- ✓ **DOC-01**: `/docs/convention.md` documents current code-naming conventions — case styles for variables, constants, functions, components, hooks, utils, and assets, mapped from the actual codebase — validated in Phase 1
+- ✓ **DOC-02**: Naming inconsistencies found while mapping conventions are surfaced to the user with a question rather than silently picked — validated in Phase 1 (constants scope-rule resolved via user decision; human-verify checkpoint confirmed no new inconsistency was silently standardized)
+- ✓ **DOC-03**: `/docs/folder-structure.md` documents the project's folder organization — primarily `/src` and `/messages` — explaining responsibility separation, what belongs in each folder, and how to decide where new code goes — validated in Phase 2
+- ✓ **DOC-04**: `/docs/folder-structure.md` briefly mentions `/public` (no deep mapping) — validated in Phase 2
+- ✓ **DOC-05**: `/docs/folder-structure.md` excludes root-level config files (next.config, eslint.config, tsconfig, README, etc.) — validated in Phase 2
+- ✓ **DOC-06**: The GSD-generated `.claude/CLAUDE.md` references both `docs/convention.md` and `docs/folder-structure.md` so they're discoverable for future work — validated in Phase 2 (unmarked section between GSD:stack-end/GSD:conventions-start; a post-SUMMARY code review also caught and fixed two accuracy gaps — a missing src/proxy.ts mention and a wrong /messages key example — before this validation)
 
 ### Active
 
-- [ ] **DOC-01**: `/docs/convention.md` documents current code-naming conventions — case styles (kebab-case, snake_case, UPPER_CASE, camelCase, PascalCase, etc.) for variables, constants, functions, components, hooks, utils, and assets, mapped from the actual codebase
-- [ ] **DOC-02**: Naming inconsistencies found while mapping conventions are surfaced to the user with a question ("which pattern should we standardize on?") rather than silently picked
-- [ ] **DOC-03**: `/docs/folder-structure.md` documents the project's folder organization — primarily `/src` and `/messages` — explaining responsibility separation, what belongs in each folder, and how to decide where new code goes; briefly covers `/public`; excludes root config files (next.config, eslint.config, tsconfig, README, etc.)
-- [ ] **DOC-04**: The GSD-generated `.claude/CLAUDE.md` references both `docs/convention.md` and `docs/folder-structure.md` so they're discoverable for future work
+None — all Phase 1 and Phase 2 requirements validated. Milestone v1.0 complete.
 
 ### Out of Scope
 
@@ -51,9 +54,9 @@ The portfolio must present the developer's experience and skills clearly and rel
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Docs written in English, not Portuguese | Standard for technical docs; conversation was in Portuguese but docs are for long-term project reference | — Pending |
-| Document-only scope (no refactor) this milestone | User wants to define standards first, fix inconsistencies later, deliberately | — Pending |
-| Use GSD-generated `.claude/CLAUDE.md` (not a root CLAUDE.md) to reference the docs | Aligns with GSD's runtime-derived instruction file policy for Claude Code | — Pending |
+| Docs written in English, not Portuguese | Standard for technical docs; conversation was in Portuguese but docs are for long-term project reference | Applied in Phase 1 — `docs/convention.md` written in English |
+| Document-only scope (no refactor) this milestone | User wants to define standards first, fix inconsistencies later, deliberately | Held in Phase 1 — `git status --porcelain -- src` confirmed empty after execution |
+| Use GSD-generated `.claude/CLAUDE.md` (not a root CLAUDE.md) to reference the docs | Aligns with GSD's runtime-derived instruction file policy for Claude Code | Applied in Phase 2 — additive "Project Documentation" section added outside GSD marker regions |
 
 ## Evolution
 
@@ -73,4 +76,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-07-21 after initialization*
+*Last updated: 2026-07-22 after Phase 2 (Structure Documentation & Discoverability) completion — milestone v1.0 complete*
