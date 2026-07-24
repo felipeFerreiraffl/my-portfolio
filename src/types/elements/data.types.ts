@@ -26,3 +26,19 @@ export interface ExperienceData {
   description: string;
   skills: string[];
 }
+
+interface SkillIcon {
+  icon: SVGIcon;
+  label: string;
+  isMostUsed?: boolean;
+}
+
+export interface SkillsData {
+  id: `ski-${number}`;
+  title: string;
+  skills: SkillIcon[];
+  illustration: {
+    icon: SVGIcon;
+    label?: string;
+  };
+}

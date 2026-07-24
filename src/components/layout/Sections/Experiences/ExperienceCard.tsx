@@ -3,7 +3,6 @@
 import Icon from "@/components/ui/Icon";
 import { SVGIcon } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
-import { ReactNode } from "react";
 
 interface ExperienceCardProps {
   title: string;
@@ -77,7 +76,7 @@ export default function ExperienceCard({
               <div className="flex items-center gap-3">
                 <div className="size-2 bg-text rounded-full" />
                 <h4 className="md:text-xl text-lg font-medium leading-heading text-text">
-                  Descrição
+                  {tSec("descriptionTitle")}
                 </h4>
               </div>
               <p className="pl-5 md:text-base text-sm leading-body text-text">
@@ -88,7 +87,7 @@ export default function ExperienceCard({
               <div className="flex items-center gap-3">
                 <div className="size-2 bg-text rounded-full" />
                 <h4 className="md:text-xl text-lg font-medium leading-heading text-text">
-                  Habilidades
+                  {tSec("skillsTitle")}
                 </h4>
               </div>
               <div className="w-full flex gap-2 flex-wrap">

@@ -1,7 +1,8 @@
+import { IconType } from "@icons-pack/react-simple-icons";
 import { Icon } from "@phosphor-icons/react";
 import { FC, RefObject, SVGProps } from "react";
 
-export type SVGIcon = FC<SVGProps<SVGElement>> | Icon;
+export type SVGIcon = FC<SVGProps<SVGElement>> | Icon | IconType;
 export type SectionRef = RefObject<HTMLElement | null>;
 export type SectionKey = "aboutMe" | "experiences" | "skills" | "projects";
 
