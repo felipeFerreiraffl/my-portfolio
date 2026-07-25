@@ -93,7 +93,7 @@ export default function Projects({ ref }: SectionProps) {
             <div className="flex">
               {PROJECTS.map((p, i) => (
                 <div key={p.id} className="min-w-0 flex-none basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="flex items-center justify-center md:justify-normal">
+                  <div className="flex items-center">
                     <div
                       className={cn(
                         "hidden md:block flex-1 min-w-0 h-0",
@@ -117,7 +117,7 @@ export default function Projects({ ref }: SectionProps) {
         </div>
       </Section>
 
-      <ProjectDetails data={proj} open={open} onOpenChange={() => setOpen(false)} />
+      <ProjectDetails data={proj} open={open} onOpenChange={handleClose} />
     </>
   );
 }

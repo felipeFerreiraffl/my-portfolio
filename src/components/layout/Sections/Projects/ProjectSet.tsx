@@ -17,7 +17,8 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
     <div
       role="button"
       onClick={onClick}
-      className="group relative grid place-items-center md:size-80 size-64 border-2 border-main rounded-full">
+      className="group relative grid place-items-center md:size-80 size-64 border-2 border-main rounded-full"
+      data-cursor-hover>
       <div
         className={cn(
           "absolute top-1/2 left-1/2 -translate-1/2 md:max-w-73 max-w-83 size-[92%] aspect-square border border-main rounded-full",
