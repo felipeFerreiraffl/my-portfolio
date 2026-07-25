@@ -118,5 +118,56 @@
       "title": "Tools",
       "alt": "Tools bar — Tools"
     }
+  },
+  "Projects": {
+    "title": "Projects",
+    "data": {
+      "proj_1": {
+        "title": "Math Calculations",
+        "desc": "Math Calculations is a React SPA (built with Create React App), designed as a portfolio project. It works as a calculator hub: the user navigates through Math, Physics, BMI, and Interest routes, each with its own operation and result screen, plus About and Contact pages. Deployed on Vercel.",
+        "features": {
+          "feat_1": "Math and physics operations",
+          "feat_2": "BMI",
+          "feat_3": "Simple and compound interest",
+          "feat_4": "SPA navigation"
+        }
+      },
+      "proj_2": {
+        "title": "Anime & Manga Info",
+        "desc": "Anime & Manga Info is a React SPA that consumes the public Kitsu API to display anime and manga catalogs. It features a home screen to choose between anime/manga, a content page with carousels (popular, top rated, current season, recent), genre-based search, a details page, and a contact screen. Deployed on Vercel.",
+        "features": {
+          "feat_1": "External API consumption",
+          "feat_2": "Anime and manga catalog",
+          "feat_3": "Multiple filters",
+          "feat_4": "Pagination",
+          "feat_5": "Carousels",
+          "feat_6": "Loading screen",
+          "feat_7": "Responsiveness"
+        }
+      },
+      "proj_3": {
+        "title": "Library CRUD",
+        "desc": "Library CRUD is a full-stack book registration project, styled as a library system. Backend built with Spring Boot, exposing a REST API (/livraria) with MySQL persistence via JPA; frontend built with React consuming that API. No live demo — the repository runs locally (backend + MySQL + frontend, run separately).",
+        "features": {
+          "feat_1": "Full CRUD",
+          "feat_2": "Book management",
+          "feat_3": "REST API",
+          "feat_4": "Data validation with Bean Validation",
+          "feat_5": "DTO pattern"
+        }
+      },
+      "proj_4": {
+        "title": "TSAuth",
+        "desc": "TSAuth is a portfolio project focused on user authentication: sign-up, login, account update, and account deletion, with a protected route (/user). Backend built with Node.js + Express + MongoDB (Mongoose), JWT-based authentication; frontend built with React + Vite, both 100% TypeScript. Design inspired by the 'Logify' Figma kit.",
+        "features": {
+          "feat_1": "JWT authentication",
+          "feat_2": "User CRUD",
+          "feat_3": "Password hashing",
+          "feat_4": "Context API",
+          "feat_5": "Automated tests",
+          "feat_6": "REST API"
+        }
+      }
+    }
   }
 }
