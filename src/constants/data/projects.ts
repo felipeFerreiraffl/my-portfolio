@@ -1,1 +1,86 @@
-export const PROJECTS = [];
+import { ProjectData } from "@/types/elements/data.types";
+import { ICONS } from "../icons";
+import { SKILLS_NAMES } from "../objects";
+
+export const PROJECTS: ProjectData[] = [
+  {
+    id: "proj-1",
+    title: "data.proj_1.title",
+    description: "data.proj_1.desc",
+    techs: [
+      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs },
+      { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css },
+      { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript },
+      { icon: ICONS.skillsIcons.vercel, label: SKILLS_NAMES.vercel },
+    ],
+    feats: [
+      "data.proj_1.features.feat_1",
+      "data.proj_1.features.feat_2",
+      "data.proj_1.features.feat_3",
+      "data.proj_1.features.feat_4",
+    ],
+  },
+  {
+    id: "proj-2",
+    title: "data.proj_2.title",
+    description: "data.proj_2.desc",
+    techs: [
+      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs },
+      { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css },
+      { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript },
+      { icon: ICONS.skillsIcons.styledComponents, label: SKILLS_NAMES.styledComponents },
+      { icon: ICONS.skillsIcons.vercel, label: SKILLS_NAMES.vercel },
+    ],
+    feats: [
+      "data.proj_2.features.feat_1",
+      "data.proj_2.features.feat_2",
+      "data.proj_2.features.feat_3",
+      "data.proj_2.features.feat_4",
+      "data.proj_2.features.feat_5",
+      "data.proj_2.features.feat_6",
+      "data.proj_2.features.feat_7",
+    ],
+  },
+  {
+    id: "proj-3",
+    title: "data.proj_3.title",
+    description: "data.proj_3.desc",
+    techs: [
+      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs },
+      { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css },
+      { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript },
+      { icon: ICONS.skillsIcons.java, label: SKILLS_NAMES.java },
+      { icon: ICONS.skillsIcons.spring, label: SKILLS_NAMES.spring },
+      { icon: ICONS.skillsIcons.mysql, label: SKILLS_NAMES.mysql },
+    ],
+    feats: [
+      "data.proj_3.features.feat_1",
+      "data.proj_3.features.feat_2",
+      "data.proj_3.features.feat_3",
+      "data.proj_3.features.feat_4",
+      "data.proj_3.features.feat_5",
+    ],
+  },
+  {
+    id: "proj-4",
+    title: "data.proj_4.title",
+    description: "data.proj_4.desc",
+    techs: [
+      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs },
+      { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css },
+      { icon: ICONS.skillsIcons.typescript, label: SKILLS_NAMES.typescript },
+      { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript },
+      { icon: ICONS.skillsIcons.nodejs, label: SKILLS_NAMES.nodejs },
+      { icon: ICONS.skillsIcons.mongodb, label: SKILLS_NAMES.mongodb },
+      { icon: ICONS.skillsIcons.vercel, label: SKILLS_NAMES.vercel },
+    ],
+    feats: [
+      "data.proj_4.features.feat_1",
+      "data.proj_4.features.feat_2",
+      "data.proj_4.features.feat_3",
+      "data.proj_4.features.feat_4",
+      "data.proj_4.features.feat_5",
+      "data.proj_4.features.feat_6",
+    ],
+  },
+];
