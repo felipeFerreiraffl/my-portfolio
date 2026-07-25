@@ -57,7 +57,7 @@ export default function Projects({ ref }: SectionProps) {
   return (
     <>
       <Section ref={ref} title={tSec("title")}>
-        <div className="relative w-full group">
+        <div className="relative w-full group/carousel">
           {canPrev && (
             <button
               type="button"
@@ -67,7 +67,7 @@ export default function Projects({ ref }: SectionProps) {
                 "z-90 absolute top-1/2 left-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
                 "border-[1.5px] border-title rounded-full",
                 "opacity-0 -translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
-                "group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto",
+                "group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 group-hover/carousel:pointer-events-auto",
               )}
               data-cursor-hover>
               <Icon icon={ICONS.arrows.left} className="size-6 text-title" />
@@ -82,19 +82,17 @@ export default function Projects({ ref }: SectionProps) {
                 "z-90 absolute top-1/2 right-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
                 "border-[1.5px] border-title rounded-full",
                 "opacity-0 translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
-                "group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto",
+                "group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 group-hover/carousel:pointer-events-auto",
               )}
               data-cursor-hover>
               <Icon icon={ICONS.arrows.right} className="size-6 text-title" />
             </button>
           )}
 
-          <div className="w-full overflow-hidden" ref={emblaRef}>
+          <div className="w-full overflow-hidden px-4 md:px-6 lg:px-10" ref={emblaRef}>
             <div className="flex">
               {PROJECTS.map((p, i) => (
-                <div
-                  key={p.id}
-                  className="min-w-0 flex-none basis-full md:basis-1/2 lg:basis-1/3 px-4 md:px-6 lg:px-10">
+                <div key={p.id} className="min-w-0 flex-none basis-full md:basis-1/2 lg:basis-1/3">
                   <div className="flex items-center justify-center md:justify-normal">
                     <div
                       className={cn(
