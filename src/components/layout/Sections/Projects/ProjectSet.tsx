@@ -4,6 +4,7 @@ import { cn } from "@/libs/cn";
 import { ProjectData } from "@/types/elements/data.types";
 import { useTranslations } from "next-intl";
 import { MouseEventHandler } from "react";
+import ProjectDetails from "./ProjectDetails";
 
 type ProjectSetProps = Pick<ProjectData, "title"> & {
   onClick?: MouseEventHandler;

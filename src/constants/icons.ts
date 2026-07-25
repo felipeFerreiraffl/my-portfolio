@@ -4,6 +4,7 @@ import AboutGames from "@/assets/svg/aboutMe/about-games.svg";
 import ArrowLeft from "@/assets/svg/arrows/arrow-left.svg";
 import ArrowRight from "@/assets/svg/arrows/arrow-right.svg";
 import ArrowUp from "@/assets/svg/arrows/arrow-up.svg";
+import GenCloseX from "@/assets/svg/close-x.svg";
 import ExpDev from "@/assets/svg/experiences/experience-dev.svg";
 import ExpMech from "@/assets/svg/experiences/experience-mech.svg";
 import ExpStar from "@/assets/svg/experiences/experience-star.svg";
@@ -40,6 +41,7 @@ import {
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr";
 
 export const ICONS = {
+  closeX: GenCloseX as SVGIcon,
   language: {
     ptBr: LangPt as SVGIcon,
     en: LangEn as SVGIcon,
