@@ -6,7 +6,8 @@
     "github": "Ver GitHub",
     "linkedin": "Ver LinkedIn",
     "prev": "Anterior",
-    "next": "Próximo"
+    "next": "Próximo",
+    "close": "Fechar"
   },
   "Date": {
     "current": "Atual",
@@ -121,6 +122,10 @@
   },
   "Projects": {
     "title": "Projetos",
+    "seeProj": "Ver projeto",
+    "techsTitle": "Tecnologias",
+    "featTitle": "Funcionalidades",
+    "repo": "Repositório",
     "data": {
       "proj_1": {
         "title": "Cálculos matemáticos",

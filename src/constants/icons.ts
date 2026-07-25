@@ -32,8 +32,10 @@ import {
   SiNodedotjs,
   SiReact,
   SiSpring,
+  SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
 } from "@icons-pack/react-simple-icons";
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react/ssr";
 
@@ -78,6 +80,7 @@ export const ICONS = {
     css3: SiCss,
     javascript: SiJavascript,
     typescript: SiTypescript,
+    styledComponents: SiStyledcomponents,
     nextjs: SiNextdotjs,
     tailwind: SiTailwindcss,
     react: SiReact,
@@ -88,5 +91,6 @@ export const ICONS = {
     nodejs: SiNodedotjs,
     git: SiGit,
     figma: SiFigma,
+    vercel: SiVercel,
   },
 } as const;
