@@ -5,7 +5,7 @@ import Icon from "@/components/ui/Icon";
 import { ICONS } from "@/constants/icons";
 import { ProjectData } from "@/types/elements/data.types";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ProjectDetails {
   data: ProjectData | null;
@@ -25,6 +25,17 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
     if (open) setIsMounted(true);
   }
 
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onOpenChange();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMounted, onOpenChange]);
+
   const handleAnimationEnd = (e: React.AnimationEvent<HTMLDivElement>) => {
     if (e.target !== e.currentTarget) return;
     if (open) return;
@@ -41,13 +52,14 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
       <div role="dialog" className="relative size-full grid place-items-center">
         <div
           data-state={open ? "open" : "closed"}
-          className="absolute inset-0 size-full bg-bg/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fill-mode-forwards duration-200 ease-out"
+          onClick={onOpenChange}
+          className="absolute inset-0 size-full bg-bg/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out"
         />
 
         <div
           data-state={open ? "open" : "closed"}
           onAnimationEnd={handleAnimationEnd}
-          className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards duration-200 ease-out">
+          className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out">
           <button
             onClick={onOpenChange}
             className="cursor-pointer absolute md:top-6 md:right-6 top-5 right-5 grid place-items-center md:size-7 size-5 border-[0.5] border-main rounded-full z-1000"
