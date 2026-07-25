@@ -99,7 +99,7 @@ export default function Projects({ ref }: SectionProps) {
                     <div
                       className={cn(
                         "hidden md:block flex-1 min-w-0 h-0",
-                        i > 0 && "border-t-2 border-dashed border-main",
+                        i > 0 && "border-t border-dashed border-main",
                       )}
                     />
                     <div className="flex-none">
