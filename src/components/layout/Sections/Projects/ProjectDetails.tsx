@@ -5,6 +5,7 @@ import Icon from "@/components/ui/Icon";
 import { ICONS } from "@/constants/icons";
 import { ProjectData } from "@/types/elements/data.types";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 interface ProjectDetails {
   data: ProjectData | null;
@@ -16,16 +17,37 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
   const tSec = useTranslations("Projects");
   const tAria = useTranslations("AriaLabels");
 
-  if (!open) return;
+  const [isMounted, setIsMounted] = useState(open);
+  const [prevOpen, setPrevOpen] = useState(open);
+
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (open) setIsMounted(true);
+  }
+
+  const handleAnimationEnd = (e: React.AnimationEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget) return;
+    if (open) return;
+
+    setIsMounted(false);
+  };
+
+  if (!isMounted) return null;
 
   return (
     <div
       data-state={open ? "open" : "closed"}
       className="fixed top-1/2 left-1/2 -translate-1/2 grid place-items-center z-999 size-full">
       <div role="dialog" className="relative size-full grid place-items-center">
-        <div className="absolute inset-0 size-full bg-bg/30" />
+        <div
+          data-state={open ? "open" : "closed"}
+          className="absolute inset-0 size-full bg-bg/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fill-mode-forwards duration-200 ease-out"
+        />
 
-        <div className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12">
+        <div
+          data-state={open ? "open" : "closed"}
+          onAnimationEnd={handleAnimationEnd}
+          className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards duration-200 ease-out">
           <button
             onClick={onOpenChange}
             className="cursor-pointer absolute md:top-6 md:right-6 top-5 right-5 grid place-items-center md:size-7 size-5 border-[0.5] border-main rounded-full z-1000"
@@ -83,10 +105,15 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-3">
+            <div className="w-full flex flex-col items-center gap-3">
               <div className="flex items-center gap-5">
                 <Button label="Demo" />
                 <Button label={tSec("repo")} />
+              </div>
+
+              {/* Implementar vídeo posteriormente */}
+              <div className="lg:grid place-items-center hidden w-[40%] bg-bg border border-main aspect-video">
+                Implementar vídeo
               </div>
             </div>
           </div>
