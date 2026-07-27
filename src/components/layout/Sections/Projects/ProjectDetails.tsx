@@ -120,8 +120,15 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
 
               <div className="w-full flex flex-col items-center gap-3">
                 <div className="flex items-center gap-5">
-                  <Button label="Demo" />
-                  <Button label={tSec("repo")} />
+                  <a href={data.demoLink} target="_blank" rel="noopener noreferer">
+                    <Button
+                      label="Demo"
+                      disabled
+                    />
+                  </a>
+                  <a href={data.repoLink} target="_blank" rel="noopener noreferer">
+                    <Button label={tSec("repo")} />
+                  </a>
                 </div>
 
                 {/* Implementar vídeo posteriormente */}

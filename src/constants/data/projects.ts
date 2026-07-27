@@ -1,6 +1,6 @@
 import { ProjectData } from "@/types/elements/data.types";
 import { ICONS } from "../icons";
-import { SKILLS_NAMES } from "../objects";
+import { EXTERNAL_LINKS, SKILLS_NAMES } from "../objects";
 
 export const PROJECTS: ProjectData[] = [
   {
@@ -19,6 +19,8 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_1.features.feat_3",
       "data.proj_1.features.feat_4",
     ],
+    repoLink: `${EXTERNAL_LINKS.gitHub}/calculos-matematicos`,
+    demoLink: "https://calculos-matematicos.vercel.app/",
   },
   {
     id: "proj-2",
@@ -40,6 +42,8 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_2.features.feat_6",
       "data.proj_2.features.feat_7",
     ],
+    repoLink: `${EXTERNAL_LINKS.gitHub}/anime-manga-info`,
+    demoLink: "https://anime-manga-info.vercel.app/",
   },
   {
     id: "proj-3",
@@ -60,6 +64,7 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_3.features.feat_4",
       "data.proj_3.features.feat_5",
     ],
+    repoLink: `${EXTERNAL_LINKS.gitHub}/crud-livraria`,
   },
   {
     id: "proj-4",
@@ -82,5 +87,7 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_4.features.feat_5",
       "data.proj_4.features.feat_6",
     ],
+    repoLink: `${EXTERNAL_LINKS.gitHub}/tsauth`,
+    demoLink: "https://tsauth.vercel.app/",
   },
 ];

@@ -49,5 +49,7 @@ export interface ProjectData {
   description: string;
   techs: SkillIcon[];
   feats: string[];
+  repoLink: string;
+  demoLink?: string;
   previewSrc?: ImageData;
 }
