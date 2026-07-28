@@ -1,13 +1,18 @@
 {
   "ButtonLabels": {
-    "curriculum": "Curriculum"
+    "curriculum": "Curriculum",
+    "figma": "View Figma Design"
   },
   "AriaLabels": {
     "github": "Check GitHub",
     "linkedin": "Check LinkedIn",
     "prev": "Previous",
     "next": "Next",
-    "close": "Close"
+    "close": "Close",
+    "mail": {
+      "desktop": "Copy email",
+      "mobile": "Send email"
+    }
   },
   "Date": {
     "current": "Current",
@@ -174,5 +179,10 @@
         }
       }
     }
+  },
+  "Footer": {
+    "heading": "Thanks for your attention",
+    "viewSocial": "Check my social medias",
+    "viewFigma": "Design made in Figma"
   }
 }
