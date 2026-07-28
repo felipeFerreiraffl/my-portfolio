@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import { ICONS } from "@/constants/icons";
 import { ProjectData } from "@/types/elements/data.types";
+import { useLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
@@ -24,6 +25,17 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
     setPrevOpen(open);
     if (open) setIsMounted(true);
   }
+
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    if (isMounted) lenis.stop();
+    else lenis.start();
+
+    return () => lenis.start();
+  }, [isMounted, lenis]);
 
   useEffect(() => {
     if (!isMounted) return;
@@ -58,6 +70,7 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
 
         <div
           data-state={open ? "open" : "closed"}
+          data-lenis-prevent
           onAnimationEnd={handleAnimationEnd}
           className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out overflow-y-auto z-998">
           <button
