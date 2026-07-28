@@ -42,3 +42,14 @@ export interface SkillsData {
     label?: string;
   };
 }
+
+export interface ProjectData {
+  id: `proj-${number}`;
+  title: string;
+  description: string;
+  techs: SkillIcon[];
+  feats: string[];
+  repoLink: string;
+  demoLink?: string;
+  previewSrc?: ImageData;
+}

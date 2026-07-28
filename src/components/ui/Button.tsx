@@ -9,7 +9,7 @@ interface ButtonProps extends ComponentProps<typeof m.button> {
   label: string;
 }
 
-export default function Button({ label, ...props }: ButtonProps) {
+export default function Button({ label, disabled, ...props }: ButtonProps) {
   const dotToRing: Variants = {
     rest: { scale: 1 },
     hover: { scale: 1, transition: { duration: 0.3, ease: "easeInOut", delayChildren: 0.05 } },
@@ -29,14 +29,19 @@ export default function Button({ label, ...props }: ButtonProps) {
       className={cn(
         "group cursor-pointer p-2 rounded-[20px]",
         "min-w-30 whitespace-nowrap inline-flex items-center transition-colors duration-300",
-        "bg-main/5 text-title hover:bg-main/20 hover:text-main",
+        "text-title",
+        disabled ? "bg-gray/10" : "bg-main/5 hover:bg-main/20 hover:text-main",
       )}
-      data-cursor-hover
+      disabled={disabled}
+      data-cursor-hover={!disabled}
       {...props}>
       <div className="flex items-center">
         <div className="relative">
           <div className="absolute top-1/2 left-1/2 -translate-1/2 size-1 rounded-full bg-title transition-colors duration-300 group-hover:bg-main" />
-          <m.div variants={circleVariant} className="rounded-full border-main" />
+          <m.div
+            variants={disabled ? undefined : circleVariant}
+            className="rounded-full border-main"
+          />
         </div>
         <div className="w-2 h-px bg-title transition-colors duration-300 group-hover:bg-main" />
       </div>
@@ -47,7 +52,10 @@ export default function Button({ label, ...props }: ButtonProps) {
         <div className="w-2 h-px bg-title transition-colors duration-300 group-hover:bg-main" />
         <div className="relative">
           <div className="absolute top-1/2 left-1/2 -translate-1/2 size-1 rounded-full bg-title transition-colors duration-300 group-hover:bg-main" />
-          <m.div variants={circleVariant} className="rounded-full border-main" />
+          <m.div
+            variants={disabled ? undefined : circleVariant}
+            className="rounded-full border-main"
+          />
         </div>
       </div>
     </m.button>

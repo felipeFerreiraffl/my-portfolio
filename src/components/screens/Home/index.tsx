@@ -5,6 +5,7 @@ import MobileNav from "@/components/layout/Header/MobileNav";
 import AboutMe from "@/components/layout/Sections/AboutMe";
 import Experiences from "@/components/layout/Sections/Experiences";
 import Hero from "@/components/layout/Sections/Hero";
+import Projects from "@/components/layout/Sections/Projects";
 import Skills from "@/components/layout/Sections/Skills";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { Variants, m } from "motion/react";
@@ -32,6 +33,7 @@ export default function HomeScreen() {
           <AboutMe ref={refs.aboutMe} />
           <Experiences ref={refs.experiences} />
           <Skills ref={refs.skills} />
+          <Projects ref={refs.projects} />
         </main>
       )}
 

@@ -34,6 +34,8 @@
     --color-work: oklch(77.05% 0.17314 149.495);
     --color-study: oklch(65.98% 0.19317 19.511);
     --color-star: oklch(79.162% 0.15882 84.563);
+
+    --shadow-project: 0 0 60px rgba(158, 139, 235, 0.3);
   }
 
   /* Lógicas especiais */

@@ -65,6 +65,7 @@ export const SKILLS_NAMES = {
   typescript: "Typescript",
   reactjs: "React.js",
   nextjs: "Next.js",
+  styledComponents: "styled-components",
   java: "Java",
   tailwind: "TailwindCSS",
   spring: "Spring",
@@ -73,4 +74,5 @@ export const SKILLS_NAMES = {
   nodejs: "Node.js",
   git: "Git",
   figma: "Figma",
+  vercel: "Vercel",
 };

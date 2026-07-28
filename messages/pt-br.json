@@ -6,7 +6,8 @@
     "github": "Ver GitHub",
     "linkedin": "Ver LinkedIn",
     "prev": "Anterior",
-    "next": "Próximo"
+    "next": "Próximo",
+    "close": "Fechar"
   },
   "Date": {
     "current": "Atual",
@@ -117,6 +118,61 @@
     "tools": {
       "title": "Ferramentas",
       "alt": "Barra com ferramentas — Ferramentas"
+    }
+  },
+  "Projects": {
+    "title": "Projetos",
+    "seeProj": "Ver projeto",
+    "techsTitle": "Tecnologias",
+    "featTitle": "Funcionalidades",
+    "repo": "Repositório",
+    "data": {
+      "proj_1": {
+        "title": "Cálculos matemáticos",
+        "desc": "Cálculos Matemáticos é uma SPA em React (Create React App), pensada como projeto de portfólio. Funciona como um hub de calculadoras: o usuário navega por rotas de Matemática, Física, IMC e Juros, cada uma com sua própria tela de operação e resultado, além de páginas de Sobre e Contatos. Deploy feito na Vercel.",
+        "features": {
+          "feat_1": "Operações matemáticas e físicas",
+          "feat_2": "IMC",
+          "feat_3": "Juros simples e compostos",
+          "feat_4": "Navegação SPA"
+        }
+      },
+      "proj_2": {
+        "title": "Anime & Mangá Info",
+        "desc": "Anime & Mangá Info é uma SPA em React que consome a API pública da Kitsu para exibir catálogos de animes e mangás. Tem home de escolha entre anime/mangá, página de conteúdo com carrosséis (populares, melhores avaliados, temporada atual, recentes), busca por gênero, página de detalhes e tela de contatos. Deploy na Vercel.",
+        "features": {
+          "feat_1": "Consumo de API externa",
+          "feat_2": "Catálogo de animes e mangás",
+          "feat_3": "Filtros diversos",
+          "feat_4": "Paginação",
+          "feat_5": "Carrosséis",
+          "feat_6": "Loading screen",
+          "feat_7": "Responsividade"
+        }
+      },
+      "proj_3": {
+        "title": "CRUD Livraria",
+        "desc": "CRUD Livraria é um projeto full-stack de cadastro de livros, estilo sistema de biblioteca. Backend em Spring Boot com API REST (/livraria) e persistência em MySQL via JPA; frontend em React consumindo essa API. Sem demo publicada — repositório roda localmente (backend + MySQL + frontend separados).",
+        "features": {
+          "feat_1": "CRUD completo",
+          "feat_2": "Manipulação de livros",
+          "feat_3": "API REST",
+          "feat_4": "Validação de dados com Bean",
+          "feat_5": "DTO pattern"
+        }
+      },
+      "proj_4": {
+        "title": "TSAuth",
+        "desc": "TSAuth é um projeto de portfólio focado em autenticação de usuários: cadastro, login, atualização e exclusão de conta, com rota protegida (/user). Backend em Node.js + Express + MongoDB (Mongoose), autenticação via JWT; frontend em React + Vite, ambos 100% TypeScript. Design inspirado no kit Figma 'Logify'.",
+        "features": {
+          "feat_1": "Autenticação JWT",
+          "feat_2": "CRUD de usuários",
+          "feat_3": "Hash de senha",
+          "feat_4": "Context API",
+          "feat_5": "Testes automatizados",
+          "feat_6": "API REST"
+        }
+      }
     }
   }
 }
