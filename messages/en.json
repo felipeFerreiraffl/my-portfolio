@@ -11,7 +11,8 @@
     "close": "Close",
     "mail": {
       "desktop": "Copy email",
-      "mobile": "Send email"
+      "mobile": "Send email",
+      "copy": "Email copied successfully"
     }
   },
   "Date": {
