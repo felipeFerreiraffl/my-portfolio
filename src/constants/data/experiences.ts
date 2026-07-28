@@ -51,7 +51,7 @@ export const EXPERIENCES: ExperienceData[] = [
       month: "months.feb",
       year: 2026,
     },
-    description: "exp_1.description",
+    description: "exp_3.description",
     skills: [
       "exp_1.skills.fullstack",
       "exp_1.skills.hardware",
