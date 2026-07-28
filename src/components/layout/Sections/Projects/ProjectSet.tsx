@@ -4,7 +4,6 @@ import { cn } from "@/libs/cn";
 import { ProjectData } from "@/types/elements/data.types";
 import { useTranslations } from "next-intl";
 import { MouseEventHandler } from "react";
-import ProjectDetails from "./ProjectDetails";
 
 type ProjectSetProps = Pick<ProjectData, "title"> & {
   onClick?: MouseEventHandler;
@@ -29,7 +28,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
       <div
         className={cn(
           "lg:block hidden absolute top-1/2 left-1/2 -translate-1/2 md:max-w-52 max-w-44 size-[65%] aspect-square",
-          "bg-main/20 rounded-full shadow-project",
+          "bg-main/20 rounded-full shadow-project blur-[32px]",
           "opacity-0 scale-0 transition-[opacity, scale] duration-300 ease-in-out",
           "group-hover:opacity-100 group-hover:scale-100",
         )}
