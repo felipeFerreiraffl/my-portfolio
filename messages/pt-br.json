@@ -1,13 +1,19 @@
 {
   "ButtonLabels": {
-    "curriculum": "Currículo"
+    "curriculum": "Currículo",
+    "figma": "Ver design do Figma"
   },
   "AriaLabels": {
     "github": "Ver GitHub",
     "linkedin": "Ver LinkedIn",
     "prev": "Anterior",
     "next": "Próximo",
-    "close": "Fechar"
+    "close": "Fechar",
+    "mail": {
+      "desktop": "Copiar e-mail",
+      "mobile": "Enviar e-mail",
+      "copy": "E-mail copiado com sucesso"
+    }
   },
   "Date": {
     "current": "Atual",
@@ -174,5 +180,10 @@
         }
       }
     }
+  },
+  "Footer": {
+    "heading": "Obrigado pela atenção",
+    "viewSocial": "Confira minhas redes",
+    "viewFigma": "Design feito no Figma"
   }
 }

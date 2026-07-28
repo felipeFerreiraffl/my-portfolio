@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import MobileNav from "@/components/layout/Header/MobileNav";
 import AboutMe from "@/components/layout/Sections/AboutMe";
@@ -29,12 +30,16 @@ export default function HomeScreen() {
       <Hero onRingsExpandComplete={() => setRingsExpanded(true)} />
 
       {ringsExpanded && (
-        <main className="w-dvw flex flex-col gap-10 md:mt-56 mt-37 mb-5">
-          <AboutMe ref={refs.aboutMe} />
-          <Experiences ref={refs.experiences} />
-          <Skills ref={refs.skills} />
-          <Projects ref={refs.projects} />
-        </main>
+        <>
+          <main className="w-dvw flex flex-col gap-10 md:mt-56 mt-37 mb-5">
+            <AboutMe ref={refs.aboutMe} />
+            <Experiences ref={refs.experiences} />
+            <Skills ref={refs.skills} />
+            <Projects ref={refs.projects} />
+          </main>
+
+          <Footer />
+        </>
       )}
 
       <m.div variants={revealVars} initial="hidden" animate={ringsExpanded ? "visible" : "hidden"}>

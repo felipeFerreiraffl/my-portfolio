@@ -13,6 +13,9 @@ export const NAV_LINKS: NavLink[] = [
 export const EXTERNAL_LINKS = {
   gitHub: "https://github.com/felipeFerreiraffl",
   linkedIn: "https://www.linkedin.com/in/felipe-ferreira-959bb8271/",
+  email: "felipe.ferr.lima04@gmail.com",
+  figma:
+    "https://www.figma.com/design/EyyveG7mRETFSf0lMbqq6t/Felipe-Ferreira-%E2%80%94-Professional-Portfolio?m=auto&t=svtuDEUNuKWICVUM-6",
 };
 
 export const HERO_RINGS: HeroRingData[] = [

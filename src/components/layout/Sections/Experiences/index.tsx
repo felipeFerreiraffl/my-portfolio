@@ -22,12 +22,6 @@ export default function Experiences({ ref }: SectionProps) {
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
 
-  const initialTime = (exp: ExperienceData) =>
-    `${tDate(exp.initialTime.month)} ${exp.initialTime.year}`;
-
-  const endingTime = (exp: ExperienceData) =>
-    exp.endingTime ? `${tDate(exp.endingTime.month)} ${exp.endingTime?.year}` : tDate("current");
-
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -85,16 +79,7 @@ export default function Experiences({ ref }: SectionProps) {
           <div className="flex">
             {EXPERIENCES.map((exp) => (
               <div key={exp.id} className="min-w-0 flex-none basis-full px-12">
-                <ExperienceCard
-                  type="academic"
-                  title={exp.title}
-                  icon={exp.icon}
-                  location={exp.place}
-                  initialTime={initialTime(exp)}
-                  endingTime={endingTime(exp)}
-                  description={exp.description}
-                  skills={exp.skills}
-                />
+                <ExperienceCard data={exp} />
               </div>
             ))}
           </div>
