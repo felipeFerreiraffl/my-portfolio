@@ -65,7 +65,7 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
         <div
           data-state={open ? "open" : "closed"}
           onClick={onOpenChange}
-          className="absolute inset-0 size-full bg-bg/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out"
+          className="absolute inset-0 size-full bg-black/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out"
         />
 
         <div
@@ -136,7 +136,7 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
                   <a href={data.demoLink} target="_blank" rel="noopener noreferer">
                     <Button
                       label="Demo"
-                      disabled
+                      disabled={!data.demoLink}
                     />
                   </a>
                   <a href={data.repoLink} target="_blank" rel="noopener noreferer">

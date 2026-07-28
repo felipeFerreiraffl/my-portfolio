@@ -30,7 +30,7 @@ export default function Button({ label, disabled, ...props }: ButtonProps) {
         "group cursor-pointer p-2 rounded-[20px]",
         "min-w-30 whitespace-nowrap inline-flex items-center transition-colors duration-300",
         "text-title",
-        disabled ? "bg-gray/10" : "bg-main/5 hover:bg-main/20 hover:text-main",
+        disabled ? "bg-gray/10 opacity-30" : "bg-main/5 hover:bg-main/20 hover:text-main",
       )}
       disabled={disabled}
       data-cursor-hover={!disabled}
