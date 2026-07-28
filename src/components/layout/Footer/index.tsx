@@ -8,6 +8,8 @@ import { ICONS } from "@/constants/icons";
 import { EXTERNAL_LINKS, SKILLS_NAMES } from "@/constants/objects";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import CopyFeedback from "@/components/layout/Footer/CopyFeedback";
 
 export default function Footer() {
   const tSec = useTranslations("Footer");
@@ -15,14 +17,23 @@ export default function Footer() {
   const tAria = useTranslations("AriaLabels");
 
   const isDesktop = useMediaQuery("(min-width: 1200px)");
+  const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(EXTERNAL_LINKS.email);
+      setCopied(true);
     } catch {
-      return;
+      setCopied(false);
     }
   };
+
+  useEffect(() => {
+    if (!copied) return;
+
+    const timeoutId = setTimeout(() => setCopied(false), 2000);
+    return () => clearTimeout(timeoutId);
+  }, [copied]);
 
   return (
     <footer className="mt-25 mb-0 w-full flex flex-col items-center gap-10 py-10">
@@ -60,11 +71,18 @@ export default function Footer() {
                 <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
               </a>
               {isDesktop ? (
-                <IconButton
-                  icon={ICONS.email}
-                  aria-label={tAria("mail.desktop")}
-                  onClick={handleCopyEmail}
-                />
+                <div className="relative">
+                  <IconButton
+                    icon={ICONS.email}
+                    aria-label={tAria("mail.desktop")}
+                    onClick={handleCopyEmail}
+                  />
+                  <CopyFeedback
+                    show={copied}
+                    label={EXTERNAL_LINKS.email}
+                    className="bottom-full left-1/2 -translate-x-1/2 mb-2"
+                  />
+                </div>
               ) : (
                 <a href={`mailto:${EXTERNAL_LINKS.email}`}>
                   <IconButton icon={ICONS.email} aria-label={tAria("mail.mobile")} />
