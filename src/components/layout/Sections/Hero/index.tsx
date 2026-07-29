@@ -47,7 +47,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
   };
 
   return (
-    <article ref={heroRef} className="relative w-full h-dvh grid place-items-center">
+    <article ref={heroRef} className="relative w-full h-dvh grid place-items-center overflow-x-clip">
       <m.div style={{ scale: ringsScale, opacity: ringsOpacity }}>
         <HeroRings onExpandComplete={handleExpandComplete} />
       </m.div>
