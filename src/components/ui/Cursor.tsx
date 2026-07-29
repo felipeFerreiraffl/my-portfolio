@@ -62,11 +62,11 @@ export default function Cursor() {
     <>
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 size-7 border-[1.5px] border-main rounded-full pointer-events-none z-9999 will-change-transform"
+        className="fixed lg:block hidden top-0 left-0 size-7 border-[1.5px] border-main rounded-full pointer-events-none z-9999 will-change-transform"
       />
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 size-1.5 bg-main rounded-full pointer-events-none z-9999 will-change-transform"
+        className="fixed lg:block hidden top-0 left-0 size-1.5 bg-main rounded-full pointer-events-none z-9999 will-change-transform"
       />
     </>
   );
