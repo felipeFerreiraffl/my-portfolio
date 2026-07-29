@@ -78,7 +78,7 @@ export default function Experiences({ ref }: SectionProps) {
         <div className="w-full overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {EXPERIENCES.map((exp) => (
-              <div key={exp.id} className="min-w-0 flex-none basis-full px-12">
+              <div key={exp.id} className="min-w-0 flex-none basis-full md:px-12 px-7">
                 <ExperienceCard data={exp} />
               </div>
             ))}
