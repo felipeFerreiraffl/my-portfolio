@@ -1,10 +1,9 @@
 "use client";
 
+import { cn } from "@/libs/cn";
 import { SVGIcon } from "@/types/elements/elements.types";
 import { ComponentProps } from "react";
 import Icon from "./Icon";
-import { cn } from "@/libs/cn";
-import { ClassValue } from "clsx";
 
 interface IconButtonProps extends ComponentProps<"button"> {
   icon: SVGIcon;

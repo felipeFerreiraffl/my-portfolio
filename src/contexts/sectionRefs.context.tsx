@@ -4,11 +4,10 @@ import { SectionKey, SectionRef } from "@/types/elements/elements.types";
 import {
   createContext,
   ReactNode,
-  RefObject,
   useContext,
   useEffect,
   useRef,
-  useState,
+  useState
 } from "react";
 
 type SectionRefs = Record<SectionKey, SectionRef>;

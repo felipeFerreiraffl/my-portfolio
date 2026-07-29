@@ -1,4 +1,4 @@
-import type { Icon as PhosphorIcon, IconProps } from "@phosphor-icons/react";
+import type { IconProps, Icon as PhosphorIcon } from "@phosphor-icons/react";
 import { forwardRef } from "react";
 
 export const withFillWeight = (IconComponent: PhosphorIcon): PhosphorIcon => {

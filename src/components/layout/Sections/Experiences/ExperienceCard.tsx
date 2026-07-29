@@ -3,7 +3,6 @@
 import Icon from "@/components/ui/Icon";
 import { cn } from "@/libs/cn";
 import { ExperienceData } from "@/types/elements/data.types";
-import { SVGIcon } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
 
 interface ExperienceCardProps {

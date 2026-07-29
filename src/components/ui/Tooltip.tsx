@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/libs/cn";
-import { ComponentProps, useState } from "react";
+import { ComponentProps } from "react";
 
 interface TooltipProps extends ComponentProps<"div"> {
   label: string;

@@ -5,7 +5,6 @@ import Section from "@/components/ui/Section";
 import { EXPERIENCES } from "@/constants/data";
 import { ICONS } from "@/constants/icons";
 import { cn } from "@/libs/cn";
-import { ExperienceData } from "@/types/elements/data.types";
 import { SectionProps } from "@/types/elements/elements.types";
 import useEmblaCarousel from "embla-carousel-react";
 import { useTranslations } from "next-intl";
@@ -15,7 +14,6 @@ import ExperienceTimeline from "./ExperienceTimeline";
 
 export default function Experiences({ ref }: SectionProps) {
   const tSec = useTranslations("Experiences");
-  const tDate = useTranslations("Date");
   const tAria = useTranslations("AriaLabels");
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
