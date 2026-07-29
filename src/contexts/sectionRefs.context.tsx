@@ -64,7 +64,7 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
       },
       {
         root: null,
-        rootMargin: `-${HEADER_OFFSET}px 0px -50% 0px`,
+        rootMargin: `-${HEADER_OFFSET}px 0px -40% 0px`,
         threshold: 0,
       },
     );
