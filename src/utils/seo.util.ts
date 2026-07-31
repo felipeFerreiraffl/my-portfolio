@@ -18,6 +18,9 @@ export const buildLanguageAlternates = () => {
   return alternates;
 };
 
+export const buildKnownLanguages = () =>
+  routing.locales.map((locale) => HREFLANGS[locale] ?? locale);
+
 export const buildOgLocale = (locale: string) => OG_LOCALES[locale] ?? locale;
 
 export const buildAlternateOgLocales = (locale: string) =>

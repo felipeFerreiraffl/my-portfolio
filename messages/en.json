@@ -1,4 +1,13 @@
 {
+  "Meta": {
+    "title": "Portfolio — {name}",
+    "titleTemplate": "%s — {name}",
+    "description": "Professional portfolio made by Felipe Ferreira to show my skills, experiences and projects",
+    "siteName": "{name} — Portfolio",
+    "keywords": "front-end developer, web developer, portfolio, React, Next.js, TypeScript, Tailwind CSS, user interface, Felipe Ferreira",
+    "ogAlt": "Portfolio cover of {name}, front-end developer",
+    "ogTagline": "Skills, experiences and projects"
+  },
   "ButtonLabels": {
     "curriculum": "Curriculum",
     "figma": "View Figma Design"

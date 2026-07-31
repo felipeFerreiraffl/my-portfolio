@@ -1,4 +1,13 @@
 {
+  "Meta": {
+    "title": "Portfólio — {name}",
+    "titleTemplate": "%s — {name}",
+    "description": "Portfólio profissional feito por Felipe Ferreira, para demonstrar as habilidades, experiências e projetos",
+    "siteName": "{name} — Portfólio",
+    "keywords": "desenvolvedor front-end, desenvolvedor web, portfólio, React, Next.js, TypeScript, Tailwind CSS, interface de usuário, Felipe Ferreira",
+    "ogAlt": "Capa do portfólio de {name}, desenvolvedor front-end",
+    "ogTagline": "Habilidades, experiências e projetos"
+  },
   "ButtonLabels": {
     "curriculum": "Currículo",
     "figma": "Ver design do Figma"
