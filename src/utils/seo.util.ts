@@ -3,10 +3,6 @@ import { routing } from "@/libs/i18n/routing";
 
 export const buildLocaleUrl = (locale: string) => `${SITE_URL}/${locale}`;
 
-/**
- * Derived from routing.locales, so a new locale in routing.ts propagates to every
- * hreflang consumer (layout metadata and sitemap) without further edits.
- */
 export const buildLanguageAlternates = () => {
   const alternates: Record<string, string> = {};
 

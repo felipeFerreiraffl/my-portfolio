@@ -8,10 +8,6 @@ interface OgImageProps {
   params: Promise<{ locale: string }>;
 }
 
-/**
- * Shared 1200x630 social card, rendered per locale. Re-exported by both
- * opengraph-image.tsx and twitter-image.tsx so the two stay in sync.
- */
 export const renderOgImage = async ({ params }: OgImageProps) => {
   const { locale: requested } = await params;
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
