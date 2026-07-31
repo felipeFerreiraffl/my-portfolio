@@ -3,10 +3,14 @@
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import { ICONS } from "@/constants/icons";
+import { IMAGES } from "@/constants/images";
 import { ProjectData } from "@/types/elements/data.types";
+import { useTheme } from "@teispace/next-themes";
 import { useLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import ProjectGallery from "./ProjectGallery";
 
 interface ProjectDetails {
   data: ProjectData | null;
@@ -17,6 +21,7 @@ interface ProjectDetails {
 export default function ProjectDetails({ data, open, onOpenChange }: ProjectDetails) {
   const tSec = useTranslations("Projects");
   const tAria = useTranslations("AriaLabels");
+  const { theme } = useTheme();
 
   const [isMounted, setIsMounted] = useState(open);
   const [prevOpen, setPrevOpen] = useState(open);
@@ -134,20 +139,27 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
               <div className="w-full flex flex-col items-center gap-3">
                 <div className="flex items-center gap-5">
                   <a href={data.demoLink} target="_blank" rel="noopener noreferer">
-                    <Button
-                      label="Demo"
-                      disabled={!data.demoLink}
-                    />
+                    <Button label="Demo" disabled={!data.demoLink} />
                   </a>
                   <a href={data.repoLink} target="_blank" rel="noopener noreferer">
                     <Button label={tSec("repo")} />
                   </a>
                 </div>
-
-                {/* Implementar vídeo posteriormente */}
-                <div className="lg:grid place-items-center hidden w-[40%] bg-bg border border-main aspect-video">
-                  Implementar vídeo
-                </div>
+                {!data.images ? (
+                  <div className="lg:grid place-items-center hidden w-[60%] aspect-video border border-main rounded-2xl overflow-hidden">
+                    <Image
+                      src={
+                        theme === "light"
+                          ? IMAGES.projects.fallback.light
+                          : IMAGES.projects.fallback.dark
+                      }
+                      alt="Fallback"
+                      className="size-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <ProjectGallery images={data.images} title={tSec(data.title)} />
+                )}
               </div>
             </div>
           )}
