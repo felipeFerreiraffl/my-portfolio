@@ -175,18 +175,6 @@
           "feat_4": "Validação de dados com Bean",
           "feat_5": "DTO pattern"
         }
-      },
-      "proj_4": {
-        "title": "TSAuth",
-        "desc": "TSAuth é um projeto de portfólio focado em autenticação de usuários: cadastro, login, atualização e exclusão de conta, com rota protegida (/user). Backend em Node.js + Express + MongoDB (Mongoose), autenticação via JWT; frontend em React + Vite, ambos 100% TypeScript. Design inspirado no kit Figma 'Logify'.",
-        "features": {
-          "feat_1": "Autenticação JWT",
-          "feat_2": "CRUD de usuários",
-          "feat_3": "Hash de senha",
-          "feat_4": "Context API",
-          "feat_5": "Testes automatizados",
-          "feat_6": "API REST"
-        }
       }
     }
   },
