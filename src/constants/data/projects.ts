@@ -1,6 +1,7 @@
 import { ProjectData } from "@/types/elements/data.types";
 import { ICONS } from "../icons";
 import { EXTERNAL_LINKS, SKILLS_NAMES } from "../objects";
+import { IMAGES } from "../images";
 
 export const PROJECTS: ProjectData[] = [
   {
@@ -21,6 +22,12 @@ export const PROJECTS: ProjectData[] = [
     ],
     repoLink: `${EXTERNAL_LINKS.gitHub}/calculos-matematicos`,
     demoLink: "https://calculos-matematicos.vercel.app/",
+    images: [
+      IMAGES.projects.proj_1.img_1,
+      IMAGES.projects.proj_1.img_2,
+      IMAGES.projects.proj_1.img_3,
+      IMAGES.projects.proj_1.img_4,
+    ],
   },
   {
     id: "proj-2",
@@ -44,6 +51,13 @@ export const PROJECTS: ProjectData[] = [
     ],
     repoLink: `${EXTERNAL_LINKS.gitHub}/anime-manga-info`,
     demoLink: "https://anime-manga-info.vercel.app/",
+    images: [
+      IMAGES.projects.proj_2.img_1,
+      IMAGES.projects.proj_2.img_2,
+      IMAGES.projects.proj_2.img_3,
+      IMAGES.projects.proj_2.img_4,
+      IMAGES.projects.proj_2.img_5,
+    ],
   },
   {
     id: "proj-3",

@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { SVGIcon } from "./elements.types";
 
 export interface HeroRingData {
@@ -51,5 +52,5 @@ export interface ProjectData {
   feats: string[];
   repoLink: string;
   demoLink?: string;
-  previewSrc?: ImageData;
+  images?: StaticImageData[] | string[];
 }
