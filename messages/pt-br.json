@@ -98,10 +98,10 @@
       "place": "SENAI Suiço-Brasileiro Paulo Ernesto Tolle",
       "description": "Curso técnico para aprendizagem de princípios de desenvolvimento de sistemas como front-end, back-end, banco de dados SQL, redes, hardware, entre outros. Foi realizado um projeto final de chat e busca de conteúdo otaku.",
       "skills": {
-        "fullstack": "Desenvolvimento Full-Stack",
-        "network": "Redes",
-        "hardware": "Princípios de Hardware",
-        "office": "Pacote Office"
+        "ski_1": "Desenvolvimento Full-Stack",
+        "ski_2": "Redes",
+        "ski_3": "Princípios de Hardware",
+        "ski_4": "Pacote Office"
       }
     },
     "exp_2": {
@@ -109,14 +109,22 @@
       "place": "SENAI Mercedes-Benz do Brasil",
       "description": "Curso/estágio de aprendizagem industrial na área de mecânica automotiva. Como atividades extracurriculares, foram realizadas manutenções em computadores de trabalho, incluindo organização, construção e formatação dos mesmos.",
       "skills": {
-        "teamwork": "Trabalho em equipe",
-        "details": "Atenção aos detalhes"
+        "ski_1": "Trabalho em equipe",
+        "ski_2": "Atenção aos detalhes"
       }
     },
     "exp_3": {
       "title": "Desenvolvedor de Software Jr.",
       "place": "M. Shimizu",
-      "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização."
+      "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização.",
+      "skills": {
+        "ski_1": "HTML",
+        "ski_2": "CSS",
+        "ski_3": "Javascript",
+        "ski_4": "Typescript",
+        "ski_5": "Next.js",
+        "ski_6": "TailwindCSS"
+      }
     }
   },
   "Skills": {

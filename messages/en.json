@@ -98,10 +98,10 @@
       "place": "SENAI Swiss-Brazilian Paulo Ernesto Tolle",
       "description": "Technical course covering system development fundamentals, like front-end, back-end, SQL database, networking, hardware, etc. Otaku content search and chat final project was done.",
       "skills": {
-        "fullstack": "Full-Stack Development",
-        "network": "Networking",
-        "hardware": "Hardware Fundamentals",
-        "office": "Office Package"
+        "ski_1": "Full-Stack Development",
+        "ski_2": "Networking",
+        "ski_3": "Hardware Fundamentals",
+        "ski_4": "Office Package"
       }
     },
     "exp_2": {
@@ -109,14 +109,22 @@
       "place": "SENAI Mercedes-Benz Brazil",
       "description": "Industrial learning course/internship in automotive mechanics field. As extracurriculum activities, maintenance on work computers was done, including organization, building and formatting on them.",
       "skills": {
-        "teamwork": "Teamwork",
-        "details": "Attention to details"
+        "ski_1": "Teamwork",
+        "ski_2": "Attention to details"
       }
     },
     "exp_3": {
       "title": "Junior Software Developer",
       "place": "M. Shimizu",
-      "description": "Front-end focused development, with interface building, performance/SEO checking and best practices in coding, structure and organization."
+      "description": "Front-end focused development, with interface building, performance/SEO checking and best practices in coding, structure and organization.",
+      "skills": {
+        "ski_1": "HTML",
+        "ski_2": "CSS",
+        "ski_3": "Javascript",
+        "ski_4": "Typescript",
+        "ski_5": "Next.js",
+        "ski_6": "TailwindCSS"
+      }
     }
   },
   "Skills": {

@@ -18,10 +18,10 @@ export const EXPERIENCES: ExperienceData[] = [
     },
     description: "exp_1.description",
     skills: [
-      "exp_1.skills.fullstack",
-      "exp_1.skills.hardware",
-      "exp_1.skills.network",
-      "exp_1.skills.office",
+      "exp_1.skills.ski_1",
+      "exp_1.skills.ski_2",
+      "exp_1.skills.ski_3",
+      "exp_1.skills.ski_4",
     ],
   },
   {
@@ -39,7 +39,7 @@ export const EXPERIENCES: ExperienceData[] = [
       year: 2025,
     },
     description: "exp_2.description",
-    skills: ["exp_2.skills.teamwork", "exp_2.skills.details"],
+    skills: ["exp_2.skills.ski_1", "exp_2.skills.ski_2"],
   },
   {
     id: "exp-3",
@@ -53,10 +53,12 @@ export const EXPERIENCES: ExperienceData[] = [
     },
     description: "exp_3.description",
     skills: [
-      "exp_1.skills.fullstack",
-      "exp_1.skills.hardware",
-      "exp_1.skills.network",
-      "exp_1.skills.office",
+      "exp_3.skills.ski_1",
+      "exp_3.skills.ski_2",
+      "exp_3.skills.ski_3",
+      "exp_3.skills.ski_4",
+      "exp_3.skills.ski_5",
+      "exp_3.skills.ski_6",
     ],
   },
 ];
