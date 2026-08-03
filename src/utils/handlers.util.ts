@@ -1,8 +1,8 @@
-import { SectionRef } from "@/types/elements/elements.types";
+const HEADER_OFFSET = 80;
 
-export const handleScrollToSection = (ref: SectionRef) => {
-  if (!ref.current) return;
+export const handleScrollToSection = (el: HTMLElement | null) => {
+  if (!el) return;
 
-  const top = ref.current.getBoundingClientRect().top + window.scrollY - 80;
+  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
   window.scrollTo({ top, behavior: "smooth" });
 };

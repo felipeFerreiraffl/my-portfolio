@@ -4,7 +4,6 @@
     padding: 0;
     list-style: none;
     background: none;
-    outline: none;
     border: none;
     box-sizing: border-box;
     text-decoration: none;
@@ -40,7 +39,14 @@
 
   /* Lógicas especiais */
 
-  @media (pointer: fine) {
+  /* Anel de foco visível apenas na navegação por teclado */
+  *:focus-visible {
+    outline: 2px solid var(--color-main);
+    outline-offset: 2px;
+  }
+
+  /* Esconde o cursor nativo somente onde o cursor customizado é renderizado (lg+) */
+  @media (pointer: fine) and (min-width: 64rem) {
     *,
     *::before,
     *::after {

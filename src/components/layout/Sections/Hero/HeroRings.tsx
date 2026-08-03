@@ -9,6 +9,12 @@ interface HeroRingsProps {
   onExpandComplete?: () => void;
 }
 
+/**
+ * Duração da fase de "loading" (ponto pulsando) antes dos anéis expandirem.
+ * Total da intro = LOADING_DURATION + stagger dos anéis + duração do último anel.
+ */
+const LOADING_DURATION = 800;
+
 export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   const [phase, setPhase] = useState<"loading" | "expanded">("loading");
 
@@ -31,7 +37,7 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setPhase("expanded"), 2000);
+    const timeout = setTimeout(() => setPhase("expanded"), LOADING_DURATION);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -41,6 +47,8 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
         {phase === "loading" && (
           <m.div
             key="center-dot"
+            animate={{ scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
+            transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             exit={{ scale: 0, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
             className="absolute size-5 rounded-full bg-main"
           />

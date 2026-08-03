@@ -14,8 +14,6 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
 
   return (
     <div
-      role="button"
-      onClick={onClick}
       className="group relative grid place-items-center md:size-80 size-64 border-2 border-main rounded-full"
       data-cursor-hover>
       <div
@@ -23,6 +21,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
           "absolute top-1/2 left-1/2 -translate-1/2 md:max-w-73 max-w-83 size-[92%] aspect-square border border-main rounded-full",
           "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity, scale] duration-300 ease-in-out",
           "group-hover:opacity-100 group-hover:scale-100",
+          "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
         )}
       />
       <div
@@ -31,6 +30,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
           "bg-main/20 rounded-full shadow-project blur-[32px]",
           "opacity-0 scale-0 transition-[opacity, scale] duration-300 ease-in-out",
           "group-hover:opacity-100 group-hover:scale-100",
+          "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
         )}
       />
 
@@ -41,10 +41,19 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
             "md:text-base text-sm leading-body text-text",
             "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity, scale] duration-300 ease-in-out",
             "group-hover:opacity-100 group-hover:scale-100",
+            "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
           )}>
           {tSec("seeProj")}
         </span>
       </div>
+
+      {/* Gatilho real: cobre o card inteiro, mantém o <h3> fora do <button> e habilita teclado */}
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`${tSec("seeProj")}: ${title}`}
+        className="absolute inset-0 rounded-full cursor-pointer"
+      />
     </div>
   );
 }
