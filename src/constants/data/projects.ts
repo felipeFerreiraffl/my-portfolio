@@ -1,6 +1,7 @@
 import { ProjectData } from "@/types/elements/data.types";
 import { ICONS } from "../icons";
 import { EXTERNAL_LINKS, SKILLS_NAMES } from "../objects";
+import { IMAGES } from "../images";
 
 export const PROJECTS: ProjectData[] = [
   {
@@ -21,6 +22,12 @@ export const PROJECTS: ProjectData[] = [
     ],
     repoLink: `${EXTERNAL_LINKS.gitHub}/calculos-matematicos`,
     demoLink: "https://calculos-matematicos.vercel.app/",
+    images: [
+      IMAGES.projects.proj_1.img_1,
+      IMAGES.projects.proj_1.img_2,
+      IMAGES.projects.proj_1.img_3,
+      IMAGES.projects.proj_1.img_4,
+    ],
   },
   {
     id: "proj-2",
@@ -44,6 +51,13 @@ export const PROJECTS: ProjectData[] = [
     ],
     repoLink: `${EXTERNAL_LINKS.gitHub}/anime-manga-info`,
     demoLink: "https://anime-manga-info.vercel.app/",
+    images: [
+      IMAGES.projects.proj_2.img_1,
+      IMAGES.projects.proj_2.img_2,
+      IMAGES.projects.proj_2.img_3,
+      IMAGES.projects.proj_2.img_4,
+      IMAGES.projects.proj_2.img_5,
+    ],
   },
   {
     id: "proj-3",
@@ -65,29 +79,5 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_3.features.feat_5",
     ],
     repoLink: `${EXTERNAL_LINKS.gitHub}/crud-livraria`,
-  },
-  {
-    id: "proj-4",
-    title: "data.proj_4.title",
-    description: "data.proj_4.desc",
-    techs: [
-      { icon: ICONS.skillsIcons.react, label: SKILLS_NAMES.reactjs },
-      { icon: ICONS.skillsIcons.css3, label: SKILLS_NAMES.css },
-      { icon: ICONS.skillsIcons.typescript, label: SKILLS_NAMES.typescript },
-      { icon: ICONS.skillsIcons.javascript, label: SKILLS_NAMES.javascript },
-      { icon: ICONS.skillsIcons.nodejs, label: SKILLS_NAMES.nodejs },
-      { icon: ICONS.skillsIcons.mongodb, label: SKILLS_NAMES.mongodb },
-      { icon: ICONS.skillsIcons.vercel, label: SKILLS_NAMES.vercel },
-    ],
-    feats: [
-      "data.proj_4.features.feat_1",
-      "data.proj_4.features.feat_2",
-      "data.proj_4.features.feat_3",
-      "data.proj_4.features.feat_4",
-      "data.proj_4.features.feat_5",
-      "data.proj_4.features.feat_6",
-    ],
-    repoLink: `${EXTERNAL_LINKS.gitHub}/tsauth`,
-    demoLink: "https://tsauth.vercel.app/",
   },
 ];

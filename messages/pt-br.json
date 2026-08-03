@@ -1,4 +1,13 @@
 {
+  "Meta": {
+    "title": "Portfólio — {name}",
+    "titleTemplate": "%s — {name}",
+    "description": "Portfólio profissional feito por Felipe Ferreira, para demonstrar as habilidades, experiências e projetos",
+    "siteName": "{name} — Portfólio",
+    "keywords": "desenvolvedor front-end, desenvolvedor web, portfólio, React, Next.js, TypeScript, Tailwind CSS, interface de usuário, Felipe Ferreira",
+    "ogAlt": "Capa do portfólio de {name}, desenvolvedor front-end",
+    "ogTagline": "Habilidades, experiências e projetos"
+  },
   "ButtonLabels": {
     "curriculum": "Currículo",
     "figma": "Ver design do Figma"
@@ -89,10 +98,10 @@
       "place": "SENAI Suiço-Brasileiro Paulo Ernesto Tolle",
       "description": "Curso técnico para aprendizagem de princípios de desenvolvimento de sistemas como front-end, back-end, banco de dados SQL, redes, hardware, entre outros. Foi realizado um projeto final de chat e busca de conteúdo otaku.",
       "skills": {
-        "fullstack": "Desenvolvimento Full-Stack",
-        "network": "Redes",
-        "hardware": "Princípios de Hardware",
-        "office": "Pacote Office"
+        "ski_1": "Desenvolvimento Full-Stack",
+        "ski_2": "Redes",
+        "ski_3": "Princípios de Hardware",
+        "ski_4": "Pacote Office"
       }
     },
     "exp_2": {
@@ -100,14 +109,22 @@
       "place": "SENAI Mercedes-Benz do Brasil",
       "description": "Curso/estágio de aprendizagem industrial na área de mecânica automotiva. Como atividades extracurriculares, foram realizadas manutenções em computadores de trabalho, incluindo organização, construção e formatação dos mesmos.",
       "skills": {
-        "teamwork": "Trabalho em equipe",
-        "details": "Atenção aos detalhes"
+        "ski_1": "Trabalho em equipe",
+        "ski_2": "Atenção aos detalhes"
       }
     },
     "exp_3": {
       "title": "Desenvolvedor de Software Jr.",
       "place": "M. Shimizu",
-      "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização."
+      "description": "Desenvolvimento específico para front-end, como construção de interfaces, verificação de performance/SEO e melhores práticas de código, arquitetura e organização.",
+      "skills": {
+        "ski_1": "HTML",
+        "ski_2": "CSS",
+        "ski_3": "Javascript",
+        "ski_4": "Typescript",
+        "ski_5": "Next.js",
+        "ski_6": "TailwindCSS"
+      }
     }
   },
   "Skills": {
@@ -165,18 +182,6 @@
           "feat_3": "API REST",
           "feat_4": "Validação de dados com Bean",
           "feat_5": "DTO pattern"
-        }
-      },
-      "proj_4": {
-        "title": "TSAuth",
-        "desc": "TSAuth é um projeto de portfólio focado em autenticação de usuários: cadastro, login, atualização e exclusão de conta, com rota protegida (/user). Backend em Node.js + Express + MongoDB (Mongoose), autenticação via JWT; frontend em React + Vite, ambos 100% TypeScript. Design inspirado no kit Figma 'Logify'.",
-        "features": {
-          "feat_1": "Autenticação JWT",
-          "feat_2": "CRUD de usuários",
-          "feat_3": "Hash de senha",
-          "feat_4": "Context API",
-          "feat_5": "Testes automatizados",
-          "feat_6": "API REST"
         }
       }
     }
