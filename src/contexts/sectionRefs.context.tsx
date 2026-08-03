@@ -3,6 +3,8 @@
 import { SECTION_KEYS } from "@/constants/elements";
 import { SectionKey } from "@/types/elements/elements.types";
 import { handleScrollToSection } from "@/utils/handlers.util";
+import { useLenis } from "lenis/react";
+import { useReducedMotion } from "motion/react";
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 type SectionRegistry = Record<SectionKey, (node: HTMLElement | null) => void>;
@@ -22,6 +24,9 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const [activeSec, setActiveSec] = useState<SectionKey | null>(null);
+
+  const lenis = useLenis();
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const nodes = nodesRef.current;
@@ -86,9 +91,24 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     return Object.fromEntries(entries) as SectionRegistry;
   }, []);
 
-  const scrollToSection = useCallback((key: SectionKey) => {
-    handleScrollToSection(nodesRef.current.get(key) ?? null);
-  }, []);
+  // O Lenis é o dono do scroll: chamar window.scrollTo aqui brigaria com ele
+  const scrollToSection = useCallback(
+    (key: SectionKey) => {
+      const node = nodesRef.current.get(key);
+      if (!node) return;
+
+      if (lenis) {
+        lenis.scrollTo(node, {
+          offset: -HEADER_OFFSET,
+          immediate: !!prefersReducedMotion,
+        });
+        return;
+      }
+
+      handleScrollToSection(node);
+    },
+    [lenis, prefersReducedMotion],
+  );
 
   const value = useMemo(
     () => ({ registerSection, scrollToSection, activeSec }),

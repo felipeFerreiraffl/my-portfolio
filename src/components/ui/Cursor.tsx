@@ -1,8 +1,11 @@
 "use client";
 
+import { useReducedMotion } from "motion/react";
 import { useEffect, useRef } from "react";
 
 export default function Cursor() {
+  const prefersReducedMotion = useReducedMotion();
+
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
@@ -14,6 +17,8 @@ export default function Cursor() {
   const ringScaleRef = useRef(1);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     let rafId: number;
 
     const lerp = (start: number, end: number, factor: number) => start + (end - start) * factor;
@@ -56,7 +61,11 @@ export default function Cursor() {
       document.removeEventListener("mouseover", handleMouseOver);
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  // O CSS já devolve o cursor nativo sob prefers-reduced-motion, então o
+  // customizado (que roda um rAF contínuo) não deve nem existir
+  if (prefersReducedMotion) return null;
 
   return (
     <>

@@ -184,7 +184,9 @@
           "feat_5": "DTO pattern"
         }
       }
-    }
+    },
+    "imageAlt": "Captura de tela {index} de {total} do projeto {title}",
+    "fallbackAlt": "Prévia visual indisponível para o projeto {title}"
   },
   "Footer": {
     "heading": "Obrigado pela atenção",

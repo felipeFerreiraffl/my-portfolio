@@ -19,6 +19,7 @@ const AUTOPLAY_DELAY = 4000;
 
 export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
   const tAria = useTranslations("AriaLabels");
+  const tSec = useTranslations("Projects");
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: false }, [
     Fade(),
@@ -39,16 +40,16 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
   );
 
   return (
-    <div className="relative lg:block hidden w-[60%]">
+    <div className="relative block w-full lg:w-[60%]">
       <div className="aspect-video border border-main rounded-2xl overflow-hidden" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((img, idx) => (
             <div key={idx} className="relative min-w-0 flex-none basis-full h-full">
               <Image
                 src={img}
-                alt={`${title} ${idx + 1}`}
+                alt={tSec("imageAlt", { title, index: idx + 1, total: slides.length })}
                 fill
-                sizes="30vw"
+                sizes="(min-width: 1024px) 30vw, 80vw"
                 className="object-cover"
               />
             </div>

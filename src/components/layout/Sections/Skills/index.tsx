@@ -2,6 +2,7 @@
 
 import Icon from "@/components/ui/Icon";
 import Section from "@/components/ui/Section";
+import { SECTION_IDS } from "@/constants/elements";
 import { SKILLS } from "@/constants/data";
 import { ICONS } from "@/constants/icons";
 import { SectionProps } from "@/types/elements/elements.types";
@@ -16,7 +17,7 @@ export default function Skills({ ref }: SectionProps) {
   const circleRefs = useMemo(() => SKILLS.map(() => createRef<HTMLDivElement>()), []);
 
   return (
-    <Section ref={ref} title={tSec("title")}>
+    <Section ref={ref} id={SECTION_IDS.skills} title={tSec("title")}>
       <div className="flex flex-col gap-10 px-12">
         <div className="flex items-center gap-3">
           <Icon icon={ICONS.skills.star} className="size-8 text-star" />

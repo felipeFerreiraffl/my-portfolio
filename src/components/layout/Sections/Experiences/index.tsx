@@ -2,6 +2,7 @@
 
 import Icon from "@/components/ui/Icon";
 import Section from "@/components/ui/Section";
+import { SECTION_IDS } from "@/constants/elements";
 import { EXPERIENCES } from "@/constants/data";
 import { ICONS } from "@/constants/icons";
 import { cn } from "@/libs/cn";
@@ -15,7 +16,8 @@ import ExperienceTimeline from "./ExperienceTimeline";
 export default function Experiences({ ref }: SectionProps) {
   const tSec = useTranslations("Experiences");
   const tAria = useTranslations("AriaLabels");
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  // Abre no cargo atual (último do array), mantendo a linha do tempo cronológica
+  const [emblaRef, emblaApi] = useEmblaCarousel({ startIndex: EXPERIENCES.length - 1 });
 
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -40,7 +42,7 @@ export default function Experiences({ ref }: SectionProps) {
   }, [emblaApi]);
 
   return (
-    <Section ref={ref} title={tSec("title")}>
+    <Section ref={ref} id={SECTION_IDS.experiences} title={tSec("title")}>
       <div className="relative w-full group">
         {canPrev && (
           <button
@@ -84,7 +86,7 @@ export default function Experiences({ ref }: SectionProps) {
         </div>
       </div>
 
-      <ExperienceTimeline emblaApi={emblaApi} total={EXPERIENCES.length} />
+      <ExperienceTimeline emblaApi={emblaApi} labels={EXPERIENCES.map((exp) => tSec(exp.title))} />
     </Section>
   );
 }

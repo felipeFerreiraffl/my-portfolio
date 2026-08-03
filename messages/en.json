@@ -184,7 +184,9 @@
           "feat_5": "DTO pattern"
         }
       }
-    }
+    },
+    "imageAlt": "Screenshot {index} of {total} of the {title} project",
+    "fallbackAlt": "Visual preview unavailable for the {title} project"
   },
   "Footer": {
     "heading": "Thanks for your attention",

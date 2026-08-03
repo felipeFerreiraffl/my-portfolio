@@ -9,9 +9,7 @@
     text-decoration: none;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  /* Sem scroll-behavior aqui: o Lenis é o dono do scroll e os dois conflitam */
 
   body {
     position: relative;
@@ -46,11 +44,23 @@
   }
 
   /* Esconde o cursor nativo somente onde o cursor customizado é renderizado (lg+) */
-  @media (pointer: fine) and (min-width: 64rem) {
+  @media (pointer: fine) and (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
     *,
     *::before,
     *::after {
       cursor: none !important;
+    }
+  }
+
+  /* Respeita quem pediu menos movimento (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 

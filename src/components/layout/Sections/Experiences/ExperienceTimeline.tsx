@@ -7,12 +7,14 @@ import { m } from "motion/react";
 
 interface ExperienceTimelineProps {
   emblaApi: EmblaCarouselType | undefined;
-  total: number;
+  /** Título de cada experiência, usado como nome acessível de cada marcador. */
+  labels: string[];
 }
 
 const SLOT_WIDTH = 120;
 
-export default function ExperienceTimeline({ emblaApi, total }: ExperienceTimelineProps) {
+export default function ExperienceTimeline({ emblaApi, labels }: ExperienceTimelineProps) {
+  const total = labels.length;
   const { selectedIdx, progress } = useEmblaTimeline(emblaApi, total);
   const lineProgress = useTransform(
     progress,
@@ -27,12 +29,13 @@ export default function ExperienceTimeline({ emblaApi, total }: ExperienceTimeli
       <m.div
         className="absolute top-0 left-1/2 flex items-center h-full"
         style={{ x: lineProgress }}>
-        {Array.from({ length: total }).map((_, idx) => (
+        {labels.map((label, idx) => (
           <button
-            key={idx}
+            key={label}
             type="button"
             onClick={() => emblaApi?.scrollTo(idx)}
-            aria-label={`Slide ${idx}`}
+            aria-label={label}
+            aria-current={selectedIdx === idx}
             className="grid place-items-center"
             style={{ width: SLOT_WIDTH }}>
             <m.div

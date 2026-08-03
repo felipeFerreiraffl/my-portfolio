@@ -2,7 +2,7 @@
 
 import { HERO_RINGS } from "@/constants/objects";
 import { cn } from "@/libs/cn";
-import { AnimatePresence, m, stagger, Variants } from "motion/react";
+import { AnimatePresence, m, stagger, useReducedMotion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
 
 interface HeroRingsProps {
@@ -16,13 +16,14 @@ interface HeroRingsProps {
 const LOADING_DURATION = 800;
 
 export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
+  const prefersReducedMotion = useReducedMotion();
   const [phase, setPhase] = useState<"loading" | "expanded">("loading");
 
   const ringsContainerVars: Variants = {
     loading: {},
     expanded: {
       transition: {
-        delayChildren: stagger(0.15),
+        delayChildren: prefersReducedMotion ? 0 : stagger(0.15),
       },
     },
   };
@@ -32,14 +33,16 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
     expanded: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut" },
+      transition: { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" },
     },
   };
 
+  // Sob prefers-reduced-motion a intro inteira é pulada: sem espera, sem stagger
+  // e sem trava de tela, para não prender quem tem sensibilidade vestibular.
   useEffect(() => {
-    const timeout = setTimeout(() => setPhase("expanded"), LOADING_DURATION);
+    const timeout = setTimeout(() => setPhase("expanded"), prefersReducedMotion ? 0 : LOADING_DURATION);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div className="relative grid place-items-center z-1">
@@ -47,7 +50,7 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
         {phase === "loading" && (
           <m.div
             key="center-dot"
-            animate={{ scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
+            animate={prefersReducedMotion ? undefined : { scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
             transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             exit={{ scale: 0, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
             className="absolute size-5 rounded-full bg-main"

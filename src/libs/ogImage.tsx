@@ -8,6 +8,29 @@ interface OgImageProps {
   params: Promise<{ locale: string }>;
 }
 
+const resolveLocale = async (params: OgImageProps["params"]) => {
+  const { locale: requested } = await params;
+  return hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
+};
+
+/**
+ * O `alt` precisa vir daqui (e não de um `export const alt`) para poder ser
+ * traduzido por locale — é o texto que leitores de tela leem no card social.
+ */
+export const generateOgImageMetadata = async ({ params }: OgImageProps) => {
+  const locale = await resolveLocale(params);
+  const t = await getTranslations({ locale, namespace: "Meta" });
+
+  return [
+    {
+      id: "default",
+      alt: t("ogAlt", { name: SITE_AUTHOR.name }),
+      size: OG_IMAGE_SIZE,
+      contentType: "image/png",
+    },
+  ];
+};
+
 export const renderOgImage = async ({ params }: OgImageProps) => {
   const { locale: requested } = await params;
   const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;

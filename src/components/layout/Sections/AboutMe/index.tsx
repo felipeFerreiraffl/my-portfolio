@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Section from "@/components/ui/Section";
+import { SECTION_IDS } from "@/constants/elements";
 import { SectionProps } from "@/types/elements/elements.types";
 import { m, stagger, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -38,7 +39,7 @@ export default function AboutMe({ ref }: SectionProps) {
   };
 
   return (
-    <Section ref={ref} title={tSec("title")}>
+    <Section ref={ref} id={SECTION_IDS.aboutMe} title={tSec("title")}>
       <m.div
         variants={containerVars}
         initial="hidden"

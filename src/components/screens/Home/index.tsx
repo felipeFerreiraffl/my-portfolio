@@ -10,24 +10,25 @@ import Projects from "@/components/layout/Sections/Projects";
 import Skills from "@/components/layout/Sections/Skills";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { useLenis } from "lenis/react";
-import { Variants, m } from "motion/react";
+import { Variants, m, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function HomeScreen() {
   const { registerSection } = useSectionRefs();
   const { aboutMe, experiences, skills, projects } = registerSection;
   const [ringsExpanded, setRingsExpanded] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
   const lenis = useLenis();
 
   // Trava a tela enquanto a intro roda, para que ela seja lida como um loading
   useEffect(() => {
-    if (ringsExpanded || !lenis) return;
+    if (ringsExpanded || prefersReducedMotion || !lenis) return;
 
     lenis.scrollTo(0, { immediate: true });
     lenis.stop();
 
     return () => lenis.start();
-  }, [lenis, ringsExpanded]);
+  }, [lenis, ringsExpanded, prefersReducedMotion]);
 
   const revealVars: Variants = {
     hidden: { opacity: 0 },

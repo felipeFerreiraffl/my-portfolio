@@ -1,6 +1,7 @@
 "use client";
 
 import Section from "@/components/ui/Section";
+import { SECTION_IDS } from "@/constants/elements";
 import { SectionProps } from "@/types/elements/elements.types";
 import { useTranslations } from "next-intl";
 import ProjectSet from "./ProjectSet";
@@ -56,7 +57,7 @@ export default function Projects({ ref }: SectionProps) {
 
   return (
     <>
-      <Section ref={ref} title={tSec("title")}>
+      <Section ref={ref} id={SECTION_IDS.projects} title={tSec("title")}>
         <div className="relative w-full group/carousel">
           {canPrev && (
             <button

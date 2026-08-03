@@ -1,7 +1,7 @@
 import Cursor from "@/components/ui/Cursor";
 import { AVAILABLE_THEMES } from "@/constants/elements";
 import { EXTERNAL_LINKS } from "@/constants/objects";
-import { SITE_AUTHOR, SITE_URL } from "@/constants/seo";
+import { HREFLANGS, SITE_AUTHOR, SITE_URL } from "@/constants/seo";
 import { SectionRefsProvider } from "@/contexts/sectionRefs.context";
 import { routing } from "@/libs/i18n/routing";
 import SmoothScrollProvider from "@/libs/smoothScroll";
@@ -14,11 +14,11 @@ import {
   buildOgLocale,
 } from "@/utils/seo.util";
 import { ThemeProvider } from "@teispace/next-themes";
-import { getTheme } from "@teispace/next-themes/server";
-import { domAnimation, LazyMotion } from "motion/react";
+import { getThemeScript } from "@teispace/next-themes/server";
+import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
 import { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Space_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
@@ -110,14 +110,30 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space_grotesk",
 });
 
+const THEME_CONFIG = {
+  attribute: "class",
+  themes: AVAILABLE_THEMES,
+  defaultTheme: "light",
+  enableSystem: false,
+} as const;
+
+/**
+ * Script anti-FOUC gerado em tempo de build. Roda no <head>, antes do primeiro
+ * paint, então o tema é aplicado sem flash — e sem ler cookie no servidor, o que
+ * mantém a rota elegível para renderização estática.
+ */
+const themeScript = getThemeScript(THEME_CONFIG);
+
 export default async function RootLayout({ children, params }: LocaleRoutingProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  const initialTheme = await getTheme();
-  const messages = await getMessages();
+  // Sem isto o next-intl lê o locale do request, o que torna a rota dinâmica
+  setRequestLocale(locale);
+
+  const messages = await getMessages({ locale });
   const plainMessages = JSON.parse(JSON.stringify(messages));
 
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
@@ -137,36 +153,42 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
   };
 
   return (
-    <html lang={locale} className={`${spaceGrotesk.className}`} suppressHydrationWarning>
+    <html
+      lang={HREFLANGS[locale] ?? locale}
+      className={`${spaceGrotesk.className}`}
+      suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <LazyMotion features={domAnimation}>
-        <body>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-          />
-          <SmoothScrollProvider>
-            <ThemeProvider
-              attribute="class"
-              initialTheme={initialTheme ?? "light"}
-              themes={AVAILABLE_THEMES}
-              transition={{
-                type: "fade",
-                duration: 300,
-                origin: "center",
-              }}>
-              <NextIntlClientProvider
-                locale={locale}
-                messages={plainMessages}
-                now={new Date()}
-                timeZone="America/Sao_Paulo">
-                <SectionRefsProvider>
-                  <Cursor />
-                  {children}
-                </SectionRefsProvider>
-              </NextIntlClientProvider>
-            </ThemeProvider>
-          </SmoothScrollProvider>
-        </body>
+        <MotionConfig reducedMotion="user">
+          <body>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+            />
+            <SmoothScrollProvider>
+              <ThemeProvider
+                {...THEME_CONFIG}
+                noScript
+                transition={{
+                  type: "fade",
+                  duration: 300,
+                  origin: "center",
+                }}>
+                <NextIntlClientProvider
+                  locale={locale}
+                  messages={plainMessages}
+                  timeZone="America/Sao_Paulo">
+                  <SectionRefsProvider>
+                    <Cursor />
+                    {children}
+                  </SectionRefsProvider>
+                </NextIntlClientProvider>
+              </ThemeProvider>
+            </SmoothScrollProvider>
+          </body>
+        </MotionConfig>
       </LazyMotion>
     </html>
   );

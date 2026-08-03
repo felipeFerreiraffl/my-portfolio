@@ -9,19 +9,25 @@ import { useTheme } from "@teispace/next-themes";
 import { useLenis } from "lenis/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import ProjectGallery from "./ProjectGallery";
 
-interface ProjectDetails {
+interface ProjectDetailsProps {
   data: ProjectData | null;
   open: boolean;
   onOpenChange: () => void;
 }
 
-export default function ProjectDetails({ data, open, onOpenChange }: ProjectDetails) {
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input, select, textarea';
+
+export default function ProjectDetails({ data, open, onOpenChange }: ProjectDetailsProps) {
   const tSec = useTranslations("Projects");
   const tAria = useTranslations("AriaLabels");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+
+  const titleId = useId();
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   const [isMounted, setIsMounted] = useState(open);
   const [prevOpen, setPrevOpen] = useState(open);
@@ -42,16 +48,46 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
     return () => lenis.start();
   }, [isMounted, lenis]);
 
+  // Escape para fechar + foco preso dentro do diálogo enquanto ele está aberto
   useEffect(() => {
     if (!isMounted) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onOpenChange();
+      if (e.key === "Escape") {
+        onOpenChange();
+        return;
+      }
+
+      if (e.key !== "Tab" || !dialogRef.current) return;
+
+      const focusables = [...dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)];
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMounted, onOpenChange]);
+
+  // Move o foco para dentro do diálogo e o devolve ao card ao fechar
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const trigger = document.activeElement as HTMLElement | null;
+    dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR)?.focus();
+
+    return () => trigger?.focus();
+  }, [isMounted]);
 
   const handleAnimationEnd = (e: React.AnimationEvent<HTMLDivElement>) => {
     if (e.target !== e.currentTarget) return;
@@ -66,7 +102,12 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
     <div
       data-state={open ? "open" : "closed"}
       className="fixed top-1/2 left-1/2 -translate-1/2 grid place-items-center z-999 size-full">
-      <div role="dialog" className="relative size-full grid place-items-center">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        className="relative size-full grid place-items-center">
         <div
           data-state={open ? "open" : "closed"}
           onClick={onOpenChange}
@@ -91,7 +132,9 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
               <div className="flex flex-col items-center gap-3 text-center">
                 <div className="flex items-center gap-3">
                   <div className="size-3 bg-main rotate-45" />
-                  <h3 className="md:text-[2.5rem] text-2xl font-bold leading-heading text-title whitespace-nowrap">
+                  <h3
+                    id={titleId}
+                    className="md:text-[2.5rem] text-2xl font-bold leading-heading text-title whitespace-nowrap">
                     {tSec(data.title)}
                   </h3>
                   <div className="size-3 bg-main rotate-45" />
@@ -117,8 +160,6 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
                     ))}
                   </div>
                 </div>
-
-                <div className=""></div>
 
                 <div className="md:max-w-[60%] w-full flex flex-col items-center gap-3 text-center">
                   <h4 className="md:text-2xl text-xl font-medium leading-heading text-text">
@@ -146,14 +187,14 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
                   </a>
                 </div>
                 {!data.images ? (
-                  <div className="lg:grid place-items-center hidden w-[60%] aspect-video border border-main rounded-2xl overflow-hidden">
+                  <div className="grid place-items-center w-full lg:w-[60%] aspect-video border border-main rounded-2xl overflow-hidden">
                     <Image
                       src={
-                        theme === "light"
-                          ? IMAGES.projects.fallback.light
-                          : IMAGES.projects.fallback.dark
+                        resolvedTheme === "dark"
+                          ? IMAGES.projects.fallback.dark
+                          : IMAGES.projects.fallback.light
                       }
-                      alt="Fallback"
+                      alt={tSec("fallbackAlt", { title: tSec(data.title) })}
                       className="size-full object-cover"
                     />
                   </div>

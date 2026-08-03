@@ -2,6 +2,7 @@
 
 import Tooltip from "@/components/ui/Tooltip";
 import { cn } from "@/libs/cn";
+import { useIsHydrated } from "@/hooks/useIsHydrated";
 import { useTheme } from "@teispace/next-themes";
 import { useTranslations } from "next-intl";
 
@@ -9,7 +10,10 @@ export default function ThemeChanger() {
   const t = useTranslations("Header");
   const { resolvedTheme, setTheme } = useTheme();
 
-  const isDark = resolvedTheme === "dark";
+  // O tema só é conhecido no cliente (o servidor renderiza estático), então o
+  // primeiro render precisa bater com o do servidor para não gerar mismatch.
+  const isHydrated = useIsHydrated();
+  const isDark = isHydrated && resolvedTheme === "dark";
 
   return (
     <div
