@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
+import { CV_PATH } from "@/constants/elements";
 import { ICONS } from "@/constants/icons";
 import { Variants, m, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -9,6 +10,7 @@ import { useRef, useState } from "react";
 import HeroRings from "./HeroRings";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
 import { EXTERNAL_LINKS } from "@/constants/objects";
+import { SITE_AUTHOR } from "@/constants/seo";
 
 interface HeroProps {
   onRingsExpandComplete?: () => void;
@@ -74,14 +76,14 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
 
         <div className="flex flex-col items-center gap-2 text-center">
           <h1 className="md:text-5xl text-[2rem] font-bold text-title leading-heading w-full">
-            Felipe Ferreira Lima
+            {SITE_AUTHOR.name}
           </h1>
           <p className="md:text-lg text-base text-gray leading-body">{tHero("role")}</p>
         </div>
 
         <div className="flex flex-col items-center gap-1">
           <span className="text-xs text-text leading-body text-center">{tHero("workingNow")}</span>
-          <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferrer">
+          <a href={CV_PATH} target="_blank" rel="noopener noreferrer" download>
             <Button label={tDef("curriculum")} />
           </a>
         </div>

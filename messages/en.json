@@ -192,5 +192,15 @@
     "heading": "Thanks for your attention",
     "viewSocial": "Check my social medias",
     "viewFigma": "Design made in Figma"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The address you visited does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred while loading this page.",
+    "retry": "Try again"
   }
 }

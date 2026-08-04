@@ -9,10 +9,16 @@ const resolveSiteUrl = () => {
 export const SITE_URL = resolveSiteUrl().replace(/\/$/, "");
 
 export const SITE_AUTHOR = {
-  name: "Felipe Ferreira",
+  name: "Felipe Ferreira Lima",
   firstName: "Felipe",
-  lastName: "Ferreira",
+  lastName: "Ferreira Lima",
   handle: "felipeFerreiraffl",
+};
+
+// Cor da barra do navegador, por tema. Equivale a --color-bg em _themes.css.
+export const THEME_COLORS = {
+  light: "#f6f6f6",
+  dark: "#010005",
 };
 
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 };

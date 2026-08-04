@@ -12,3 +12,6 @@ export const SECTION_IDS: Record<SectionKey, string> = {
   skills: "skills",
   projects: "projects",
 };
+
+// Nome do arquivo vira o nome do download no navegador
+export const CV_PATH = "/felipe-ferreira-lima-cv.pdf";

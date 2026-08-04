@@ -192,5 +192,15 @@
     "heading": "Obrigado pela atenção",
     "viewSocial": "Confira minhas redes",
     "viewFigma": "Design feito no Figma"
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "O endereço que você acessou não existe ou foi movido.",
+    "backHome": "Voltar ao início"
+  },
+  "ErrorPage": {
+    "title": "Algo deu errado",
+    "description": "Ocorreu um erro inesperado ao carregar esta página.",
+    "retry": "Tentar novamente"
   }
 }

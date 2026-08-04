@@ -1,7 +1,8 @@
 import Cursor from "@/components/ui/Cursor";
+import { EXPERIENCES } from "@/constants/data";
 import { AVAILABLE_THEMES } from "@/constants/elements";
 import { EXTERNAL_LINKS } from "@/constants/objects";
-import { HREFLANGS, SITE_AUTHOR, SITE_URL } from "@/constants/seo";
+import { HREFLANGS, SITE_AUTHOR, SITE_URL, THEME_COLORS } from "@/constants/seo";
 import { SectionRefsProvider } from "@/contexts/sectionRefs.context";
 import { routing } from "@/libs/i18n/routing";
 import SmoothScrollProvider from "@/libs/smoothScroll";
@@ -14,8 +15,10 @@ import {
   buildOgLocale,
 } from "@/utils/seo.util";
 import { ThemeProvider } from "@teispace/next-themes";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Space_Grotesk } from "next/font/google";
@@ -32,6 +35,15 @@ type LocaleMetadataProps = Omit<LocaleRoutingProps, "children">;
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+/**
+ * Valor estático para a barra do navegador. O script do ThemeProvider
+ * sobrescreve antes do paint quando o tema resolvido é o escuro.
+ */
+export const viewport: Viewport = {
+  themeColor: THEME_COLORS.light,
+  colorScheme: "light dark",
+};
 
 export async function generateMetadata({ params }: LocaleMetadataProps): Promise<Metadata> {
   const { locale } = await params;
@@ -63,8 +75,12 @@ export async function generateMetadata({ params }: LocaleMetadataProps): Promise
     publisher: SITE_AUTHOR.name,
     category: "technology",
     icons: {
-      icon: [{ url: "/favicon.ico" }],
+      icon: [
+        { url: "/favicon.ico", sizes: "16x16 32x32" },
+        { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      ],
       shortcut: ["/favicon.ico"],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
     },
     formatDetection: { email: false, address: false, telephone: false },
     alternates: {
@@ -139,6 +155,10 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
   const tHero = await getTranslations({ locale, namespace: "Hero" });
 
+  // Derivado do dado, não hardcoded: o cargo atual é o único sem data de término
+  const tExp = await getTranslations({ locale, namespace: "Experiences" });
+  const currentJob = EXPERIENCES.find((exp) => exp.type === "work" && !exp.endingTime);
+
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -150,6 +170,9 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
     description: tMeta("description"),
     knowsLanguage: buildKnownLanguages(),
     sameAs: [EXTERNAL_LINKS.gitHub, EXTERNAL_LINKS.linkedIn],
+    ...(currentJob && {
+      worksFor: { "@type": "Organization", name: tExp(currentJob.place) },
+    }),
   };
 
   return (
@@ -167,6 +190,7 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
             <SmoothScrollProvider>
               <ThemeProvider
                 {...THEME_CONFIG}
+                themeColor={THEME_COLORS}
                 transition={{
                   type: "fade",
                   duration: 300,
@@ -180,6 +204,8 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
                     <Cursor />
                     {children}
                   </SectionRefsProvider>
+                  <Analytics />
+                  <SpeedInsights />
                 </NextIntlClientProvider>
               </ThemeProvider>
             </SmoothScrollProvider>
