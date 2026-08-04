@@ -10,8 +10,7 @@ export default function ThemeChanger() {
   const t = useTranslations("Header");
   const { resolvedTheme, setTheme } = useTheme();
 
-  // O tema só é conhecido no cliente (o servidor renderiza estático), então o
-  // primeiro render precisa bater com o do servidor para não gerar mismatch.
+  // Renderiza a mudança de tema server-side, até comparar com o Virtual DOM
   const isHydrated = useIsHydrated();
   const isDark = isHydrated && resolvedTheme === "dark";
 

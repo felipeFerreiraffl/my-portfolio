@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
 import { CV_PATH } from "@/constants/elements";
 import { ICONS } from "@/constants/icons";
+import { useIntroPlayed } from "@/hooks/useIntroPlayed";
 import { Variants, m, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
@@ -27,7 +28,10 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const [contentVisible, setContentVisible] = useState(false);
+  
+  const introPlayed = useIntroPlayed();
+  const [contentVisible, setContentVisible] = useState(introPlayed);
+  const revealFrom = introPlayed ? "visible" : "hidden";
 
   const ringsScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
   const ringsOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
@@ -39,7 +43,11 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
 
   const circleVars: Variants = {
     hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "easeInOut" } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
   };
 
   const handleExpandComplete = () => {
@@ -48,21 +56,23 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
   };
 
   return (
-    <article ref={heroRef} className="relative w-full h-dvh grid place-items-center overflow-x-clip">
+    <article
+      ref={heroRef}
+      className="relative w-full h-dvh grid place-items-center overflow-x-clip">
       <m.div style={{ scale: ringsScale, opacity: ringsOpacity }}>
         <HeroRings onExpandComplete={handleExpandComplete} />
       </m.div>
 
       <m.div
         variants={circleVars}
-        initial="hidden"
+        initial={revealFrom}
         animate={contentVisible ? "visible" : "hidden"}
         className="absolute top-1/2 left-1/2 -translate-1/2 lg:size-[27dvw] size-[82dvw] bg-main/20 rounded-full blur-2xl shadow-main/30 z-1"
       />
 
       <m.div
         variants={contentVars}
-        initial="hidden"
+        initial={revealFrom}
         animate={contentVisible ? "visible" : "hidden"}
         className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
@@ -91,7 +101,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
 
       <m.button
         variants={contentVars}
-        initial="hidden"
+        initial={revealFrom}
         animate={contentVisible ? "visible" : "hidden"}
         onClick={() => scrollToSection("aboutMe")}
         className="cursor-pointer absolute bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center"

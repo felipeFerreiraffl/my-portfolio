@@ -1,7 +1,7 @@
 "use client";
 
 import { HERO_RINGS } from "@/constants/objects";
-import { markIntroSeen, useIntroSeen } from "@/hooks/useIntroSeen";
+import { useIntroPlayed } from "@/hooks/useIntroPlayed";
 import { cn } from "@/libs/cn";
 import { AnimatePresence, m, stagger, useReducedMotion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
@@ -18,12 +18,16 @@ const LOADING_DURATION = 800;
 
 export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   const prefersReducedMotion = useReducedMotion();
-  const introSeen = useIntroSeen();
-  const [phase, setPhase] = useState<"loading" | "expanded">("loading");
+  const introPlayed = useIntroPlayed();
+  const [loadingDone, setLoadingDone] = useState(false);
 
-  // Pula a intro para quem tem prefers-reduced-motion e para quem já a viu
-  // nesta aba (ex.: ao trocar de idioma, que remonta a tela inteira).
-  const skipIntro = prefersReducedMotion || introSeen;
+  // Pula a intro para quem pediu movimento reduzido e para quem apenas trocou
+  // de idioma — nesse caso a árvore remonta, mas a intro já rodou no documento.
+  const skipIntro = prefersReducedMotion || introPlayed;
+
+  // Derivada em vez de estado próprio: `prefersReducedMotion` só resolve depois
+  // da montagem, então a fase precisa reagir a ele sem um setState em efeito.
+  const phase = skipIntro || loadingDone ? "expanded" : "loading";
 
   const ringsContainerVars: Variants = {
     loading: {},
@@ -44,29 +48,38 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setPhase("expanded"), skipIntro ? 0 : LOADING_DURATION);
+    if (skipIntro) return;
+
+    const timeout = setTimeout(() => setLoadingDone(true), LOADING_DURATION);
     return () => clearTimeout(timeout);
   }, [skipIntro]);
 
   return (
     <div className="relative grid place-items-center z-1">
       <AnimatePresence>
-        {phase === "loading" && (
+        {phase === "loading" && !skipIntro && (
           <m.div
             key="center-dot"
-            animate={skipIntro ? undefined : { scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
+            animate={{ scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
             transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-            exit={{ scale: 0, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
+            exit={{
+              scale: 0,
+              opacity: 0,
+              transition: { duration: 0.3, ease: "easeIn" },
+            }}
             className="absolute size-5 rounded-full bg-main"
           />
         )}
       </AnimatePresence>
 
       {/* initial explícito: sem ele o motion não serializa o scale:0 no HTML
-          estático, e os anéis pintam expandidos antes de colapsar na hidratação */}
+          estático, e os anéis pintam expandidos antes de colapsar na hidratação.
+          `introPlayed` é sempre false no servidor e na hidratação, então o HTML
+          estático continua saindo com "loading" — só a troca de idioma cai no
+          "expanded", onde os anéis já nascem no lugar, sem animação nenhuma. */}
       <m.div
         variants={ringsContainerVars}
-        initial="loading"
+        initial={introPlayed ? "expanded" : "loading"}
         animate={phase}
         className="relative grid place-items-center">
         {HERO_RINGS.map((ring, i) => (
@@ -77,7 +90,6 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
             onAnimationComplete={(def) => {
               const isLastRing = i === HERO_RINGS.length - 1;
               if (def === "expanded" && isLastRing) {
-                markIntroSeen();
                 onExpandComplete?.();
               }
             }}
