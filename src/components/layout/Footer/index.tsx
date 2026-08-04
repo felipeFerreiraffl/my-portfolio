@@ -3,7 +3,7 @@
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import IconButton from "@/components/ui/IconButton";
-import { CURRENT_YEAR } from "@/constants/elements";
+import { COPYRIGHT_START_YEAR, CURRENT_YEAR } from "@/constants/elements";
 import { ICONS } from "@/constants/icons";
 import { EXTERNAL_LINKS, SKILLS_NAMES } from "@/constants/objects";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -64,10 +64,10 @@ export default function Footer() {
               {tSec("viewSocial")}
             </h3>
             <div className="flex items-center gap-5">
-              <a href={EXTERNAL_LINKS.gitHub} target="_blank" rel="noopener noreferer">
+              <a href={EXTERNAL_LINKS.gitHub} target="_blank" rel="noopener noreferrer">
                 <IconButton icon={ICONS.social.gitHub} aria-label={tAria("github")} />
               </a>
-              <a href={EXTERNAL_LINKS.linkedIn} target="_blank" rel="noopener noreferer">
+              <a href={EXTERNAL_LINKS.linkedIn} target="_blank" rel="noopener noreferrer">
                 <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
               </a>
               {isDesktop ? (
@@ -95,15 +95,20 @@ export default function Footer() {
             <h3 className="md:text-[2rem] text-xl font-bold leading-heading text-title">
               {tSec("viewFigma")}
             </h3>
-            <a href={EXTERNAL_LINKS.figma} target="_blank" rel="noopener noreferer">
+            <a href={EXTERNAL_LINKS.figma} target="_blank" rel="noopener noreferrer">
               <Button label={tBtn("figma")} />
             </a>
           </div>
         </div>
 
         <div className="w-full flex justify-between">
-          <span className="md:text-sm text-xs leading-body text-text">
-            Copyright &copy; 2026-{CURRENT_YEAR}
+          {/* suppressHydrationWarning: o HTML estático carrega o ano do build,
+              o cliente corrige para o ano corrente na virada de ano */}
+          <span className="md:text-sm text-xs leading-body text-text" suppressHydrationWarning>
+            Copyright &copy;{" "}
+            {CURRENT_YEAR > COPYRIGHT_START_YEAR
+              ? `${COPYRIGHT_START_YEAR}-${CURRENT_YEAR}`
+              : COPYRIGHT_START_YEAR}
           </span>
 
           <div className="flex items-center gap-3">

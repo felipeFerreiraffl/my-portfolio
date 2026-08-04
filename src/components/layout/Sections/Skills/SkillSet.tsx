@@ -68,7 +68,7 @@ export default function SkillSet({
       <div className={cn("lg:flex hidden items-center", reversed && "flex-row-reverse")}>
         <div className="w-15 border border-dashed border-main" />
 
-        <div className="relative grid place-items-center size size-32.5">
+        <div className="relative grid place-items-center size-32.5">
           <div className="absolute top-1/2 left-1/2 -translate-1/2 size-23 border border-main rotate-45" />
           <Icon
             icon={illustration.icon}

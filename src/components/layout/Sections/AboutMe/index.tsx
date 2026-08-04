@@ -70,7 +70,7 @@ export default function AboutMe({ ref }: SectionProps) {
         <AboutTopic variants={itemVars} title={tSec("presentation.title")}>
           <div className="flex flex-col items-center gap-3">
             <span className="text-base text-text leading-body">{tSec("presentation.span")}</span>
-            <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferer">
+            <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferrer">
               <Button label={tDef("curriculum")} />
             </a>
           </div>

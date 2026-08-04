@@ -1,5 +1,6 @@
 "use client";
 
+import CarouselDots from "@/components/ui/CarouselDots";
 import Icon from "@/components/ui/Icon";
 import Section from "@/components/ui/Section";
 import { SECTION_IDS } from "@/constants/elements";
@@ -18,6 +19,8 @@ export default function Experiences({ ref }: SectionProps) {
   const tAria = useTranslations("AriaLabels");
   // Abre no cargo atual (último do array), mantendo a linha do tempo cronológica
   const [emblaRef, emblaApi] = useEmblaCarousel({ startIndex: EXPERIENCES.length - 1 });
+
+  const experienceLabels = EXPERIENCES.map((exp) => tSec(exp.title));
 
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -52,7 +55,7 @@ export default function Experiences({ ref }: SectionProps) {
             className={cn(
               "z-90 absolute top-1/2 left-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
               "border-[1.5px] border-title rounded-full",
-              "opacity-0 -translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
+              "opacity-0 -translate-x-2 pointer-events-none transition-[opacity,translate] duration-300",
               "group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto",
             )}
             data-cursor-hover>
@@ -67,7 +70,7 @@ export default function Experiences({ ref }: SectionProps) {
             className={cn(
               "z-90 absolute top-1/2 right-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
               "border-[1.5px] border-title rounded-full",
-              "opacity-0 translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
+              "opacity-0 translate-x-2 pointer-events-none transition-[opacity,translate] duration-300",
               "group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto",
             )}
             data-cursor-hover>
@@ -86,7 +89,8 @@ export default function Experiences({ ref }: SectionProps) {
         </div>
       </div>
 
-      <ExperienceTimeline emblaApi={emblaApi} labels={EXPERIENCES.map((exp) => tSec(exp.title))} />
+      <ExperienceTimeline emblaApi={emblaApi} labels={experienceLabels} />
+      <CarouselDots emblaApi={emblaApi} labels={experienceLabels} />
     </Section>
   );
 }

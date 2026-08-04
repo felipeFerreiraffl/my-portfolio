@@ -1,6 +1,7 @@
 "use client";
 
 import { HERO_RINGS } from "@/constants/objects";
+import { markIntroSeen, useIntroSeen } from "@/hooks/useIntroSeen";
 import { cn } from "@/libs/cn";
 import { AnimatePresence, m, stagger, useReducedMotion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
@@ -17,13 +18,18 @@ const LOADING_DURATION = 800;
 
 export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
   const prefersReducedMotion = useReducedMotion();
+  const introSeen = useIntroSeen();
   const [phase, setPhase] = useState<"loading" | "expanded">("loading");
+
+  // Pula a intro para quem tem prefers-reduced-motion e para quem já a viu
+  // nesta aba (ex.: ao trocar de idioma, que remonta a tela inteira).
+  const skipIntro = prefersReducedMotion || introSeen;
 
   const ringsContainerVars: Variants = {
     loading: {},
     expanded: {
       transition: {
-        delayChildren: prefersReducedMotion ? 0 : stagger(0.15),
+        delayChildren: skipIntro ? 0 : stagger(0.15),
       },
     },
   };
@@ -33,16 +39,14 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
     expanded: {
       scale: 1,
       opacity: 1,
-      transition: { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" },
+      transition: { duration: skipIntro ? 0 : 0.8, ease: "easeInOut" },
     },
   };
 
-  // Sob prefers-reduced-motion a intro inteira é pulada: sem espera, sem stagger
-  // e sem trava de tela, para não prender quem tem sensibilidade vestibular.
   useEffect(() => {
-    const timeout = setTimeout(() => setPhase("expanded"), prefersReducedMotion ? 0 : LOADING_DURATION);
+    const timeout = setTimeout(() => setPhase("expanded"), skipIntro ? 0 : LOADING_DURATION);
     return () => clearTimeout(timeout);
-  }, [prefersReducedMotion]);
+  }, [skipIntro]);
 
   return (
     <div className="relative grid place-items-center z-1">
@@ -50,7 +54,7 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
         {phase === "loading" && (
           <m.div
             key="center-dot"
-            animate={prefersReducedMotion ? undefined : { scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
+            animate={skipIntro ? undefined : { scale: [1, 1.4, 1], opacity: [1, 0.55, 1] }}
             transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             exit={{ scale: 0, opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
             className="absolute size-5 rounded-full bg-main"
@@ -58,8 +62,11 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
         )}
       </AnimatePresence>
 
+      {/* initial explícito: sem ele o motion não serializa o scale:0 no HTML
+          estático, e os anéis pintam expandidos antes de colapsar na hidratação */}
       <m.div
         variants={ringsContainerVars}
+        initial="loading"
         animate={phase}
         className="relative grid place-items-center">
         {HERO_RINGS.map((ring, i) => (
@@ -70,6 +77,7 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
             onAnimationComplete={(def) => {
               const isLastRing = i === HERO_RINGS.length - 1;
               if (def === "expanded" && isLastRing) {
+                markIntroSeen();
                 onExpandComplete?.();
               }
             }}

@@ -19,7 +19,7 @@ export default function IconButton({ icon, tooltipLabel, className, ...props }: 
       <div
         className={cn(
           "absolute inset-0 border-2 border-main rounded-full scale-0 opacity-0",
-          "transition-[transform, opacity] duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100",
+          "transition-[scale,opacity] duration-300 ease-in-out group-hover:scale-100 group-hover:opacity-100",
         )}
       />
       <div

@@ -18,7 +18,7 @@ export default function Skills({ ref }: SectionProps) {
 
   return (
     <Section ref={ref} id={SECTION_IDS.skills} title={tSec("title")}>
-      <div className="flex flex-col gap-10 px-12">
+      <div className="flex flex-col gap-10 md:px-12 px-7">
         <div className="flex items-center gap-3">
           <Icon icon={ICONS.skills.star} className="size-8 text-star" />
           <span className="text-xl font-medium leading-heading text-gray">{tSec("mostUsed")}</span>

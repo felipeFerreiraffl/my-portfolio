@@ -19,7 +19,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
       <div
         className={cn(
           "absolute top-1/2 left-1/2 -translate-1/2 md:max-w-73 max-w-83 size-[92%] aspect-square border border-main rounded-full",
-          "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity, scale] duration-300 ease-in-out",
+          "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity,scale] duration-300 ease-in-out",
           "group-hover:opacity-100 group-hover:scale-100",
           "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
         )}
@@ -28,7 +28,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
         className={cn(
           "lg:block hidden absolute top-1/2 left-1/2 -translate-1/2 md:max-w-52 max-w-44 size-[65%] aspect-square",
           "bg-main/20 rounded-full shadow-project blur-[32px]",
-          "opacity-0 scale-0 transition-[opacity, scale] duration-300 ease-in-out",
+          "opacity-0 scale-0 transition-[opacity,scale] duration-300 ease-in-out",
           "group-hover:opacity-100 group-hover:scale-100",
           "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
         )}
@@ -39,7 +39,7 @@ export default function ProjectSet({ title, onClick }: ProjectSetProps) {
         <span
           className={cn(
             "md:text-base text-sm leading-body text-text",
-            "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity, scale] duration-300 ease-in-out",
+            "lg:opacity-0 lg:scale-0 opacity-100 scale-100 transition-[opacity,scale] duration-300 ease-in-out",
             "group-hover:opacity-100 group-hover:scale-100",
             "group-has-[:focus-visible]:opacity-100 group-has-[:focus-visible]:scale-100",
           )}>

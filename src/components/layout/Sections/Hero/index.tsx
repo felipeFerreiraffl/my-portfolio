@@ -64,10 +64,10 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
         animate={contentVisible ? "visible" : "hidden"}
         className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center gap-8 z-10">
         <div className="flex items-center gap-3">
-          <a href={EXTERNAL_LINKS.gitHub} target="_blank" rel="noopener noreferer">
+          <a href={EXTERNAL_LINKS.gitHub} target="_blank" rel="noopener noreferrer">
             <IconButton icon={ICONS.social.gitHub} aria-label={tAria("github")} />
           </a>
-          <a href={EXTERNAL_LINKS.linkedIn} target="_blank" rel="noopener noreferer">
+          <a href={EXTERNAL_LINKS.linkedIn} target="_blank" rel="noopener noreferrer">
             <IconButton icon={ICONS.social.linkedIn} aria-label={tAria("linkedin")} />
           </a>
         </div>
@@ -81,7 +81,7 @@ export default function Hero({ onRingsExpandComplete }: HeroProps) {
 
         <div className="flex flex-col items-center gap-1">
           <span className="text-xs text-text leading-body text-center">{tHero("workingNow")}</span>
-          <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferer">
+          <a href="/programmer_cv.pdf" target="_blank" rel="noopener noreferrer">
             <Button label={tDef("curriculum")} />
           </a>
         </div>

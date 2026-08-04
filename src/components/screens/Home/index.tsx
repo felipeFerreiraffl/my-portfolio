@@ -9,6 +9,7 @@ import Hero from "@/components/layout/Sections/Hero";
 import Projects from "@/components/layout/Sections/Projects";
 import Skills from "@/components/layout/Sections/Skills";
 import { useSectionRefs } from "@/contexts/sectionRefs.context";
+import { useIntroSeen } from "@/hooks/useIntroSeen";
 import { useLenis } from "lenis/react";
 import { Variants, m, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -18,17 +19,20 @@ export default function HomeScreen() {
   const { aboutMe, experiences, skills, projects } = registerSection;
   const [ringsExpanded, setRingsExpanded] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+  const introSeen = useIntroSeen();
   const lenis = useLenis();
 
-  // Trava a tela enquanto a intro roda, para que ela seja lida como um loading
+  // Trava a tela enquanto a intro roda, para que ela seja lida como um loading.
+  // Não trava (nem volta ao topo) quando a intro é pulada — trocar de idioma
+  // não pode arrancar o visitante da seção em que ele estava.
   useEffect(() => {
-    if (ringsExpanded || prefersReducedMotion || !lenis) return;
+    if (ringsExpanded || prefersReducedMotion || introSeen || !lenis) return;
 
     lenis.scrollTo(0, { immediate: true });
     lenis.stop();
 
     return () => lenis.start();
-  }, [lenis, ringsExpanded, prefersReducedMotion]);
+  }, [lenis, ringsExpanded, prefersReducedMotion, introSeen]);
 
   const revealVars: Variants = {
     hidden: { opacity: 0 },

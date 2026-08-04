@@ -121,7 +121,7 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
           className="relative md:w-[76dvw] w-[80dvw] max-h-[85dvh] h-full bg-bg border-[1.5px] border-main rounded-[40px] py-10 px-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:fill-mode-forwards duration-300 ease-in-out overflow-y-auto z-998">
           <button
             onClick={onOpenChange}
-            className="cursor-pointer absolute md:top-6 md:right-6 top-5 right-5 grid place-items-center md:size-7 size-5 border-[0.5] border-main rounded-full z-1000"
+            className="cursor-pointer absolute md:top-6 md:right-6 top-5 right-5 grid place-items-center md:size-7 size-5 border-[0.5px] border-main rounded-full z-1000"
             aria-label={tAria("close")}
             data-cursor-hover>
             <Icon icon={ICONS.closeX} className="md:size-4 size-3 text-text" />
@@ -179,10 +179,10 @@ export default function ProjectDetails({ data, open, onOpenChange }: ProjectDeta
 
               <div className="w-full flex flex-col items-center gap-3">
                 <div className="flex items-center gap-5">
-                  <a href={data.demoLink} target="_blank" rel="noopener noreferer">
+                  <a href={data.demoLink} target="_blank" rel="noopener noreferrer">
                     <Button label="Demo" disabled={!data.demoLink} />
                   </a>
-                  <a href={data.repoLink} target="_blank" rel="noopener noreferer">
+                  <a href={data.repoLink} target="_blank" rel="noopener noreferrer">
                     <Button label={tSec("repo")} />
                   </a>
                 </div>

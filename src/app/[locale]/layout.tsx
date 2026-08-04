@@ -14,7 +14,6 @@ import {
   buildOgLocale,
 } from "@/utils/seo.util";
 import { ThemeProvider } from "@teispace/next-themes";
-import { getThemeScript } from "@teispace/next-themes/server";
 import { domAnimation, LazyMotion, MotionConfig } from "motion/react";
 import { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -110,19 +109,20 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space_grotesk",
 });
 
+/**
+ * Sem `initialTheme`, o ThemeProvider injeta o script anti-FOUC ele mesmo (via
+ * useServerInsertedHTML) e resolve o tema antes do primeiro paint. Renderizar
+ * esse <script> à mão dispararia o aviso do React 19 "Encountered a script tag
+ * while rendering React component", porque ele não tem `type` de data block.
+ *
+ * Como nada é lido de cookie no servidor, a rota segue elegível para SSG.
+ */
 const THEME_CONFIG = {
   attribute: "class",
   themes: AVAILABLE_THEMES,
   defaultTheme: "light",
   enableSystem: false,
 } as const;
-
-/**
- * Script anti-FOUC gerado em tempo de build. Roda no <head>, antes do primeiro
- * paint, então o tema é aplicado sem flash — e sem ler cookie no servidor, o que
- * mantém a rota elegível para renderização estática.
- */
-const themeScript = getThemeScript(THEME_CONFIG);
 
 export default async function RootLayout({ children, params }: LocaleRoutingProps) {
   const { locale } = await params;
@@ -157,9 +157,6 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
       lang={HREFLANGS[locale] ?? locale}
       className={`${spaceGrotesk.className}`}
       suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <LazyMotion features={domAnimation}>
         <MotionConfig reducedMotion="user">
           <body>
@@ -170,7 +167,6 @@ export default async function RootLayout({ children, params }: LocaleRoutingProp
             <SmoothScrollProvider>
               <ThemeProvider
                 {...THEME_CONFIG}
-                noScript
                 transition={{
                   type: "fade",
                   duration: 300,

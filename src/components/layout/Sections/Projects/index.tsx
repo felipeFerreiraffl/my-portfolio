@@ -1,5 +1,6 @@
 "use client";
 
+import CarouselDots from "@/components/ui/CarouselDots";
 import Section from "@/components/ui/Section";
 import { SECTION_IDS } from "@/constants/elements";
 import { SectionProps } from "@/types/elements/elements.types";
@@ -67,7 +68,7 @@ export default function Projects({ ref }: SectionProps) {
               className={cn(
                 "z-90 absolute top-1/2 left-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
                 "border-[1.5px] border-title rounded-full",
-                "opacity-0 -translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
+                "opacity-0 -translate-x-2 pointer-events-none transition-[opacity,translate] duration-300",
                 "group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 group-hover/carousel:pointer-events-auto",
               )}
               data-cursor-hover>
@@ -82,7 +83,7 @@ export default function Projects({ ref }: SectionProps) {
               className={cn(
                 "z-90 absolute top-1/2 right-20 -translate-y-1/2 lg:grid hidden place-items-center size-12",
                 "border-[1.5px] border-title rounded-full",
-                "opacity-0 translate-x-2 pointer-events-none transition-[opacity, transform] duration-300",
+                "opacity-0 translate-x-2 pointer-events-none transition-[opacity,translate] duration-300",
                 "group-hover/carousel:opacity-100 group-hover/carousel:translate-x-0 group-hover/carousel:pointer-events-auto",
               )}
               data-cursor-hover>
@@ -116,6 +117,8 @@ export default function Projects({ ref }: SectionProps) {
             </div>
           </div>
         </div>
+
+        <CarouselDots emblaApi={emblaApi} labels={PROJECTS.map((p) => tSec(p.title))} />
       </Section>
 
       <ProjectDetails data={proj} open={open} onOpenChange={handleClose} />
