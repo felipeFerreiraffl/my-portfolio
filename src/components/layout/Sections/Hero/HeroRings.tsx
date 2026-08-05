@@ -71,12 +71,6 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
           />
         )}
       </AnimatePresence>
-
-      {/* initial explícito: sem ele o motion não serializa o scale:0 no HTML
-          estático, e os anéis pintam expandidos antes de colapsar na hidratação.
-          `introPlayed` é sempre false no servidor e na hidratação, então o HTML
-          estático continua saindo com "loading" — só a troca de idioma cai no
-          "expanded", onde os anéis já nascem no lugar, sem animação nenhuma. */}
       <m.div
         variants={ringsContainerVars}
         initial={introPlayed ? "expanded" : "loading"}
