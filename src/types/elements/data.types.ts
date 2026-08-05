@@ -34,7 +34,7 @@ export interface SkillIcon {
   icon: SVGIcon;
   label: string;
   isMostUsed?: boolean;
-  level: SkillLevel;
+  level?: SkillLevel;
 }
 
 export interface SkillsData {

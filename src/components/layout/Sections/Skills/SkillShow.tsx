@@ -10,6 +10,8 @@ interface SkillShowProps {
 
 export default function SkillShow({ data }: SkillShowProps) {
   const handleSkillLevel = (level: SkillLevel) => {
+    if (!level) return;
+
     switch (level) {
       case "basic":
         return <span className="size-1 rounded-full bg-main"></span>;
@@ -49,7 +51,7 @@ export default function SkillShow({ data }: SkillShowProps) {
   return (
     <div className="flex flex-col items-center gap-1">
       <Icon icon={data.icon} className="md:size-12 size-8 text-title" ariaLabel={data.label} />
-      <div className="flex items-center">{handleSkillLevel(data.level)}</div>
+      <div className="flex items-center">{handleSkillLevel(data.level ?? "basic")}</div>
 
       {data.isMostUsed && (
         <Icon
