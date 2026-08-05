@@ -26,7 +26,8 @@ export default function IconButton({ icon, tooltipLabel, className, ...props }: 
         className={cn(
           "p-2.5 md:p-3 grid place-items-center border border-title rounded-full text-title",
           "transition-colors duration-300 group-hover:text-main group-hover:border-main",
-        )}>
+        )}
+        tabIndex={-1}>
         <Icon icon={icon} label={tooltipLabel} className="size-5 md:size-8" />
       </div>
     </button>

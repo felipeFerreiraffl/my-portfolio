@@ -24,7 +24,6 @@ export default function Icon({ icon: Component, className, label, ariaLabel }: I
         focusable="false"
         className={cn("relative shrink-0", className)}
         aria-label={accessibleName}
-        tabIndex={-1}
       />
       {label && <Tooltip label={label} className="bottom-8 left-8" />}
     </>

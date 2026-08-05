@@ -21,9 +21,9 @@ export default function Skills({ ref }: SectionProps) {
       <div className="flex flex-col gap-10 md:px-12 px-7">
         <div className="w-full flex md:flex-row flex-col md:items-start items-center md:justify-between md:gap-0 gap-10">
           <div className="flex flex-col md:items-start items-center gap-2">
-            <h4 className="text-xl font-medium leading-heading text-text">
+            <h3 className="text-xl font-medium leading-heading text-text">
               {tSec("levels.title")}
-            </h4>
+            </h3>
             <div className="flex items-center gap-3 justify-evenly flex-wrap">
               <div className="min-w-20 flex flex-col items-center gap-1">
                 <span className="size-1 rounded-full bg-main"></span>
