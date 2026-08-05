@@ -32,6 +32,7 @@ interface SkillIcon {
   icon: SVGIcon;
   label: string;
   isMostUsed?: boolean;
+  level: "basic" | "intermediate" | "advanced" | "expert";
 }
 
 export interface SkillsData {

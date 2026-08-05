@@ -54,13 +54,15 @@ export default function SkillSet({
         className="max-w-95 h-full w-full aspect-square grid place-items-center lg:grid-cols-3 grid-cols-2 gap-y-5 gap-x-8 lg:py-25 py-9 px-15 border border-main rounded-full shrink-0">
         {skills.map((s) => (
           <div key={s.label} className="relative grid place-items-center md:size-16 size-12">
-            <Icon icon={s.icon} className="md:size-12 size-8 text-title" ariaLabel={s.label} />
-            {s.isMostUsed && (
-              <Icon
-                icon={ICONS.skills.star}
-                className="absolute md:-top-0.5 md:-right-0.5 -top-1 -right-1 md:size-6 size-4 text-star z-20"
-              />
-            )}
+            <div className="flex flex-col items-center gap-1">
+              <Icon icon={s.icon} className="md:size-12 size-8 text-title" ariaLabel={s.label} />
+              {s.isMostUsed && (
+                <Icon
+                  icon={ICONS.skills.star}
+                  className="absolute md:-top-0.5 md:-right-0.5 -top-1 -right-1 md:size-6 size-4 text-star z-20"
+                />
+              )}
+            </div>
           </div>
         ))}
       </div>
