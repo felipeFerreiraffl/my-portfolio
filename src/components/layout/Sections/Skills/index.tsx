@@ -19,9 +19,43 @@ export default function Skills({ ref }: SectionProps) {
   return (
     <Section ref={ref} id={SECTION_IDS.skills} title={tSec("title")}>
       <div className="flex flex-col gap-10 md:px-12 px-7">
-        <div className="flex items-center gap-3">
-          <Icon icon={ICONS.skills.star} className="size-8 text-star" />
-          <span className="text-xl font-medium leading-heading text-gray">{tSec("mostUsed")}</span>
+        <div className="w-full flex md:flex-row flex-col md:items-start items-center md:justify-between md:gap-0 gap-10">
+          <div className="flex flex-col md:items-start items-center gap-2">
+            <h4 className="text-xl font-medium leading-heading text-text">
+              {tSec("levels.title")}
+            </h4>
+            <div className="flex items-center gap-3 justify-evenly flex-wrap">
+              <div className="min-w-20 flex flex-col items-center gap-1">
+                <span className="size-1 rounded-full bg-main"></span>
+                <span className="text-sm leading-body text-text text-center">
+                  {tSec("levels.basic")}
+                </span>
+              </div>
+              <div className="min-w-20 flex flex-col items-center gap-1">
+                <span className="size-1 rounded-full bg-main"></span>
+                <span className="text-sm leading-body text-text text-center">
+                  {tSec("levels.intermediate")}
+                </span>
+              </div>
+              <div className="min-w-20 flex flex-col items-center gap-1">
+                <span className="size-1 rounded-full bg-main"></span>
+                <span className="text-sm leading-body text-text text-center">
+                  {tSec("levels.advanced")}
+                </span>
+              </div>
+              <div className="min-w-20 flex flex-col items-center gap-1">
+                <span className="size-1 rounded-full bg-main"></span>
+                <span className="text-sm leading-body text-text text-center">
+                  {tSec("levels.expert")}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Icon icon={ICONS.skills.star} className="size-6 text-star" />
+            <span className="text-base leading-heading text-gray">{tSec("mostUsed")}</span>
+          </div>
         </div>
 
         <div ref={containerRef} className="relative flex flex-col gap-25">

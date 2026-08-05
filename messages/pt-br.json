@@ -130,6 +130,13 @@
   "Skills": {
     "title": "Habilidades",
     "mostUsed": "Mais utilizadas",
+    "levels": {
+      "title": "Níveis",
+      "basic": "Básico",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado",
+      "expert": "Expert"
+    },
     "frontend": {
       "title": "Front-end",
       "alt": "Janela com símbolo de desenvolvimento — Front-end"

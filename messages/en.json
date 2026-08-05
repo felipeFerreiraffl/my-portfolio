@@ -130,6 +130,13 @@
   "Skills": {
     "title": "Skills",
     "mostUsed": "Most used",
+    "levels": {
+      "title": "Levels",
+      "basic": "Basic",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    },
     "frontend": {
       "title": "Front-end",
       "alt": "Window with development symbol — Front-end"
