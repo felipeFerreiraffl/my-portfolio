@@ -27,7 +27,8 @@ export default function SkillSet({
       className={cn(
         "relative lg:max-w-[60dvw] w-full mx-auto flex items-center flex-col lg:gap-0 gap-2",
         reversed ? "lg:flex-row-reverse lg:translate-x-[22%]" : "lg:flex-row",
-      )}>
+      )}
+      tabIndex={0}>
       <div className="flex flex-col w-full max-w-75">
         <h3
           className={cn(

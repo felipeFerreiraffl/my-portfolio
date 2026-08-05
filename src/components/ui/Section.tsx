@@ -11,7 +11,10 @@ interface SectionProps extends ComponentProps<"section"> {
 export default function Section({ className, children, title, ...props }: SectionProps) {
   // scroll-mt compensa o header fixo quando a seção é alvo de uma âncora
   return (
-    <section className={cn("w-full flex flex-col gap-16 py-15 scroll-mt-20", className)} {...props}>
+    <section
+      className={cn("w-full flex flex-col gap-16 py-15 scroll-mt-20", className)}
+      tabIndex={0}
+      {...props}>
       <SectionTitle title={title} />
 
       {children}

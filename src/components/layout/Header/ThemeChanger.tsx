@@ -16,10 +16,12 @@ export default function ThemeChanger() {
 
   return (
     <div
+      role="button"
       className={cn(
         "group relative cursor-pointer",
         "grid place-items-center md:size-12 size-8 border-main border-2 rounded-full",
       )}
+      tabIndex={0}
       data-cursor-hover>
       <div className="absolute top-1/2 left-1/2 -translate-1/2 md:size-10 size-5 border-main border-[1.5px] rounded-full shrink-0"></div>
       <div className="absolute top-1/2 left-1/2 -translate-1/2 md:size-4 size-2 border-main border-[1.5px] rounded-full transition-all duration-300 group-hover:size-7 shrink-0"></div>
