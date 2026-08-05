@@ -13,7 +13,7 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
   return (
     <ReactLenis
       root
-      options={{ duration: 1.2, smoothWheel: !prefersReducedMotion, wheelMultiplier: 1 }}>
+      options={{ duration: 1.4, smoothWheel: !prefersReducedMotion, wheelMultiplier: 0.8 }}>
       {children}
     </ReactLenis>
   );
