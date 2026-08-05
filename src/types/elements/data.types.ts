@@ -28,10 +28,13 @@ export interface ExperienceData {
   skills: string[];
 }
 
-interface SkillIcon {
+export type SkillLevel = "basic" | "intermediate" | "advanced" | "expert";
+
+export interface SkillIcon {
   icon: SVGIcon;
   label: string;
   isMostUsed?: boolean;
+  level?: SkillLevel;
 }
 
 export interface SkillsData {

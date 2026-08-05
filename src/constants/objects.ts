@@ -24,19 +24,19 @@ export const HERO_RINGS: HeroRingData[] = [
     borderWidth: 1,
     borderStyle: "dashed",
     sizeVar: "--ring-dashed-size",
-    className: cn("lg:[--ring-dashed-size:65dvw] [--ring-dashed-size:164dvw]"),
+    className: cn("lg:[--ring-dashed-size:65dvw] [--ring-dashed-size:120dvw]"),
   },
   {
     id: "inner-1",
     borderWidth: 2.5,
     sizeVar: "--ring-inner-1-size",
-    className: cn("lg:[--ring-inner-1-size:47dvw] [--ring-inner-1-size:108dvw]"),
+    className: cn("lg:[--ring-inner-1-size:47dvw] [--ring-inner-1-size:88dvw]"),
   },
   {
     id: "inner-2",
     borderWidth: 1.5,
     sizeVar: "--ring-inner-2-size",
-    className: cn("lg:[--ring-inner-2-size:49dvw] [--ring-inner-2-size:164dvw]"),
+    className: cn("lg:[--ring-inner-2-size:49dvw] [--ring-inner-2-size:92dvw]"),
   },
   {
     id: "outer-1",

@@ -16,6 +16,7 @@ export default function ThemeChanger() {
 
   return (
     <div
+      role="button"
       className={cn(
         "group relative cursor-pointer",
         "grid place-items-center md:size-12 size-8 border-main border-2 rounded-full",
@@ -31,6 +32,7 @@ export default function ThemeChanger() {
         onClick={() => setTheme(isDark ? "light" : "dark")}
         aria-label={isDark ? t("tooltips.theme.light") : t("tooltips.theme.dark")}
         className="absolute inset-0 rounded-full cursor-pointer"
+        tabIndex={0}
       />
 
       <Tooltip

@@ -75,7 +75,7 @@ export default function HeroRings({ onExpandComplete }: HeroRingsProps) {
         variants={ringsContainerVars}
         initial={introPlayed ? "expanded" : "loading"}
         animate={phase}
-        className="relative grid place-items-center">
+        className="relative grid place-items-center opacity-40">
         {HERO_RINGS.map((ring, i) => (
           <m.div
             key={ring.id}
