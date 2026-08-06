@@ -37,3 +37,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# vscode
+/.vscode
+
+# claude
+.claude/gsd-core/
+.claude/hooks/
+.claude/scripts/
+.claude/agents/gsd*
+.claude/commands/gsd*
+.claude/package.json
+.claude/gsd*
+.claude/.gsd*
+.claude/*local*
+.planning/
+
+# graphify
+graphify-out/

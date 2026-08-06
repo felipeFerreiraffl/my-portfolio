@@ -4,15 +4,12 @@
     padding: 0;
     list-style: none;
     background: none;
-    outline: none;
     border: none;
     box-sizing: border-box;
     text-decoration: none;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  /* Sem scroll-behavior aqui: o Lenis é o dono do scroll e os dois conflitam */
 
   body {
     position: relative;
@@ -24,25 +21,62 @@
     font: var(--font-space_grotesk);
   }
 
-  :root {
-    --bg: var(--color-light-bg);
-    --gray: var(--color-light-gray);
-    --main: var(--color-light-main);
-    --title: var(--color-light-title);
-    --study: var(--color-light-study);
-    --work: var(--color-light-work);
-    --star: var(--color-star);
+  @variant dark {
+    --color-bg: oklch(6.04% 0.03368 292.484);
+    --color-gray: oklch(82.088% 0.00999 298.955);
+    --color-main: oklch(69.329% 0.13888 291.439);
+    --color-circle: oklch(85.038% 0.067 294.458);
+    --color-title: oklch(85.038% 0.067 294.458);
+    --color-text: oklch(97.315% 0.00011 271.152);
+    --color-work: oklch(77.05% 0.17314 149.495);
+    --color-study: oklch(65.98% 0.19317 19.511);
+    --color-star: oklch(79.162% 0.15882 84.563);
+
+    --shadow-project: 0 0 60px rgba(158, 139, 235, 0.3);
   }
 
-  @variant dark {
-    :root {
-      --bg: var(--color-dark-bg);
-      --gray: var(--color-dark-gray);
-      --main: var(--color-dark-main);
-      --title: var(--color-dark-title);
-      --study: var(--color-dark-study);
-      --work: var(--color-dark-work);
-      --star: var(--color-star);
+  /* Lógicas especiais */
+
+  /* Anel de foco visível apenas na navegação por teclado */
+  *:focus-visible {
+    outline: 2px solid var(--color-main);
+    outline-offset: 2px;
+  }
+
+  /* Esconde o cursor nativo somente onde o cursor customizado é renderizado (lg+) */
+  @media (pointer: fine) and (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
     }
+  }
+
+  /* Respeita quem pediu menos movimento (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: var(--color-bg);
+    border-radius: 20px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-main);
+    border: 2px solid var(--color-bg);
+    border-radius: 20px;
   }
 }

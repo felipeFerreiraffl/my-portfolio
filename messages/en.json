@@ -1,0 +1,213 @@
+{
+  "Meta": {
+    "title": "Portfolio — {name}",
+    "titleTemplate": "%s — {name}",
+    "description": "Professional portfolio made by Felipe Ferreira to show my skills, experiences and projects",
+    "siteName": "{name} — Portfolio",
+    "keywords": "front-end developer, web developer, portfolio, React, Next.js, TypeScript, Tailwind CSS, user interface, Felipe Ferreira",
+    "ogAlt": "Portfolio cover of {name}, front-end developer",
+    "ogTagline": "Skills, experiences and projects"
+  },
+  "ButtonLabels": {
+    "curriculum": "Curriculum",
+    "figma": "View Figma Design"
+  },
+  "AriaLabels": {
+    "github": "Check GitHub",
+    "linkedin": "Check LinkedIn",
+    "prev": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "mail": {
+      "desktop": "Copy email",
+      "mobile": "Send email",
+      "copy": "Email copied successfully"
+    }
+  },
+  "Date": {
+    "current": "Current",
+    "months": {
+      "jan": "Jan.",
+      "feb": "Feb.",
+      "mar": "Mar.",
+      "apr": "Apr.",
+      "may": "May",
+      "jun": "Jun.",
+      "jul": "Jul.",
+      "aug": "Aug.",
+      "sep": "Sep.",
+      "oct": "Oct.",
+      "nov": "Nov.",
+      "dec": "Dec."
+    }
+  },
+  "Header": {
+    "tooltips": {
+      "theme": {
+        "light": "Switch to light mode",
+        "dark": "Switch to dark mode"
+      },
+      "language": {
+        "ptBr": "Switch to PT-BR",
+        "en": "Switch to EN"
+      }
+    },
+    "nav": {
+      "aboutMe": "About me",
+      "experiences": "Experiences",
+      "skills": "Skills",
+      "projects": "Projects"
+    }
+  },
+  "Hero": {
+    "role": "Front-end Developer",
+    "workingNow": "Currently working",
+    "scrollDown": "Continue"
+  },
+  "AboutMe": {
+    "title": "About me",
+    "hobbies": {
+      "title": "Hobbies",
+      "icons": {
+        "football": "Football",
+        "games": "Games",
+        "animesMangas": "Animes & Mangas"
+      }
+    },
+    "goals": {
+      "title": "Goals",
+      "body": {
+        "topic1": "Become a mid-level/senior front-end developer",
+        "topic2": "Learn more about the IT field as a whole",
+        "topic3": "Start studying game programming and design"
+      }
+    },
+    "presentation": {
+      "title": "Presentation",
+      "span": "Click below to see more details of my journey"
+    }
+  },
+  "Experiences": {
+    "title": "Experiences",
+    "academicTag": "Academic",
+    "workTag": "Professional",
+    "descriptionTitle": "Description",
+    "skillsTitle": "Skills",
+    "exp_1": {
+      "title": "System Development Technician",
+      "place": "SENAI Swiss-Brazilian Paulo Ernesto Tolle",
+      "description": "Technical course covering system development fundamentals, like front-end, back-end, SQL database, networking, hardware, etc. Otaku content search and chat final project was done.",
+      "skills": {
+        "ski_1": "Full-Stack Development",
+        "ski_2": "Networking",
+        "ski_3": "Hardware Fundamentals",
+        "ski_4": "Office Package"
+      }
+    },
+    "exp_2": {
+      "title": "Vehicular Production Mechanic",
+      "place": "SENAI Mercedes-Benz Brazil",
+      "description": "Industrial learning course/internship in automotive mechanics field. As extracurriculum activities, maintenance on work computers was done, including organization, building and formatting on them.",
+      "skills": {
+        "ski_1": "Teamwork",
+        "ski_2": "Attention to details"
+      }
+    },
+    "exp_3": {
+      "title": "Junior Software Developer",
+      "place": "M. Shimizu",
+      "description": "Front-end focused development, with interface building, performance/SEO checking and best practices in coding, structure and organization.",
+      "skills": {
+        "ski_1": "HTML",
+        "ski_2": "CSS",
+        "ski_3": "Javascript",
+        "ski_4": "Typescript",
+        "ski_5": "Next.js",
+        "ski_6": "TailwindCSS"
+      }
+    }
+  },
+  "Skills": {
+    "title": "Skills",
+    "mostUsed": "Most used",
+    "levels": {
+      "title": "Levels",
+      "basic": "Basic",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    },
+    "frontend": {
+      "title": "Front-end",
+      "alt": "Window with development symbol — Front-end"
+    },
+    "backend": {
+      "title": "Back-end",
+      "alt": "Server — Back-end"
+    },
+    "tools": {
+      "title": "Tools",
+      "alt": "Tools bar — Tools"
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "seeProj": "View project",
+    "techsTitle": "Technologies",
+    "featTitle": "Features",
+    "repo": "Repository",
+    "data": {
+      "proj_1": {
+        "title": "Math Calculations",
+        "desc": "Math Calculations is a React SPA (built with Create React App), designed as a portfolio project. It works as a calculator hub: the user navigates through Math, Physics, BMI, and Interest routes, each with its own operation and result screen, plus About and Contact pages. Deployed on Vercel.",
+        "features": {
+          "feat_1": "Math and physics operations",
+          "feat_2": "BMI",
+          "feat_3": "Simple and compound interest",
+          "feat_4": "SPA navigation"
+        }
+      },
+      "proj_2": {
+        "title": "Anime & Manga Info",
+        "desc": "Anime & Manga Info is a React SPA that consumes the public Kitsu API to display anime and manga catalogs. It features a home screen to choose between anime/manga, a content page with carousels (popular, top rated, current season, recent), genre-based search, a details page, and a contact screen. Deployed on Vercel.",
+        "features": {
+          "feat_1": "External API consumption",
+          "feat_2": "Anime and manga catalog",
+          "feat_3": "Multiple filters",
+          "feat_4": "Pagination",
+          "feat_5": "Carousels",
+          "feat_6": "Loading screen",
+          "feat_7": "Responsiveness"
+        }
+      },
+      "proj_3": {
+        "title": "Library CRUD",
+        "desc": "Library CRUD is a full-stack book registration project, styled as a library system. Backend built with Spring Boot, exposing a REST API (/livraria) with MySQL persistence via JPA; frontend built with React consuming that API. No live demo — the repository runs locally (backend + MySQL + frontend, run separately).",
+        "features": {
+          "feat_1": "Full CRUD",
+          "feat_2": "Book management",
+          "feat_3": "REST API",
+          "feat_4": "Data validation with Bean Validation",
+          "feat_5": "DTO pattern"
+        }
+      }
+    },
+    "imageAlt": "Screenshot {index} of {total} of the {title} project",
+    "fallbackAlt": "Visual preview unavailable for the {title} project"
+  },
+  "Footer": {
+    "heading": "Thanks for your attention",
+    "viewSocial": "Check my social medias",
+    "viewFigma": "Design made in Figma"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The address you visited does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred while loading this page.",
+    "retry": "Try again"
+  }
+}
