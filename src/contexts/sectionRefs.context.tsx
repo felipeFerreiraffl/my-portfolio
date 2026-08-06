@@ -5,7 +5,16 @@ import { SectionKey } from "@/types/elements/elements.types";
 import { handleScrollToSection } from "@/utils/handlers.util";
 import { useLenis } from "lenis/react";
 import { useReducedMotion } from "motion/react";
-import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 type SectionRegistry = Record<SectionKey, (node: HTMLElement | null) => void>;
 
@@ -110,10 +119,7 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     [lenis, prefersReducedMotion],
   );
 
-  const value = useMemo(
-    () => ({ registerSection, scrollToSection, activeSec }),
-    [registerSection, scrollToSection, activeSec],
-  );
+  const value = (() => ({ registerSection, scrollToSection, activeSec }))();
 
   return <SectionRefsContext.Provider value={value}>{children}</SectionRefsContext.Provider>;
 };
