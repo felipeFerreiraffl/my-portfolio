@@ -22,7 +22,8 @@
       "desktop": "Copiar e-mail",
       "mobile": "Enviar e-mail",
       "copy": "E-mail copiado com sucesso"
-    }
+    },
+    "scrollUp": "Navegar ao início"
   },
   "Date": {
     "current": "Atual",

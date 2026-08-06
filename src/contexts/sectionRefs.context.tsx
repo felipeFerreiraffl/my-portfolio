@@ -5,7 +5,16 @@ import { SectionKey } from "@/types/elements/elements.types";
 import { handleScrollToSection } from "@/utils/handlers.util";
 import { useLenis } from "lenis/react";
 import { useReducedMotion } from "motion/react";
-import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 type SectionRegistry = Record<SectionKey, (node: HTMLElement | null) => void>;
 
@@ -68,8 +77,8 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
-  // Refs de callback estáveis: registram a seção assim que ela monta, sem observar o DOM inteiro
-  const registerSection = useMemo(() => {
+  // Registro de seção ao aparecer na tela sem consultar o DOM
+  const registerSection = (() => {
     const entries = SECTION_KEYS.map((key) => {
       const setNode = (node: HTMLElement | null) => {
         const prev = nodesRef.current.get(key);
@@ -89,7 +98,7 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     });
 
     return Object.fromEntries(entries) as SectionRegistry;
-  }, []);
+  })();
 
   // O Lenis é o dono do scroll: chamar window.scrollTo aqui brigaria com ele
   const scrollToSection = useCallback(
@@ -110,10 +119,7 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     [lenis, prefersReducedMotion],
   );
 
-  const value = useMemo(
-    () => ({ registerSection, scrollToSection, activeSec }),
-    [registerSection, scrollToSection, activeSec],
-  );
+  const value = (() => ({ registerSection, scrollToSection, activeSec }))();
 
   return <SectionRefsContext.Provider value={value}>{children}</SectionRefsContext.Provider>;
 };

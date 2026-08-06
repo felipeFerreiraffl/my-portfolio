@@ -14,10 +14,10 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   return (
     <main className="w-full min-h-dvh grid place-items-center md:px-12 px-7">
       <div className="flex flex-col items-center gap-8 text-center">
-        <div className="flex items-center gap-3">
-          <div className="size-3 bg-main rotate-45" />
+        <div className="relative grid place-items-center">
           <span className="md:text-[5rem] text-6xl font-bold leading-heading text-main">!</span>
-          <div className="size-3 bg-main rotate-45" />
+          <div className="absolute left-1/2 top-1/2 -translate-1/2 size-24 border-[1.5px] border-main rounded-full" />
+          <div className="absolute left-1/2 top-1/2 -translate-1/2 size-28 border border-main border-dashed rounded-full" />
         </div>
 
         <div className="flex flex-col items-center gap-2">

@@ -22,7 +22,8 @@
       "desktop": "Copy email",
       "mobile": "Send email",
       "copy": "Email copied successfully"
-    }
+    },
+    "scrollUp": "Scroll to start"
   },
   "Date": {
     "current": "Current",
