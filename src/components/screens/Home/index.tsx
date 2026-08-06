@@ -14,7 +14,7 @@ import { markIntroPlayed, useIntroPlayed } from "@/hooks/useIntroPlayed";
 import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useLenis } from "lenis/react";
 import { Variants, m, useReducedMotion } from "motion/react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HomeScreen() {
   const { registerSection } = useSectionRefs();

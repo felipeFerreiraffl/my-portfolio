@@ -1,5 +1,6 @@
 import Button from "@/components/ui/Button";
 import { Link } from "@/libs/i18n/navigation";
+import "@/styles/globals.css";
 import { useTranslations } from "next-intl";
 
 export default function NotFound() {

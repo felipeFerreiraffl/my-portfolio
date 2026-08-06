@@ -77,8 +77,8 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
-  // Refs de callback estáveis: registram a seção assim que ela monta, sem observar o DOM inteiro
-  const registerSection = useMemo(() => {
+  // Registro de seção ao aparecer na tela sem consultar o DOM
+  const registerSection = (() => {
     const entries = SECTION_KEYS.map((key) => {
       const setNode = (node: HTMLElement | null) => {
         const prev = nodesRef.current.get(key);
@@ -98,7 +98,7 @@ export const SectionRefsProvider = ({ children }: { children: ReactNode }) => {
     });
 
     return Object.fromEntries(entries) as SectionRegistry;
-  }, []);
+  })();
 
   // O Lenis é o dono do scroll: chamar window.scrollTo aqui brigaria com ele
   const scrollToSection = useCallback(
