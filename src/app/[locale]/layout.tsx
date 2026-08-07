@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: LocaleMetadataProps): Promise
     notFound();
   }
 
-  // The locale is passed explicitly so the route stays eligible for static rendering.
   const t = await getTranslations({ locale, namespace: "Meta" });
 
   const title = t("title", { name: SITE_AUTHOR.name });
