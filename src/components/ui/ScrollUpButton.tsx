@@ -45,14 +45,16 @@ export default function ScrollUpButton({ isVisible }: ScrollUpButtonProps) {
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       className={cn(
-        "group fixed left-1/2 bottom-10 -translate-x-1/2 grid place-items-center size-12 bg-main/20 border border-main rounded-full backdrop-blur-lg z-999 transition-colors duration-300 hover:bg-main/40",
+        "group fixed left-1/2 md:bottom-10 bottom-30 -translate-x-1/2",
+        "grid place-items-center md:size-12 size-9 bg-main/20 border border-main rounded-full",
+        "backdrop-blur-lg z-999 transition-colors duration-300 hover:bg-main/40",
         !isVisible && "pointer-events-none",
       )}
       aria-label={tAria("scrollUp")}
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
       data-cursor-hover>
-      <Icon icon={ICONS.arrows.up} className="size-6 text-title" />
+      <Icon icon={ICONS.arrows.up} className="md:size-6 size-4 text-title" />
 
       <Tooltip label={tAria("scrollUp")} className="-top-8 left-12" />
     </m.button>
