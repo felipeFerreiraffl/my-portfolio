@@ -4,12 +4,7 @@
 
 Portfólio pessoal de um desenvolvedor front-end, construído como uma experiência bilíngue e animada em página única.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Motion](https://img.shields.io/badge/Motion-12-FFF116?style=for-the-badge&logo=framer&logoColor=black)](https://motion.dev/)
-[![next-intl](https://img.shields.io/badge/next--intl-4-EC4899?style=for-the-badge&logo=googletranslate&logoColor=white)](https://next-intl.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/) [![Motion](https://img.shields.io/badge/Motion-12-FFF116?style=for-the-badge&logo=framer&logoColor=black)](https://motion.dev/) [![next-intl](https://img.shields.io/badge/next--intl-4-EC4899?style=for-the-badge&logo=googletranslate&logoColor=white)](https://next-intl.dev/)
 
 [English](./README.md) · **Português**
 
@@ -100,18 +95,18 @@ rolagem suave, navegação ciente da seção ativa e carrosséis para experiênc
 
 ## Tecnologias
 
-| Área | Tecnologias |
-|---|---|
-| Framework | [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/) |
-| Linguagem | [TypeScript 5](https://www.typescriptlang.org/) (modo estrito) |
-| Estilização | [Tailwind CSS 4](https://tailwindcss.com/), PostCSS, `tw-animate-css`, `clsx` + `tailwind-merge` |
-| Internacionalização | [next-intl 4](https://next-intl.dev/) |
-| Animação e rolagem | [Motion 12](https://motion.dev/), [Lenis](https://lenis.darkroom.engineering/), [Embla Carousel](https://www.embla-carousel.com/) (+ plugins de autoplay e fade) |
-| Temas | `@teispace/next-themes` |
-| Ícones e assets | [Phosphor Icons](https://phosphoricons.com/), [Simple Icons](https://simpleicons.org/), [Devicons](https://devicon.dev/), SVGR |
-| Tipografia | Space Grotesk via `next/font/google` |
-| Analytics | Vercel Analytics, Vercel Speed Insights |
-| Ferramentas | ESLint 9 (`eslint-config-next`), plugin Babel do React Compiler |
+| Área                | Tecnologias                                                                                                                                                      |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework           | [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/)                                                                                   |
+| Linguagem           | [TypeScript 5](https://www.typescriptlang.org/) (modo estrito)                                                                                                   |
+| Estilização         | [Tailwind CSS 4](https://tailwindcss.com/), PostCSS, `tw-animate-css`, `clsx` + `tailwind-merge`                                                                 |
+| Internacionalização | [next-intl 4](https://next-intl.dev/)                                                                                                                            |
+| Animação e rolagem  | [Motion 12](https://motion.dev/), [Lenis](https://lenis.darkroom.engineering/), [Embla Carousel](https://www.embla-carousel.com/) (+ plugins de autoplay e fade) |
+| Temas               | `@teispace/next-themes`                                                                                                                                          |
+| Ícones e assets     | [Phosphor Icons](https://phosphoricons.com/), [Simple Icons](https://simpleicons.org/), SVGR                                                                     |
+| Tipografia          | Space Grotesk via `next/font/google`                                                                                                                             |
+| Analytics           | Vercel Analytics, Vercel Speed Insights                                                                                                                          |
+| Ferramentas         | ESLint 9 (`eslint-config-next`), plugin Babel do React Compiler                                                                                                  |
 
 ## Como começar
 
@@ -139,20 +134,20 @@ detectado (`/pt-br` ou `/en`).
 
 ### Scripts
 
-| Script | O que faz |
-|---|---|
-| `npm run dev` | Inicia o servidor de desenvolvimento |
-| `npm run build` | Cria o build de produção |
-| `npm run start` | Serve o build de produção |
-| `npm run lint` | Executa o ESLint sobre o código |
+| Script          | O que faz                            |
+| --------------- | ------------------------------------ |
+| `npm run dev`   | Inicia o servidor de desenvolvimento |
+| `npm run build` | Cria o build de produção             |
+| `npm start` | Serve o build de produção            |
+| `npm run lint`  | Executa o ESLint sobre o código      |
 
 ### Variáveis de ambiente
 
 Nenhuma é obrigatória para rodar o projeto localmente.
 
-| Variável | Obrigatória | Finalidade |
-|---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Opcional | URL base absoluta usada em links canônicos, alternativas `hreflang`, imagens de Open Graph e no sitemap. Recorre à URL de produção da Vercel e, em seguida, a `http://localhost:3000`. |
+| Variável               | Obrigatória | Finalidade                                                                                                                                                                             |
+| ---------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | Opcional    | URL base absoluta usada em links canônicos, alternativas `hreflang`, imagens de Open Graph e no sitemap. Recorre à URL de produção da Vercel e, em seguida, a `http://localhost:3000`. |
 
 ## Estrutura do projeto
 
@@ -179,13 +174,13 @@ ficar — está em [`docs/folder-structure.md`](./docs/folder-structure.md).
 
 ## Documentação
 
-O repositório mantém dois documentos de referência. Eles formam um par: um responde *como as
-coisas são nomeadas*, o outro responde *onde as coisas ficam*.
+O repositório mantém dois documentos de referência. Eles formam um par: um responde _como as
+coisas são nomeadas_, o outro responde _onde as coisas ficam_.
 
-| Documento | Cobre |
-|---|---|
-| [`docs/convention.md`](./docs/convention.md) | Convenções de nomenclatura — regras de caixa para variáveis, constantes, funções, componentes, hooks, utils, assets e nomes de arquivo, com exemplos retirados do código e as exceções documentadas. |
-| [`docs/folder-structure.md`](./docs/folder-structure.md) | Organização de pastas — o modelo por tipo/por funcionalidade, o que cada pasta de `src/`, `messages/` e `public/` guarda, e um guia de "Where to Add New Code". |
+| Documento                                                | Cobre                                                                                                                                                                                                |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`docs/convention.md`](./docs/convention.md)             | Convenções de nomenclatura — regras de caixa para variáveis, constantes, funções, componentes, hooks, utils, assets e nomes de arquivo, com exemplos retirados do código e as exceções documentadas. |
+| [`docs/folder-structure.md`](./docs/folder-structure.md) | Organização de pastas — o modelo por tipo/por funcionalidade, o que cada pasta de `src/`, `messages/` e `public/` guarda, e um guia de "Where to Add New Code".                                      |
 
 > Os dois documentos são escritos em inglês, seguindo o padrão do projeto para documentação
 > técnica.

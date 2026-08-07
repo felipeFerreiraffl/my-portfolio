@@ -4,12 +4,7 @@
 
 Personal portfolio of a front-end developer, built as a bilingual, animated single-page experience.
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Motion](https://img.shields.io/badge/Motion-12-FFF116?style=for-the-badge&logo=framer&logoColor=black)](https://motion.dev/)
-[![next-intl](https://img.shields.io/badge/next--intl-4-EC4899?style=for-the-badge&logo=googletranslate&logoColor=white)](https://next-intl.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/) [![Motion](https://img.shields.io/badge/Motion-12-FFF116?style=for-the-badge&logo=framer&logoColor=black)](https://motion.dev/) [![next-intl](https://img.shields.io/badge/next--intl-4-EC4899?style=for-the-badge&logo=googletranslate&logoColor=white)](https://next-intl.dev/)
 
 **English** · [Português](./README.pt-BR.md)
 
@@ -98,18 +93,18 @@ scrolling, section-aware navigation, and carousels for experiences and projects.
 
 ## Tech stack
 
-| Area | Technologies |
-|---|---|
-| Framework | [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/) |
-| Language | [TypeScript 5](https://www.typescriptlang.org/) (strict mode) |
-| Styling | [Tailwind CSS 4](https://tailwindcss.com/), PostCSS, `tw-animate-css`, `clsx` + `tailwind-merge` |
-| Internationalization | [next-intl 4](https://next-intl.dev/) |
-| Animation & scroll | [Motion 12](https://motion.dev/), [Lenis](https://lenis.darkroom.engineering/), [Embla Carousel](https://www.embla-carousel.com/) (+ autoplay and fade plugins) |
-| Theming | `@teispace/next-themes` |
-| Icons & assets | [Phosphor Icons](https://phosphoricons.com/), [Simple Icons](https://simpleicons.org/), [Devicons](https://devicon.dev/), SVGR |
-| Typography | Space Grotesk via `next/font/google` |
-| Analytics | Vercel Analytics, Vercel Speed Insights |
-| Tooling | ESLint 9 (`eslint-config-next`), Babel React Compiler plugin |
+| Area                 | Technologies                                                                                                                                                    |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework            | [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/)                                                                                  |
+| Language             | [TypeScript 5](https://www.typescriptlang.org/) (strict mode)                                                                                                   |
+| Styling              | [Tailwind CSS 4](https://tailwindcss.com/), PostCSS, `tw-animate-css`, `clsx` + `tailwind-merge`                                                                |
+| Internationalization | [next-intl 4](https://next-intl.dev/)                                                                                                                           |
+| Animation & scroll   | [Motion 12](https://motion.dev/), [Lenis](https://lenis.darkroom.engineering/), [Embla Carousel](https://www.embla-carousel.com/) (+ autoplay and fade plugins) |
+| Theming              | `@teispace/next-themes`                                                                                                                                         |
+| Icons & assets       | [Phosphor Icons](https://phosphoricons.com/), [Simple Icons](https://simpleicons.org/), SVGR                                                                    |
+| Typography           | Space Grotesk via `next/font/google`                                                                                                                            |
+| Analytics            | Vercel Analytics, Vercel Speed Insights                                                                                                                         |
+| Tooling              | ESLint 9 (`eslint-config-next`), Babel React Compiler plugin                                                                                                    |
 
 ## Getting started
 
@@ -137,20 +132,12 @@ locale (`/pt-br` or `/en`).
 
 ### Scripts
 
-| Script | What it does |
-|---|---|
-| `npm run dev` | Starts the development server |
-| `npm run build` | Creates the production build |
-| `npm run start` | Serves the production build |
-| `npm run lint` | Runs ESLint over the codebase |
-
-### Environment variables
-
-None are required to run the project locally.
-
-| Variable | Required | Purpose |
-|---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Optional | Absolute base URL used for canonical links, `hreflang` alternates, Open Graph images and the sitemap. Falls back to the Vercel production URL, then to `http://localhost:3000`. |
+| Script          | What it does                  |
+| --------------- | ----------------------------- |
+| `npm run dev`   | Starts the development server |
+| `npm run build` | Creates the production build  |
+| `npm start`     | Serves the production build   |
+| `npm run lint`  | Runs ESLint over the codebase |
 
 ## Project structure
 
@@ -177,13 +164,13 @@ go — lives in [`docs/folder-structure.md`](./docs/folder-structure.md).
 
 ## Documentation
 
-The repository carries two reference documents. They are a pair: one answers *how things are
-named*, the other answers *where things live*.
+The repository carries two reference documents. They are a pair: one answers _how things are
+named_, the other answers _where things live_.
 
-| Document | Covers |
-|---|---|
-| [`docs/convention.md`](./docs/convention.md) | Naming conventions — case rules for variables, constants, functions, components, hooks, utils, assets and file names, with examples from the source and the documented exceptions. |
-| [`docs/folder-structure.md`](./docs/folder-structure.md) | Folder organization — the type-based/feature-based model, what each folder under `src/`, `messages/` and `public/` holds, and a "Where to Add New Code" guide. |
+| Document                                                 | Covers                                                                                                                                                                             |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`docs/convention.md`](./docs/convention.md)             | Naming conventions — case rules for variables, constants, functions, components, hooks, utils, assets and file names, with examples from the source and the documented exceptions. |
+| [`docs/folder-structure.md`](./docs/folder-structure.md) | Folder organization — the type-based/feature-based model, what each folder under `src/`, `messages/` and `public/` holds, and a "Where to Add New Code" guide.                     |
 
 ## Contact
 
