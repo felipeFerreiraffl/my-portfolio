@@ -32,19 +32,37 @@ export default function Skills({ ref }: SectionProps) {
                 </span>
               </div>
               <div className="min-w-20 flex flex-col items-center gap-1">
-                <span className="size-1 rounded-full bg-main"></span>
+                <div className="flex items-center">
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                </div>
                 <span className="text-sm leading-body text-text text-center">
                   {tSec("levels.intermediate")}
                 </span>
               </div>
               <div className="min-w-20 flex flex-col items-center gap-1">
-                <span className="size-1 rounded-full bg-main"></span>
+                <div className="flex items-center">
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                </div>
                 <span className="text-sm leading-body text-text text-center">
                   {tSec("levels.advanced")}
                 </span>
               </div>
               <div className="min-w-20 flex flex-col items-center gap-1">
-                <span className="size-1 rounded-full bg-main"></span>
+                <div className="flex items-center">
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                  <div className="w-1 h-[0.5px] bg-main" />
+                  <span className="size-1 rounded-full bg-main"></span>
+                </div>
                 <span className="text-sm leading-body text-text text-center">
                   {tSec("levels.expert")}
                 </span>
