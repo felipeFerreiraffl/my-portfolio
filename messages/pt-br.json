@@ -182,14 +182,13 @@
         }
       },
       "proj_3": {
-        "title": "CRUD Livraria",
-        "desc": "CRUD Livraria é um projeto full-stack de cadastro de livros, estilo sistema de biblioteca. Backend em Spring Boot com API REST (/livraria) e persistência em MySQL via JPA; frontend em React consumindo essa API. Sem demo publicada — repositório roda localmente (backend + MySQL + frontend separados).",
+        "title": "TSAuth",
+        "desc": "O TSAuth é um projeto full-stack de cadastro de usuários para visualização, com CRUD completo e login/registro com JWT. Back-end realizado em Node.js com Express e API REST; frontend em React com Vite e Typescript consumindo a API. Deploy do back-end no Render e front-end na Vercel.",
         "features": {
           "feat_1": "CRUD completo",
-          "feat_2": "Manipulação de livros",
-          "feat_3": "API REST",
-          "feat_4": "Validação de dados com Bean",
-          "feat_5": "DTO pattern"
+          "feat_2": "Cadastro e login de usuário",
+          "feat_3": "JWT",
+          "feat_4": "Segurança de senhas com bcrypt"
         }
       }
     },
