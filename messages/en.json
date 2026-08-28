@@ -182,14 +182,13 @@
         }
       },
       "proj_3": {
-        "title": "Library CRUD",
-        "desc": "Library CRUD is a full-stack book registration project, styled as a library system. Backend built with Spring Boot, exposing a REST API (/livraria) with MySQL persistence via JPA; frontend built with React consuming that API. No live demo — the repository runs locally (backend + MySQL + frontend, run separately).",
+        "title": "TSAuth",
+        "desc": "TSAuth is a full-stack user management project featuring complete CRUD functionality and JWT-based login/registration. The back-end was built with Node.js, Express, and a REST API; the front-end uses React with Vite and TypeScript to consume the API. The back-end is deployed on Render and the front-end on Vercel.",
         "features": {
-          "feat_1": "Full CRUD",
-          "feat_2": "Book management",
-          "feat_3": "REST API",
-          "feat_4": "Data validation with Bean Validation",
-          "feat_5": "DTO pattern"
+          "feat_1": "Full CRUD functionality",
+          "feat_2": "User registration and login",
+          "feat_3": "JWT authentication",
+          "feat_4": "Password security with bcrypt"
         }
       }
     },
