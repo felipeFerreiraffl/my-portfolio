@@ -76,8 +76,9 @@ export const PROJECTS: ProjectData[] = [
       "data.proj_3.features.feat_2",
       "data.proj_3.features.feat_3",
       "data.proj_3.features.feat_4",
-      "data.proj_3.features.feat_5",
     ],
-    repoLink: `${EXTERNAL_LINKS.gitHub}/crud-livraria`,
+    repoLink: `${EXTERNAL_LINKS.gitHub}/tsauth`,
+    demoLink: "https://tsauth.vercel.app/",
+    images: [IMAGES.projects.proj_3.img_1, IMAGES.projects.proj_3.img_2],
   },
 ];
